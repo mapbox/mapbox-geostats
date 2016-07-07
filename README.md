@@ -18,5 +18,5 @@ Some anticipated problems:
 - Handling large input files.
 - Limiting the generation and output of theoretically unlimited data, like fields and values.
 - Handling non-numbers (for stats like `sum`).
-- 
+
 More to come.
