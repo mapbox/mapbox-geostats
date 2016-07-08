@@ -1,7 +1,7 @@
 var path = require('path');
 var Promise = require('pinkie-promise');
-// var mapnikAnalyze = require('./lib/mapnik-analyze');
-var gdalAnalyze = require('./lib/gdal-analyze');
+var mapnikAnalyze = require('./lib/mapnik-analyze');
+// var gdalAnalyze = require('./lib/gdal-analyze');
 var Stats = require('./lib/stats');
 
 function buildGeoStats(filePath) {
@@ -15,8 +15,8 @@ function buildGeoStats(filePath) {
     var analyze = (function () {
       switch (extension) {
         case '.geojson':
-          // return mapnikAnalyze(stats, filePath);
-          return gdalAnalyze(stats, filePath);
+          return mapnikAnalyze(stats, filePath);
+          // return gdalAnalyze(stats, filePath);
         default:
           throw new Error('Invalid file type');
       }
