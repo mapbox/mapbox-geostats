@@ -2,7 +2,8 @@ var test = require('tape');
 var path = require('path');
 var geostats = require('../');
 
-var result = geostats(fixture('simple.geojson'));
+// var result = geostats(fixture('simple.geojson'));
+var result = geostats(fixture('ne_10m_ports/ne_10m_ports.shp'));
 
 // geostats(fixture('populations-plus.geojson'))
 result.then(function (stats) {

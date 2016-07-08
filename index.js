@@ -15,8 +15,9 @@ function buildGeoStats(filePath) {
     var analyze = (function () {
       switch (extension) {
         case '.geojson':
-          // return mapnikAnalyze(stats, filePath);
-          return gdalAnalyze(stats, filePath);
+        case '.shp':
+          return mapnikAnalyze(stats, filePath);
+          // return gdalAnalyze(stats, filePath);
         default:
           throw new Error('Invalid file type');
       }
