@@ -21,8 +21,7 @@
     "gdal": "^0.9.2",
     "mapnik": "^3.5.13",
     "pinkie-promise": "^2.0.1",
-    "tile-stat-stream": "^1.1.0",
-    "wellknown": "^0.4.2"
+    "tile-stat-stream": "^1.1.0"
   },
   "devDependencies": {
     "eslint": "^3.0.1",
