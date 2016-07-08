@@ -1,0 +1,128 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "foo",
+        "power": 6,
+        "numbers": [1, 2, 3]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          84.72656249999999,
+          55.7765730186677
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "bar",
+        "power": 99
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            84.462890625,
+            55.32914440840507
+          ],
+          [
+            86.0009765625,
+            55.751849391735284
+          ],
+          [
+            86.044921875,
+            56.04749958329888
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "baz"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.49609375,
+          56.48676175249086
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "haha"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.341796875,
+          56.8249328650072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "hoho",
+        "numbers": [1, 2, 3]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            85.8251953125,
+            55.50374985927514
+          ],
+          [
+            86.4404296875,
+            55.677584411089505
+          ],
+          [
+            86.7919921875,
+            55.65279803318956
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "hehe",
+        "power": 86
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              80.947265625,
+              57.397624055000456
+            ],
+            [
+              80.5078125,
+              56.145549500679074
+            ],
+            [
+              81.650390625,
+              56.145549500679074
+            ],
+            [
+              81.650390625,
+              56.559482483762245
+            ],
+            [
+              80.947265625,
+              57.397624055000456
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

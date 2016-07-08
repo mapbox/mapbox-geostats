@@ -1,0 +1,30 @@
+{
+  "name": "mapbox-geostats",
+  "version": "0.1.0",
+  "description": "Generate statistics about geodata.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapbox/mapbox-geostats.git"
+  },
+  "author": "Mapbox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mapbox/mapbox-geostats/issues"
+  },
+  "homepage": "https://github.com/mapbox/mapbox-geostats#readme",
+  "dependencies": {
+    "gdal": "^0.9.2",
+    "pinkie-promise": "^2.0.1",
+    "tile-stat-stream": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.0.1",
+    "eslint-config-airbnb-base": "^4.0.0",
+    "eslint-plugin-import": "^1.10.2",
+    "tape": "^4.6.0"
+  }
+}
