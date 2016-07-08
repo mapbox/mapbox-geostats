@@ -6,6 +6,7 @@
       "properties": {
         "name": "foo",
         "power": 6,
+        "mixed": 7,
         "numbers": [1, 2, 3]
       },
       "geometry": {
@@ -20,6 +21,7 @@
       "type": "Feature",
       "properties": {
         "name": "bar",
+        "mixed": "7",
         "power": 99
       },
       "geometry": {
@@ -70,7 +72,8 @@
       "type": "Feature",
       "properties": {
         "name": "hoho",
-        "numbers": [1, 2, 3]
+        "numbers": [1, 2, 3],
+        "data": 6
       },
       "geometry": {
         "type": "LineString",
@@ -94,7 +97,11 @@
       "type": "Feature",
       "properties": {
         "name": "hehe",
-        "power": 86
+        "power": 86,
+        "data": {
+          "foo": "bar"
+        },
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
       },
       "geometry": {
         "type": "Polygon",
