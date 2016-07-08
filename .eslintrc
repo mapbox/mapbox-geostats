@@ -1,6 +1,11 @@
 {
-  "extends": "eslint:recommended",
-  "env": {
-    "node": true
+  "extends": "airbnb-base/legacy",
+  "rules": {
+    "vars-on-top": ["off"],
+    "func-names": ["off"],
+    "no-use-before-define": ["off"],
+    "consistent-return": ["off"],
+    "no-prototype-builtins": ["off"],
+    "no-restricted-syntax": ["off"]
   }
 }
