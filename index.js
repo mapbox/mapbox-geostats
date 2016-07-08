@@ -3,6 +3,7 @@ var Promise = require('pinkie-promise');
 var mapnikAnalyze = require('./lib/mapnik-analyze');
 var gdalAnalyze = require('./lib/gdal-analyze');
 var Stats = require('./lib/stats');
+var Constants = require('./lib/constants');
 
 function buildGeoStats(filePath) {
   return new Promise(function (resolve) {
@@ -14,8 +15,8 @@ function buildGeoStats(filePath) {
 
     var analyze = (function () {
       switch (extension) {
-        case '.geojson':
-        case '.shp':
+        case Constants.EXTNAME_GEOJSON:
+        case Constants.EXTNAME_SHAPEFILE:
           return mapnikAnalyze(stats, filePath);
           // return gdalAnalyze(stats, filePath);
         default:
