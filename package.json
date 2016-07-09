@@ -26,6 +26,7 @@
     "eslint-config-airbnb-base": "^4.0.0",
     "eslint-plugin-import": "^1.10.2",
     "lodash": "^4.13.1",
+    "tap": "^6.1.1",
     "tape": "^4.6.0"
   }
 }

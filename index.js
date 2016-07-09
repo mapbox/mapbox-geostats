@@ -1,13 +1,11 @@
 var path = require('path');
 var Promise = require('pinkie-promise');
 var mapnikAnalyze = require('./lib/mapnik-analyze');
-var Stats = require('./lib/stats');
+var reportStats = require('./lib/report-stats');
 var Constants = require('./lib/constants');
 
 function buildGeoStats(filePath) {
   return new Promise(function (resolve) {
-    var stats = new Stats(path.basename(filePath, path.extname(filePath)));
-
     if (!filePath) throw new Error('Filename required');
 
     var extension = path.extname(filePath);
@@ -16,14 +14,14 @@ function buildGeoStats(filePath) {
       switch (extension) {
         case Constants.EXTNAME_GEOJSON:
         case Constants.EXTNAME_SHAPEFILE:
-          return mapnikAnalyze(stats, filePath);
+          return mapnikAnalyze(filePath);
         default:
           throw new Error('Invalid file type');
       }
     }());
 
-    resolve(analyze.then(function (modifiedStats) {
-      return modifiedStats.toJSON();
+    resolve(analyze.then(function (stats) {
+      return reportStats(stats);
     }));
   });
 }
