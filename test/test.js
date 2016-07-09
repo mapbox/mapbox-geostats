@@ -1,5 +1,4 @@
-/* eslint-disable no-console */
-var test = require('tape');
+var test = require('tap').test;
 var path = require('path');
 var fs = require('fs');
 var Promise = require('pinkie-promise');
@@ -51,7 +50,7 @@ function fixturePath(fileName) {
 }
 
 function logError(err) {
-  console.error(err.stack);
+  console.error(err.stack); // eslint-disable-line no-console
 }
 
 function promiseExpected(name) {

@@ -4,7 +4,7 @@
   "description": "Generate statistics about geodata.",
   "main": "index.js",
   "scripts": {
-    "test": "tape test/test.js"
+    "test": "tap test/test.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,6 @@
     "eslint-config-airbnb-base": "^4.0.0",
     "eslint-plugin-import": "^1.10.2",
     "lodash": "^4.13.1",
-    "tap": "^6.1.1",
-    "tape": "^4.6.0"
+    "tap": "^6.1.1"
   }
 }
