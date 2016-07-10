@@ -7,6 +7,8 @@ var geostats = require('../');
 // var result = geostats(fixturePath('src/simple.geojson'));
 // var result = geostats(fixturePath('src/ports/ports.shp'));
 // var result = geostats(fixturePath('src/populations-plus.geojson'));
+// var result = geostats(fixturePath('src/plain.mbtiles'));
+// var result = geostats(fixturePath('src/valid-vectorgzip.mbtiles'));
 //
 // result.then(function (stats) {
 //   console.log(JSON.stringify(stats, null, 2));
@@ -39,6 +41,16 @@ test('ports shapefile', function (t) {
   Promise.all([
     geostats(fixturePath('src/ports/ports.shp')),
     promiseExpected('ports'),
+  ]).then(function (output) {
+    t.deepEqual(output[0], output[1]);
+    t.end();
+  }).catch(logError);
+});
+
+test('gzip mbtiles', function (t) {
+  Promise.all([
+    geostats(fixturePath('src/valid-vectorgzip.mbtiles')),
+    promiseExpected('valid-vectorgzip'),
   ]).then(function (output) {
     t.deepEqual(output[0], output[1]);
     t.end();
