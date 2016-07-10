@@ -7,20 +7,25 @@ var geostats = require('../');
 // var result = geostats(fixturePath('src/simple.geojson'));
 // var result = geostats(fixturePath('src/ports/ports.shp'));
 // var result = geostats(fixturePath('src/populations-plus.geojson'));
-// var result = geostats(fixturePath('src/plain.mbtiles'));
 // var result = geostats(fixturePath('src/valid-vectorgzip.mbtiles'));
-//
+// var result = geostats(fixturePath('src/twolayers.mbtiles'));
+// var result = geostats(fixturePath('src/038.mbtiles'));
+// var result = geostats(fixturePath('src/pngs.mbtiles')); /* raster I think */
+// var result = geostats(fixturePath('src/plain_2.mbtiles')); /* not working */
+// var result = geostats(fixturePath('src/plain_3.mbtiles')); /* not working */
+// var result = geostats(fixturePath('src/plain_4.mbtiles')); /* not working */
+// var result = geostats(fixturePath('src/unindexed.mbtiles')); /* not working */
+// var result = geostats(fixturePath('src/some-empty-tiles.mbtiles')); /* not working */
+// var result = geostats(fixturePath('src/with spaces.mbtiles')); /* not working */
+
 // result.then(function (stats) {
-//   console.log(JSON.stringify(stats, null, 2));
-// })
-// .catch(function (err) {
-//   console.error(err.stack);
-// });
+//   console.log(JSON.stringify(stats, null, 2))
+// }).catch(logError);
 
 test('simple geojson', function (t) {
   Promise.all([
     geostats(fixturePath('src/simple.geojson')),
-    promiseExpected('simple'),
+    getExpected('simple'),
   ]).then(function (output) {
     t.deepEqual(output[0], output[1]);
     t.end();
@@ -30,7 +35,7 @@ test('simple geojson', function (t) {
 test('ports not-so-simple', function (t) {
   Promise.all([
     geostats(fixturePath('src/populations-plus.geojson')),
-    promiseExpected('populations-plus'),
+    getExpected('populations-plus'),
   ]).then(function (output) {
     t.deepEqual(output[0], output[1]);
     t.end();
@@ -40,17 +45,27 @@ test('ports not-so-simple', function (t) {
 test('ports shapefile', function (t) {
   Promise.all([
     geostats(fixturePath('src/ports/ports.shp')),
-    promiseExpected('ports'),
+    getExpected('ports'),
   ]).then(function (output) {
     t.deepEqual(output[0], output[1]);
     t.end();
   }).catch(logError);
 });
 
-test('gzip mbtiles', function (t) {
+test('gzipped mbtiles', function (t) {
   Promise.all([
     geostats(fixturePath('src/valid-vectorgzip.mbtiles')),
-    promiseExpected('valid-vectorgzip'),
+    getExpected('valid-vectorgzip'),
+  ]).then(function (output) {
+    t.deepEqual(output[0], output[1]);
+    t.end();
+  }).catch(logError);
+});
+
+test('more gzipped mbtiles', function (t) {
+  Promise.all([
+    geostats(fixturePath('src/twolayers.mbtiles')),
+    getExpected('twolayers'),
   ]).then(function (output) {
     t.deepEqual(output[0], output[1]);
     t.end();
@@ -62,10 +77,10 @@ function fixturePath(fileName) {
 }
 
 function logError(err) {
-  console.error(err.stack); // eslint-disable-line no-console
+  console.log(err.stack); // eslint-disable-line no-console
 }
 
-function promiseExpected(name) {
+function getExpected(name) {
   return new Promise(function (resolve, reject) {
     fs.readFile(fixturePath(path.join('expected', name + '.json')), 'utf8', function (err, data) {
       if (err) return reject(err);

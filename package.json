@@ -23,6 +23,7 @@
     "pbf": "^2.0.1",
     "pinkie-promise": "^2.0.1",
     "tilelive": "^5.12.2",
+    "tiletype": "^0.3.0",
     "vector-tile": "^1.2.1"
   },
   "devDependencies": {

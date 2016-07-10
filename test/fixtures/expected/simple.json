@@ -1,88 +1,82 @@
 {
-  "layers": [
-    {
-      "layer": "simple",
-      "count": 6,
-      "attributeCount": 7,
-      "attributes": [
-        {
-          "attribute": "astonishing",
-          "type": "Boolean",
-          "count": 6,
-          "values": [
-            true,
-            null
-          ]
-        },
-        {
-          "attribute": "mixed",
-          "type": "Mixed",
-          "count": 6,
-          "min": 7,
-          "max": 7,
-          "sum": 7,
-          "values": [
-            7,
-            "7",
-            null
-          ]
-        },
-        {
-          "attribute": "name",
-          "type": "String",
-          "count": 6,
-          "values": [
-            "foo",
-            "bar",
-            "baz",
-            "haha",
-            "hoho",
-            "hehe"
-          ]
-        },
-        {
-          "attribute": "numbers",
-          "type": "String",
-          "count": 6,
-          "values": [
-            "[1,2,3]",
-            null
-          ]
-        },
-        {
-          "attribute": "power",
-          "type": "Number",
-          "count": 6,
-          "min": 6,
-          "max": 99,
-          "sum": 191,
-          "values": [
-            6,
-            99,
-            null,
-            86
-          ]
-        },
-        {
-          "attribute": "data",
-          "type": "Mixed",
-          "count": 2,
-          "min": 6,
-          "max": 6,
-          "sum": 6,
-          "values": [
-            6,
-            "{\"foo\":\"bar\"}"
-          ]
-        },
-        {
-          "attribute": "description",
-          "type": "String",
-          "count": 1,
-          "values": []
-        }
+  "layers": [{
+    "layer": "simple",
+    "count": 6,
+    "attributeCount": 8,
+    "attributes": [{
+      "values": [
+        true,
+        null
       ],
-      "geometry": "Point"
-    }
-  ]
+      "attribute": "astonishing",
+      "count": 2,
+      "type": "Boolean"
+    }, {
+      "values": [
+        7,
+        "7",
+        null
+      ],
+      "attribute": "mixed",
+      "count": 3,
+      "type": "Mixed",
+      "min": 7,
+      "max": 7
+    }, {
+      "values": [
+        "foo",
+        "bar",
+        "baz",
+        "haha",
+        "hoho",
+        "hehe"
+      ],
+      "attribute": "name",
+      "count": 6,
+      "type": "String"
+    }, {
+      "values": [
+        "[1,2,3]",
+        null
+      ],
+      "attribute": "numbers",
+      "count": 3,
+      "type": "String"
+    }, {
+      "values": [
+        6,
+        99,
+        null,
+        86
+      ],
+      "attribute": "power",
+      "count": 4,
+      "type": "Number",
+      "min": 6,
+      "max": 99
+    }, {
+      "values": [
+        6,
+        "{\"foo\":\"bar\"}"
+      ],
+      "attribute": "data",
+      "count": 2,
+      "type": "Mixed",
+      "min": 6,
+      "max": 6
+    }, {
+      "values": [],
+      "attribute": "description",
+      "count": 1,
+      "type": "String"
+    }, {
+      "values": [
+        null
+      ],
+      "attribute": "onlyNull",
+      "count": 1,
+      "type": "Null"
+    }],
+    "geometry": "Point"
+  }]
 }

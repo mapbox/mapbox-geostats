@@ -8,6 +8,7 @@
     "no-prototype-builtins": ["off"],
     "no-restricted-syntax": ["off"],
     "no-param-reassign": ["off"],
+    "no-underscore-dangle": ["off"],
     "no-new": ["off"]
   }
 }

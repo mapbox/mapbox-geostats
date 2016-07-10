@@ -6,17 +6,14 @@
       "attributeCount": 5,
       "attributes": [
         {
-          "attribute": "featurecla",
-          "count": 1081,
-          "type": "String",
           "values": [
             "Port"
-          ]
+          ],
+          "attribute": "featurecla",
+          "count": 1081,
+          "type": "String"
         },
         {
-          "attribute": "name",
-          "count": 1081,
-          "type": "String",
           "values": [
             "Sint Nicolaas",
             "Campana",
@@ -118,15 +115,12 @@
             "Poti",
             "Piraeus",
             "Saint George's"
-          ]
+          ],
+          "attribute": "name",
+          "count": 1081,
+          "type": "String"
         },
         {
-          "attribute": "natlscale",
-          "count": 1081,
-          "type": "Number",
-          "min": 5,
-          "max": 75,
-          "sum": 22185,
           "values": [
             5,
             10,
@@ -134,15 +128,14 @@
             30,
             50,
             75
-          ]
-        },
-        {
-          "attribute": "scalerank",
+          ],
+          "attribute": "natlscale",
           "count": 1081,
           "type": "Number",
-          "min": 3,
-          "max": 8,
-          "sum": 6804,
+          "min": 5,
+          "max": 75
+        },
+        {
           "values": [
             8,
             7,
@@ -150,12 +143,14 @@
             5,
             4,
             3
-          ]
+          ],
+          "attribute": "scalerank",
+          "count": 1081,
+          "type": "Number",
+          "min": 3,
+          "max": 8
         },
         {
-          "attribute": "website",
-          "count": 1081,
-          "type": "String",
           "values": [
             "www.rocargo.com/SanNicolas.html",
             "www.consejoportuario.com.ar",
@@ -257,7 +252,10 @@
             "www.ppc.com.pa",
             "www.cocatram.org.ni/puertosca/pto_pedregal_panama.html",
             "www.enapu.com.pe"
-          ]
+          ],
+          "attribute": "website",
+          "count": 1081,
+          "type": "String"
         }
       ],
       "geometry": "Point"

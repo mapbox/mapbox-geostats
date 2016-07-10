@@ -112,8 +112,7 @@
           "count": 245,
           "type": "Number",
           "min": 0,
-          "max": 1638094,
-          "sum": 12963239
+          "max": 1638094
         },
         {
           "values": [
@@ -543,8 +542,7 @@
           "count": 245,
           "type": "Number",
           "min": -54.422,
-          "max": 78.83,
-          "sum": 4116.687999999997
+          "max": 78.83
         },
         {
           "values": [
@@ -653,8 +651,7 @@
           "count": 245,
           "type": "Number",
           "min": -178.131,
-          "max": 179.219,
-          "sum": 3249.132000000001
+          "max": 179.219
         },
         {
           "values": [
@@ -870,8 +867,7 @@
           "count": 245,
           "type": "Number",
           "min": 0,
-          "max": 1312978855,
-          "sum": 6171721574
+          "max": 1312978855
         },
         {
           "values": [
@@ -886,8 +882,7 @@
           "count": 245,
           "type": "Number",
           "min": 0,
-          "max": 150,
-          "sum": 16096
+          "max": 150
         },
         {
           "values": [
@@ -919,8 +914,7 @@
           "count": 245,
           "type": "Number",
           "min": 0,
-          "max": 155,
-          "sum": 13491
+          "max": 155
         },
         {
           "values": [
@@ -1029,8 +1023,7 @@
           "count": 245,
           "type": "Number",
           "min": 4,
-          "max": 894,
-          "sum": 106224
+          "max": 894
         }
       ],
       "geometry": "Polygon"
