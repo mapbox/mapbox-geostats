@@ -9,14 +9,6 @@ The initial plan:
   - GeoJSON
   - shapefiles
   - mbtiles
-- Output format will match [tile-stat-stream](https://github.com/mapbox/tile-stat-stream#output)'s.
-- We can use [tile-stat-stream](https://github.com/mapbox/tile-stat-stream) to deal with mbtiles. 
-- We'll use gdal or mapnik to parse and analyze GeoJSON and shapefiles.
-
-Some anticipated problems:
-
-- Handling large input files.
-- Limiting the generation and output of theoretically unlimited data, like fields and values.
-- Handling non-numbers (for stats like `sum`).
+- Use mapnik to parse and analyze GeoJSON and shapefiles.
 
 More to come.
