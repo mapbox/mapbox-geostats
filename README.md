@@ -1,4 +1,4 @@
-# mapbox-geostats
+# mapbox-geostats [![CircleCI](https://circleci.com/gh/mapbox/mapbox-geostats.svg?style=svg)](https://circleci.com/gh/mapbox/mapbox-geostats)
 
 Generate statistics about geodata.
 
