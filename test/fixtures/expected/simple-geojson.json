@@ -13,17 +13,6 @@
       "type": "Boolean"
     }, {
       "values": [
-        7,
-        "7",
-        null
-      ],
-      "attribute": "mixed",
-      "count": 3,
-      "type": "Mixed",
-      "min": 7,
-      "max": 7
-    }, {
-      "values": [
         "foo",
         "bar",
         "baz",
@@ -44,8 +33,8 @@
       "type": "String"
     }, {
       "values": [
-        6,
         99,
+        6,
         null,
         86
       ],
@@ -64,6 +53,17 @@
       "type": "Mixed",
       "min": 6,
       "max": 6
+    }, {
+      "values": [
+        7,
+        "7",
+        null
+      ],
+      "attribute": "mixed",
+      "count": 3,
+      "type": "Mixed",
+      "min": 7,
+      "max": 7
     }, {
       "values": [],
       "attribute": "description",
