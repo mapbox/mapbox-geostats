@@ -1,0 +1,81 @@
+{
+  "layers": [
+    {
+      "layer": "simple",
+      "count": 52,
+      "attributeCount": 7,
+      "attributes": [
+        {
+          "values": [
+            true
+          ],
+          "attribute": "astonishing",
+          "count": 10,
+          "type": "Boolean"
+        },
+        {
+          "values": [
+            7,
+            "7"
+          ],
+          "attribute": "mixed",
+          "count": 21,
+          "type": "Mixed",
+          "min": 7,
+          "max": 7
+        },
+        {
+          "values": [
+            "foo",
+            "bar",
+            "baz",
+            "haha",
+            "hoho",
+            "hehe"
+          ],
+          "attribute": "name",
+          "count": 52,
+          "type": "String"
+        },
+        {
+          "values": [
+            "[1,2,3]"
+          ],
+          "attribute": "numbers",
+          "count": 19,
+          "type": "String"
+        },
+        {
+          "values": [
+            6,
+            99,
+            86
+          ],
+          "attribute": "power",
+          "count": 29,
+          "type": "Number",
+          "min": 6,
+          "max": 99
+        },
+        {
+          "values": [
+            6,
+            "{\"foo\":\"bar\"}"
+          ],
+          "attribute": "data",
+          "count": 17,
+          "type": "Mixed",
+          "min": 6,
+          "max": 6
+        },
+        {
+          "values": [],
+          "attribute": "description",
+          "count": 8,
+          "type": "String"
+        }
+      ],
+      "geometry": "Point"
+    }
+  ]
+}
