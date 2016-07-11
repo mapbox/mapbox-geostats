@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mapbox/mapbox-geostats#readme",
   "dependencies": {
+    "core-js": "^2.4.0",
     "es6-set": "^0.1.4",
     "mapnik": "^3.5.13",
     "mbtiles": "^0.9.0",
