@@ -10,5 +10,6 @@ The initial plan:
   - shapefiles
   - mbtiles
 - Use mapnik to parse and analyze GeoJSON and shapefiles.
+- Option to specify which attributes should be reported.
 
 More to come.
