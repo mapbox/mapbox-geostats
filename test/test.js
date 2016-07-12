@@ -9,11 +9,8 @@ var geostats = require('../');
 // var result = geostats(fixturePath('src/ports/ports.shp'));
 // var result = geostats(fixturePath('src/populations-plus.geojson'));
 // var result = geostats(fixturePath('src/vectorgzip.mbtiles'));
-// var result = geostats(fixturePath('src/twolayers.mbtiles'));
 // var result = geostats(fixturePath('src/pngs.mbtiles')); /* raster I think */
-// var result = geostats(fixturePath('src/simple.mbtiles'), {
-//   attributes: ['astonishing'],
-// });
+// var result = geostats(fixturePath('src/simple.mbtiles'));
 // //
 // result.then(function (stats) {
 //   console.log(JSON.stringify(stats, null, 2))
@@ -69,38 +66,38 @@ test('gzipped mbtiles', function (t) {
   }).catch(logError);
 });
 
-test('more gzipped mbtiles', function (t) {
-  Promise.all([
-    geostats(fixturePath('src/twolayers.mbtiles')),
-    getExpected('twolayers'),
-  ]).then(function (output) {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
+test('mbtiles with raster tiles', function (t) {
+  geostats(fixturePath('src/pngs.mbtiles')).then(function (output) {
+    t.deepEqual(output, { layerCount: 0, layers: [] });
     t.end();
   }).catch(logError);
 });
 
 test('mbtiles with no features', function (t) {
   geostats(fixturePath('src/no-features.mbtiles')).then(function (output) {
-    t.deepEqual(output, { layers: [] });
+    t.deepEqual(output, { layerCount: 0, layers: [] });
     t.end();
   }).catch(logError);
 });
 
 test('shapefile with no features', function (t) {
   geostats(fixturePath('src/no-features/no-features.shp')).then(function (output) {
-    t.deepEqual(output, { layers: [{
-      attributeCount: 0,
-      attributes: [],
-      count: 0,
-      layer: 'no-features',
-    }] });
+    t.deepEqual(output, {
+      layerCount: 1,
+      layers: [{
+        attributeCount: 0,
+        attributes: [],
+        count: 0,
+        layer: 'no-features',
+      }],
+    });
     t.end();
   }).catch(logError);
 });
 
 // test('geojson with no features', function (t) {
 //   geostats(fixturePath('src/no-features.geojson')).then(function (output) {
-//     t.deepEqual(output, { layers: [] });
+//     t.deepEqual(output, { layerCount: 0, layers: [] });
 //     t.end();
 //   }).catch(logError);
 // });

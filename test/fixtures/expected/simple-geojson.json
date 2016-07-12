@@ -1,82 +1,94 @@
 {
-  "layers": [{
-    "layer": "simple",
-    "count": 6,
-    "attributeCount": 8,
-    "attributes": [{
-      "values": [
-        true,
-        null
-      ],
-      "attribute": "astonishing",
-      "count": 2,
-      "type": "Boolean"
-    }, {
-      "values": [
-        "foo",
-        "bar",
-        "baz",
-        "haha",
-        "hoho",
-        "hehe"
-      ],
-      "attribute": "name",
+  "layerCount": 1,
+  "layers": [
+    {
+      "layer": "simple",
       "count": 6,
-      "type": "String"
-    }, {
-      "values": [
-        "[1,2,3]",
-        null
+      "attributeCount": 8,
+      "attributes": [
+        {
+          "values": [
+            true,
+            null
+          ],
+          "count": 2,
+          "attribute": "astonishing",
+          "type": "Boolean"
+        },
+        {
+          "values": [
+            7,
+            "7",
+            null
+          ],
+          "count": 3,
+          "attribute": "mixed",
+          "type": "Mixed",
+          "min": 7,
+          "max": 7
+        },
+        {
+          "values": [
+            "foo",
+            "bar",
+            "baz",
+            "haha",
+            "hoho",
+            "hehe"
+          ],
+          "count": 6,
+          "attribute": "name",
+          "type": "String"
+        },
+        {
+          "values": [
+            "[1,2,3]",
+            null
+          ],
+          "count": 2,
+          "attribute": "numbers",
+          "type": "String"
+        },
+        {
+          "values": [
+            6,
+            99,
+            null,
+            86
+          ],
+          "count": 4,
+          "attribute": "power",
+          "type": "Number",
+          "min": 6,
+          "max": 99
+        },
+        {
+          "values": [
+            6,
+            "{\"foo\":\"bar\"}"
+          ],
+          "count": 2,
+          "attribute": "data",
+          "type": "Mixed",
+          "min": 6,
+          "max": 6
+        },
+        {
+          "values": [],
+          "count": 1,
+          "attribute": "description",
+          "type": "String"
+        },
+        {
+          "values": [
+            null
+          ],
+          "count": 1,
+          "attribute": "onlyNull",
+          "type": "Null"
+        }
       ],
-      "attribute": "numbers",
-      "count": 3,
-      "type": "String"
-    }, {
-      "values": [
-        99,
-        6,
-        null,
-        86
-      ],
-      "attribute": "power",
-      "count": 4,
-      "type": "Number",
-      "min": 6,
-      "max": 99
-    }, {
-      "values": [
-        6,
-        "{\"foo\":\"bar\"}"
-      ],
-      "attribute": "data",
-      "count": 2,
-      "type": "Mixed",
-      "min": 6,
-      "max": 6
-    }, {
-      "values": [
-        7,
-        "7",
-        null
-      ],
-      "attribute": "mixed",
-      "count": 3,
-      "type": "Mixed",
-      "min": 7,
-      "max": 7
-    }, {
-      "values": [],
-      "attribute": "description",
-      "count": 1,
-      "type": "String"
-    }, {
-      "values": [
-        null
-      ],
-      "attribute": "onlyNull",
-      "count": 1,
-      "type": "Null"
-    }],
-    "geometry": "Point"
-  }]
+      "geometry": "Point"
+    }
+  ]
 }

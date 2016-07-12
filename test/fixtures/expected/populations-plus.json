@@ -1,17 +1,18 @@
 {
+  "layerCount": 1,
   "layers": [
     {
       "layer": "populations-plus",
       "count": 243,
-      "attributeCount": 6903,
+      "attributeCount": 127,
       "attributes": [
         {
           "values": [
             1,
             0
           ],
+          "count": 2,
           "attribute": "ADM0CAP",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 1
@@ -119,8 +120,8 @@
             "Chile",
             "Mauritania"
           ],
+          "count": 198,
           "attribute": "ADM0NAME",
-          "count": 243,
           "type": "String"
         },
         {
@@ -226,8 +227,8 @@
             "CHL",
             "MRT"
           ],
+          "count": 198,
           "attribute": "ADM0_A3",
-          "count": 243,
           "type": "String"
         },
         {
@@ -333,8 +334,8 @@
             "Bangui",
             "Centre"
           ],
+          "count": 205,
           "attribute": "ADM1NAME",
-          "count": 214,
           "type": "String"
         },
         {
@@ -393,8 +394,8 @@
             34,
             28
           ],
+          "count": 53,
           "attribute": "ADMIN1_COD",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 82
@@ -404,8 +405,8 @@
             0,
             1
           ],
+          "count": 2,
           "attribute": "CAPALT",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 1
@@ -434,8 +435,8 @@
             "UN Headquarters",
             "Official, admin"
           ],
+          "count": 21,
           "attribute": "CAPIN",
-          "count": 34,
           "type": "Mixed"
         },
         {
@@ -448,8 +449,8 @@
             1,
             3
           ],
+          "count": 7,
           "attribute": "CHANGED",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 40
@@ -459,8 +460,8 @@
             0,
             5
           ],
+          "count": 2,
           "attribute": "CHECKME",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 5
@@ -522,8 +523,8 @@
             "Calcutta",
             "Sao Paulo"
           ],
-          "attribute": "CITYALT",
           "count": 54,
+          "attribute": "CITYALT",
           "type": "Mixed"
         },
         {
@@ -531,8 +532,8 @@
             0,
             1
           ],
+          "count": 2,
           "attribute": "COMPARE",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 1
@@ -542,8 +543,8 @@
             0,
             1
           ],
+          "count": 2,
           "attribute": "DIFFASCII",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 1
@@ -564,8 +565,8 @@
             "Changed feature class. Changed scale rank.",
             "Corrected coordinates."
           ],
+          "count": 13,
           "attribute": "DIFFNOTE",
-          "count": 112,
           "type": "String"
         },
         {
@@ -590,8 +591,8 @@
             10,
             187
           ],
+          "count": 19,
           "attribute": "ELEVATION",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 2320
@@ -605,8 +606,8 @@
             "Admin-1 region capital",
             "Admin-0 region capital"
           ],
+          "count": 6,
           "attribute": "FEATURECLA",
-          "count": 243,
           "type": "String"
         },
         {
@@ -614,8 +615,8 @@
             "P",
             null
           ],
+          "count": 2,
           "attribute": "FEATURE_CL",
-          "count": 235,
           "type": "String"
         },
         {
@@ -626,8 +627,8 @@
             "PPLA",
             "PPLG"
           ],
+          "count": 5,
           "attribute": "FEATURE_CO",
-          "count": 235,
           "type": "String"
         },
         {
@@ -733,8 +734,8 @@
             927967,
             3598132
           ],
+          "count": 242,
           "attribute": "GEONAMEID",
-          "count": 243,
           "type": "Number",
           "min": -1,
           "max": 6942553
@@ -751,8 +752,8 @@
             "Geonames ascii name + lat.d + long.d matching.",
             "GeoNames rough area, rough name, requires further research."
           ],
+          "count": 9,
           "attribute": "GEONAMESNO",
-          "count": 243,
           "type": "String"
         },
         {
@@ -858,8 +859,8 @@
             "Lilongwe",
             "Guatemala City"
           ],
-          "attribute": "GN_ASCII",
           "count": 240,
+          "attribute": "GN_ASCII",
           "type": "String"
         },
         {
@@ -965,8 +966,8 @@
             994938,
             578156
           ],
+          "count": 236,
           "attribute": "GN_POP",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 14608512
@@ -1074,8 +1075,8 @@
             53,
             558
           ],
+          "count": 166,
           "attribute": "GTOPO30",
-          "count": 243,
           "type": "Number",
           "min": -9999,
           "max": 3829
@@ -1183,8 +1184,8 @@
             "CL",
             "MR"
           ],
+          "count": 196,
           "attribute": "ISO_A2",
-          "count": 243,
           "type": "String"
         },
         {
@@ -1198,8 +1199,8 @@
             2,
             1
           ],
+          "count": 8,
           "attribute": "LABELRANK",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 8
@@ -1307,8 +1308,8 @@
             -13.9832950655,
             14.6211346628
           ],
+          "count": 242,
           "attribute": "LATITUDE",
-          "count": 243,
           "type": "Number",
           "min": -41.2999739393,
           "max": 64.1500236197
@@ -1416,8 +1417,8 @@
             33.78330196,
             -90.5269655779
           ],
-          "attribute": "LONGITUDE",
           "count": 243,
+          "attribute": "LONGITUDE",
           "type": "Number",
           "min": -175.220564478,
           "max": 179.216647094
@@ -1428,8 +1429,8 @@
             0,
             2
           ],
+          "count": 3,
           "attribute": "LS_MATCH",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 2
@@ -1537,8 +1538,8 @@
             "Lilongwe",
             "Guatemala"
           ],
-          "attribute": "LS_NAME",
           "count": 243,
+          "attribute": "LS_NAME",
           "type": "String"
         },
         {
@@ -1644,8 +1645,8 @@
             34,
             9
           ],
+          "count": 212,
           "attribute": "MAX_AREAKM",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 186559
@@ -1753,8 +1754,8 @@
             62,
             133
           ],
+          "count": 181,
           "attribute": "MAX_AREAMI",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 72030
@@ -1862,8 +1863,8 @@
             9.525,
             178.53333333
           ],
+          "count": 240,
           "attribute": "MAX_BBXMAX",
-          "count": 243,
           "type": "Number",
           "min": -175.16666667,
           "max": 178.53333333
@@ -1971,8 +1972,8 @@
             9.4,
             178.425
           ],
+          "count": 241,
           "attribute": "MAX_BBXMIN",
-          "count": 243,
           "type": "Number",
           "min": -175.23333333,
           "max": 178.425
@@ -2080,8 +2081,8 @@
             14.78333333,
             0.48333333
           ],
+          "count": 239,
           "attribute": "MAX_BBYMAX",
-          "count": 243,
           "type": "Number",
           "min": -41.2,
           "max": 64.16666667
@@ -2189,8 +2190,8 @@
             14.44166667,
             0.28333333
           ],
+          "count": 240,
           "attribute": "MAX_BBYMIN",
-          "count": 243,
           "type": "Number",
           "min": -41.35,
           "max": 64.05
@@ -2203,8 +2204,8 @@
             0,
             300
           ],
+          "count": 5,
           "attribute": "MAX_NATSCA",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 300
@@ -2312,8 +2313,8 @@
             166,
             179
           ],
+          "count": 198,
           "attribute": "MAX_PERKM",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 130296
@@ -2421,8 +2422,8 @@
             70,
             93
           ],
+          "count": 189,
           "attribute": "MAX_PERMI",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 80962
@@ -2530,8 +2531,8 @@
             483355,
             143230
           ],
+          "count": 241,
           "attribute": "MAX_POP10",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 16172884
@@ -2639,8 +2640,8 @@
             483355,
             143230
           ],
+          "count": 241,
           "attribute": "MAX_POP20",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 24218878
@@ -2748,8 +2749,8 @@
             1060587,
             530241
           ],
+          "count": 219,
           "attribute": "MAX_POP300",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 87652060
@@ -2802,8 +2803,8 @@
             4207001,
             42594594
           ],
+          "count": 45,
           "attribute": "MAX_POP310",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 224908923
@@ -2911,8 +2912,8 @@
             742144,
             1316564
           ],
+          "count": 238,
           "attribute": "MAX_POP50",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 53845691
@@ -3020,8 +3021,8 @@
             -90.54418962,
             9.47328042
           ],
+          "count": 242,
           "attribute": "MEAN_BBXC",
-          "count": 243,
           "type": "Number",
           "min": -175.20679825,
           "max": 178.47288462
@@ -3129,8 +3130,8 @@
             14.6030153975,
             0.3952381
           ],
+          "count": 242,
           "attribute": "MEAN_BBYC",
-          "count": 243,
           "type": "Number",
           "min": -41.28553922,
           "max": 64.116125
@@ -3140,8 +3141,8 @@
             0,
             1
           ],
+          "count": 2,
           "attribute": "MEGACITY",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 1
@@ -3249,8 +3250,8 @@
             "Seoul",
             "Manila"
           ],
-          "attribute": "MEGANAME",
           "count": 146,
+          "attribute": "MEGANAME",
           "type": "Mixed"
         },
         {
@@ -3356,8 +3357,8 @@
             191,
             246
           ],
+          "count": 200,
           "attribute": "MIN_AREAKM",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 5912
@@ -3465,8 +3466,8 @@
             135,
             257
           ],
+          "count": 166,
           "attribute": "MIN_AREAMI",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 2283
@@ -3574,8 +3575,8 @@
             9.525,
             178.53333333
           ],
+          "count": 240,
           "attribute": "MIN_BBXMAX",
-          "count": 243,
           "type": "Number",
           "min": -175.16666667,
           "max": 178.53333333
@@ -3683,8 +3684,8 @@
             9.4,
             178.425
           ],
+          "count": 238,
           "attribute": "MIN_BBXMIN",
-          "count": 243,
           "type": "Number",
           "min": -175.23333333,
           "max": 178.425
@@ -3792,8 +3793,8 @@
             14.78333333,
             0.48333333
           ],
+          "count": 241,
           "attribute": "MIN_BBYMAX",
-          "count": 243,
           "type": "Number",
           "min": -41.2,
           "max": 64.16666667
@@ -3901,8 +3902,8 @@
             0.28333333,
             -18.16666667
           ],
+          "count": 237,
           "attribute": "MIN_BBYMIN",
-          "count": 243,
           "type": "Number",
           "min": -41.35,
           "max": 64.05
@@ -4010,8 +4011,8 @@
             196,
             65
           ],
+          "count": 192,
           "attribute": "MIN_PERKM",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 2296
@@ -4119,8 +4120,8 @@
             93,
             28
           ],
+          "count": 181,
           "attribute": "MIN_PERMI",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 1427
@@ -4228,8 +4229,8 @@
             "Lilongwe",
             "Guatemala"
           ],
-          "attribute": "NAME",
           "count": 243,
+          "attribute": "NAME",
           "type": "String"
         },
         {
@@ -4279,8 +4280,8 @@
             "Al-Qahirah",
             "Sao Paulo|São Paulo"
           ],
-          "attribute": "NAMEALT",
           "count": 44,
+          "attribute": "NAMEALT",
           "type": "Mixed"
         },
         {
@@ -4386,8 +4387,8 @@
             "Lilongwe",
             "Guatemala"
           ],
-          "attribute": "NAMEASCII",
           "count": 243,
+          "attribute": "NAMEASCII",
           "type": "String"
         },
         {
@@ -4395,8 +4396,8 @@
             0,
             1
           ],
+          "count": 2,
           "attribute": "NAMEDIFF",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 1
@@ -4417,8 +4418,8 @@
             "Bombay",
             "Calcutta"
           ],
-          "attribute": "NAMEPAR",
           "count": 13,
+          "attribute": "NAMEPAR",
           "type": "Mixed"
         },
         {
@@ -4432,8 +4433,8 @@
             300,
             600
           ],
+          "count": 8,
           "attribute": "NATSCALE",
-          "count": 243,
           "type": "Number",
           "min": 10,
           "max": 600
@@ -4442,8 +4443,8 @@
           "values": [
             null
           ],
-          "attribute": "NOTE",
           "count": 1,
+          "attribute": "NOTE",
           "type": "Null"
         },
         {
@@ -4549,8 +4550,8 @@
             579,
             392
           ],
+          "count": 135,
           "attribute": "POP1950",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 12338
@@ -4658,8 +4659,8 @@
             922,
             5120
           ],
+          "count": 139,
           "attribute": "POP1955",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 13713
@@ -4767,8 +4768,8 @@
             384,
             1106
           ],
+          "count": 141,
           "attribute": "POP1960",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 16679
@@ -4876,8 +4877,8 @@
             532,
             3232
           ],
+          "count": 143,
           "attribute": "POP1965",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 20284
@@ -4985,8 +4986,8 @@
             3206,
             1592
           ],
+          "count": 138,
           "attribute": "POP1970",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 23298
@@ -5094,8 +5095,8 @@
             729,
             3130
           ],
+          "count": 142,
           "attribute": "POP1975",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 26615
@@ -5203,8 +5204,8 @@
             774,
             3056
           ],
+          "count": 143,
           "attribute": "POP1980",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 28549
@@ -5312,8 +5313,8 @@
             2273,
             812
           ],
+          "count": 144,
           "attribute": "POP1985",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 30304
@@ -5421,8 +5422,8 @@
             2594,
             870
           ],
+          "count": 144,
           "attribute": "POP1990",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 32530
@@ -5530,8 +5531,8 @@
             2961,
             976
           ],
+          "count": 144,
           "attribute": "POP1995",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 33587
@@ -5639,8 +5640,8 @@
             1063,
             3384
           ],
+          "count": 141,
           "attribute": "POP2000",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 34450
@@ -5748,8 +5749,8 @@
             1189,
             3391
           ],
+          "count": 143,
           "attribute": "POP2005",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 35327
@@ -5857,8 +5858,8 @@
             1245,
             3406
           ],
+          "count": 143,
           "attribute": "POP2010",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 35676
@@ -5966,8 +5967,8 @@
             11662,
             3901
           ],
+          "count": 144,
           "attribute": "POP2015",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 36094
@@ -6075,8 +6076,8 @@
             4140,
             1398
           ],
+          "count": 143,
           "attribute": "POP2020",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 36371
@@ -6184,8 +6185,8 @@
             4298,
             1441
           ],
+          "count": 144,
           "attribute": "POP2025",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 36399
@@ -6293,8 +6294,8 @@
             4413,
             1475
           ],
+          "count": 143,
           "attribute": "POP2050",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 36400
@@ -6402,8 +6403,8 @@
             646750,
             1024000
           ],
+          "count": 240,
           "attribute": "POP_MAX",
-          "count": 243,
           "type": "Number",
           "min": 500,
           "max": 35676000
@@ -6511,8 +6512,8 @@
             646750,
             994938
           ],
-          "attribute": "POP_MIN",
           "count": 243,
+          "attribute": "POP_MIN",
           "type": "Number",
           "min": 200,
           "max": 14608512
@@ -6620,8 +6621,8 @@
             15220,
             782274
           ],
+          "count": 218,
           "attribute": "POP_OTHER",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 16803572
@@ -6641,8 +6642,8 @@
             14,
             13
           ],
+          "count": 12,
           "attribute": "RANK_MAX",
-          "count": 243,
           "type": "Number",
           "min": 2,
           "max": 14
@@ -6664,8 +6665,8 @@
             13,
             14
           ],
+          "count": 14,
           "attribute": "RANK_MIN",
-          "count": 243,
           "type": "Number",
           "min": 1,
           "max": 14
@@ -6681,8 +6682,8 @@
             1,
             0
           ],
+          "count": 8,
           "attribute": "SCALERANK",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 8
@@ -6790,8 +6791,8 @@
             "Chile",
             "Mauritania"
           ],
+          "count": 197,
           "attribute": "SOV0NAME",
-          "count": 243,
           "type": "String"
         },
         {
@@ -6897,8 +6898,8 @@
             "CHL",
             "MRT"
           ],
+          "count": 197,
           "attribute": "SOV_A3",
-          "count": 243,
           "type": "String"
         },
         {
@@ -7004,8 +7005,8 @@
             "Africa/Nouakchott",
             "Africa/Bamako"
           ],
+          "count": 188,
           "attribute": "TIMEZONE",
-          "count": 235,
           "type": "String"
         },
         {
@@ -7111,8 +7112,8 @@
             "Greece",
             "Iraq"
           ],
+          "count": 117,
           "attribute": "UN_ADM0",
-          "count": 146,
           "type": "Mixed"
         },
         {
@@ -7218,8 +7219,8 @@
             414,
             359
           ],
+          "count": 145,
           "attribute": "UN_FID",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 589
@@ -7327,8 +7328,8 @@
             37.54,
             25.67
           ],
+          "count": 145,
           "attribute": "UN_LAT",
-          "count": 243,
           "type": "Number",
           "min": -37.85,
           "max": 60.19
@@ -7436,8 +7437,8 @@
             120.96,
             -100.31
           ],
+          "count": 144,
           "attribute": "UN_LONG",
-          "count": 243,
           "type": "Number",
           "min": -122.96,
           "max": 174.76
@@ -7447,8 +7448,8 @@
             1,
             0
           ],
+          "count": 2,
           "attribute": "WORLDCITY",
-          "count": 243,
           "type": "Number",
           "min": 0,
           "max": 1
@@ -7458,8 +7459,8 @@
             0,
             null
           ],
+          "count": 2,
           "attribute": "a1",
-          "count": 2,
           "type": "Number",
           "min": 0,
           "max": 0
@@ -7469,8 +7470,8 @@
             0,
             null
           ],
+          "count": 2,
           "attribute": "a10",
-          "count": 2,
           "type": "Number",
           "min": 0,
           "max": 0
@@ -7480,8 +7481,8 @@
             0,
             null
           ],
+          "count": 2,
           "attribute": "a100",
-          "count": 2,
           "type": "Number",
           "min": 0,
           "max": 0
@@ -7491,8 +7492,8 @@
             0,
             null
           ],
+          "count": 2,
           "attribute": "a11",
-          "count": 2,
           "type": "Number",
           "min": 0,
           "max": 0
@@ -7502,8 +7503,8 @@
             0,
             null
           ],
+          "count": 2,
           "attribute": "a111",
-          "count": 2,
           "type": "Number",
           "min": 0,
           "max": 0
@@ -7513,8 +7514,8 @@
             0,
             null
           ],
+          "count": 2,
           "attribute": "a1111",
-          "count": 2,
           "type": "Number",
           "min": 0,
           "max": 0
@@ -7524,8 +7525,8 @@
             0,
             null
           ],
-          "attribute": "a12",
           "count": 2,
+          "attribute": "a12",
           "type": "Number",
           "min": 0,
           "max": 0

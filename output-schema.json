@@ -48,7 +48,7 @@
           "minimum": 0
         },
         "type": {
-          "enum": ["String", "Number", "Boolean", "Null"]
+          "enum": ["String", "Number", "Boolean", "Null", "Mixed"]
         },
         "values": {
           "type": "array",
