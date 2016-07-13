@@ -4,7 +4,8 @@
     {
       "type": "Feature",
       "properties": {
-        "constructor": 2
+        "constructor": 2,
+        "prototype": "foo"
       },
       "geometry": {
         "type": "Point",

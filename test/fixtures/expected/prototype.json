@@ -1,19 +1,33 @@
 {
-  "attributeCount": 1,
-  "attributes": [
+  "layerCount": 1,
+  "layers": [
     {
-      "attribute": "prototype",
+      "attributeCount": 2,
+      "attributes": [
+        {
+          "attribute": "constructor",
+          "count": 2,
+          "max": 2,
+          "min": 1,
+          "type": "Number",
+          "values": [
+            1,
+            2
+          ]
+        },
+        {
+          "attribute": "prototype",
+          "count": 2,
+          "type": "String",
+          "values": [
+            "foo",
+            null
+          ]
+        }
+      ],
       "count": 2,
-      "max": 2,
-      "min": 1,
-      "type": "Number",
-      "values": [
-        1,
-        2
-      ]
+      "geometry": "Point",
+      "layer": "prototype"
     }
-  ],
-  "count": 2,
-  "geometry": "Point",
-  "layer": "prototype"
+  ]
 }
