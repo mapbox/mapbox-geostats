@@ -111,3 +111,9 @@ Each attribute has one of the following types:
 - `'Boolean'` if all its values are booleans (or `null`).
 - `'Null'` if its only value is `null`.
 - `'Mixed'` if it has values of multiple types.
+
+## Known caveats
+
+- When reading MBTiles files, the feature count will be meaningless. This is because each feature will be included in multiple tiles, so will be analyzed multiple times.
+- `null` sometimes appears unbidden in the attribute value lists generated from GeoJSON sources.
+- MBTiles files whose vector data is not gzipped will not be understood.
