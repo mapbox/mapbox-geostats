@@ -30,7 +30,18 @@ You'll notice the following limitations in the output:
 - For any given attribute, no more than 1000 unique values are counted, and no more than 100 are reported. All values will affect the numeric stats (e.g. `min` and `max`), even if they are not reported or counted.
 - Attribute values that are strings longer than 256 characters are counted but not reported.
 
-Because of this necessary limitation on the number of reported attributes, you may end up with output that does not include details about a particular attribute that you wanted to learn about. If you are the victim of this misfortune, use the `attributes` option, documented below, to specify the attribute(s) whose details you'd like to inspect.
+#### Avoid limitations by specifying attributes
+
+Because of the necessary limitation on the number of reported attributes, you may end up with output that does not include details about a particular attribute that you wanted to learn about, because 100 attributes were already reported.
+
+If you are the victim of this misfortune, use the `attributes` option, documented below, to specify the attribute(s) whose details you'd like to inspect.
+
+When you use attributes, the limitations on attribute values change based on the following rules.
+
+- You can count a maximum of 100,000 unique values.
+- You can report a maximum of 10,000 unique values.
+
+So if you've specified a limited number of attributes to inspect, the number of values that will be counted and reported can be tailored to that count. If you specify one attribute, you can see up to 10,000 values reported, 100,000 values counted per attribute. If you specify 5 attributes, you can see up to 2,000 values reported, 20,000 values counted per attribute.
 
 ## CLI
 
