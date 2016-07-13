@@ -114,16 +114,21 @@ test('MBTiles with no features', function (t) {
 });
 
 test('Shapefile with no features', function (t) {
-  geostats(fixturePath('src/no-features/no-features.shp')).then(function (output) {
-    t.deepEqual(output, {
-      layerCount: 1,
-      layers: [{
-        attributeCount: 0,
-        attributes: [],
-        count: 0,
-        layer: 'no-features',
-      }],
-    });
+  Promise.all([
+    geostats(fixturePath('src/no-features/no-features.shp')),
+    getExpected('no-features'),
+  ]).then(function (output) {
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
+    t.end();
+  }).catch(logError);
+});
+
+test('CSV with no features', function (t) {
+  Promise.all([
+    geostats(fixturePath('src/no-features.csv')),
+    getExpected('no-features'),
+  ]).then(function (output) {
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
     t.end();
   }).catch(logError);
 });
@@ -149,6 +154,16 @@ test('invalid GeoJSON', function (t) {
 
 test('invalid Shapefile', function (t) {
   geostats(fixturePath('src/invalid.shp')).then(function () {
+    t.fail('An error should have been thrown');
+    t.end();
+  }).catch(function (err) {
+    t.ok(err);
+    t.end();
+  });
+});
+
+test('invalid CSV', function (t) {
+  geostats(fixturePath('src/invalid.csv')).then(function () {
     t.fail('An error should have been thrown');
     t.end();
   }).catch(function (err) {
