@@ -1,5 +1,12 @@
 var _ = require('lodash');
 
+// The purpose of the sloppy sort is only to ensure some
+// deterministic order in this module's JSON output.
+// Because of async operations in some places (esp. tile-analyze),
+// items in arrays (e.g. attributes, values) might not always
+// appear in the same the same order, but should always
+// have the same items.
+
 function sloppySortComparator(first, second) {
   var isFirstObject = _.isPlainObject(first);
   var isSecondObject = _.isPlainObject(second);

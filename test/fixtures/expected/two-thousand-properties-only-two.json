@@ -1,0 +1,29 @@
+{
+  "layerCount": 1,
+  "layers": [
+    {
+      "layer": "two-thousand-properties",
+      "count": 1,
+      "attributeCount": 2,
+      "attributes": [
+        {
+          "values": [
+            "prop-value-1031"
+          ],
+          "count": 1,
+          "attribute": "prop-1031",
+          "type": "String"
+        },
+        {
+          "values": [
+            "prop-value-21"
+          ],
+          "count": 1,
+          "attribute": "prop-21",
+          "type": "String"
+        }
+      ],
+      "geometry": "Point"
+    }
+  ]
+}

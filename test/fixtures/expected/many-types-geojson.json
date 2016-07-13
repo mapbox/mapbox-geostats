@@ -2,7 +2,7 @@
   "layerCount": 1,
   "layers": [
     {
-      "layer": "simple",
+      "layer": "many-types",
       "count": 6,
       "attributeCount": 8,
       "attributes": [

@@ -4,6 +4,7 @@
   "description": "Generate statistics about geodata.",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint lib test",
     "test": "tap test/test.js"
   },
   "repository": {

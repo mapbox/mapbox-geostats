@@ -5,48 +5,53 @@ var Promise = require('pinkie-promise');
 var sloppySort = require('./utils/sloppy-sort');
 var geostats = require('../');
 
-// var result = geostats(fixturePath('src/simple.geojson'));
-// var result = geostats(fixturePath('src/ports/ports.shp'));
-// var result = geostats(fixturePath('src/populations-plus.geojson'));
-// var result = geostats(fixturePath('src/vectorgzip.mbtiles'));
-// var result = geostats(fixturePath('src/pngs.mbtiles')); /* raster I think */
-// var result = geostats(fixturePath('src/simple.mbtiles'));
-// //
-// result.then(function (stats) {
-//   console.log(JSON.stringify(stats, null, 2))
-// }).catch(logError);
-
-test('simple geojson', function (t) {
+test('GeoJSON with many value types, matching MBTiles', function (t) {
   Promise.all([
-    geostats(fixturePath('src/simple.geojson')),
-    getExpected('simple-geojson'),
+    geostats(fixturePath('src/many-types.geojson')),
+    getExpected('many-types-geojson'),
   ]).then(function (output) {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
     t.end();
   }).catch(logError);
 });
 
-test('simple mbtiles', function (t) {
+// Key difference between the MBTiles and the GeoJSON output now
+// is that when Mapnik reads the GeoJSON it inserts `null` values
+// in weird places
+test('MBTiles with many value types, matching GeoJSON', function (t) {
   Promise.all([
-    geostats(fixturePath('src/simple.mbtiles')),
-    getExpected('simple-mbtiles'),
+    geostats(fixturePath('src/many-types.mbtiles')),
+    getExpected('many-types-mbtiles'),
   ]).then(function (output) {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
     t.end();
   }).catch(logError);
 });
 
-test('not-so-simple geojson', function (t) {
+test('GeoJSON with over 100 unique attributes and values, matching Shapefile', function (t) {
   Promise.all([
     geostats(fixturePath('src/populations-plus.geojson')),
-    getExpected('populations-plus'),
+    getExpected('populations-plus-geojson'),
   ]).then(function (output) {
     t.deepEqual(output[0], output[1]);
     t.end();
   }).catch(logError);
 });
 
-test('shapefile', function (t) {
+// Key difference between the Shapefile and the GeoJSON output right now
+// seems to be that the shapefile has converted `null` to `""` in
+// predominantly string-valued attributes
+test('Shapefile with over 100 unique attributes and values, matching GeoJSON', function (t) {
+  Promise.all([
+    geostats(fixturePath('src/populations-plus/populations-plus.shp')),
+    getExpected('populations-plus-shp'),
+  ]).then(function (output) {
+    t.deepEqual(output[0], output[1]);
+    t.end();
+  }).catch(logError);
+});
+
+test('Shapefile with over 1000 unique values', function (t) {
   Promise.all([
     geostats(fixturePath('src/ports/ports.shp')),
     getExpected('ports'),
@@ -56,7 +61,7 @@ test('shapefile', function (t) {
   }).catch(logError);
 });
 
-test('gzipped mbtiles', function (t) {
+test('MBTiles with gzipped data', function (t) {
   Promise.all([
     geostats(fixturePath('src/vectorgzip.mbtiles')),
     getExpected('vectorgzip'),
@@ -66,21 +71,31 @@ test('gzipped mbtiles', function (t) {
   }).catch(logError);
 });
 
-test('mbtiles with raster tiles', function (t) {
+test('MBTiles with raster data', function (t) {
   geostats(fixturePath('src/pngs.mbtiles')).then(function (output) {
     t.deepEqual(output, { layerCount: 0, layers: [] });
     t.end();
   }).catch(logError);
 });
 
-test('mbtiles with no features', function (t) {
+test('GeoJSON with over 1000 unique attributes', function (t) {
+  Promise.all([
+    geostats(fixturePath('src/two-thousand-properties.geojson')),
+    getExpected('two-thousand-properties'),
+  ]).then(function (output) {
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
+    t.end();
+  }).catch(logError);
+});
+
+test('MBTiles with no features', function (t) {
   geostats(fixturePath('src/no-features.mbtiles')).then(function (output) {
     t.deepEqual(output, { layerCount: 0, layers: [] });
     t.end();
   }).catch(logError);
 });
 
-test('shapefile with no features', function (t) {
+test('Shapefile with no features', function (t) {
   geostats(fixturePath('src/no-features/no-features.shp')).then(function (output) {
     t.deepEqual(output, {
       layerCount: 1,
@@ -95,12 +110,78 @@ test('shapefile with no features', function (t) {
   }).catch(logError);
 });
 
+// Currently this is blocked by a bug in node-mapnik
+//
 // test('geojson with no features', function (t) {
 //   geostats(fixturePath('src/no-features.geojson')).then(function (output) {
 //     t.deepEqual(output, { layerCount: 0, layers: [] });
 //     t.end();
 //   }).catch(logError);
 // });
+
+test('invalid GeoJSON', function (t) {
+  geostats(fixturePath('src/invalid.geojson')).then(function () {
+    t.fail('An error should have been thrown');
+    t.end();
+  }).catch(function (err) {
+    t.ok(err);
+    t.end();
+  });
+});
+
+test('invalid Shapefile', function (t) {
+  geostats(fixturePath('src/invalid.shp')).then(function () {
+    t.fail('An error should have been thrown');
+    t.end();
+  }).catch(function (err) {
+    t.ok(err);
+    t.end();
+  });
+});
+
+test('invalid MBTiles', function (t) {
+  geostats(fixturePath('src/invalid.mbtiles')).then(function () {
+    t.fail('An error should have been thrown');
+    t.end();
+  }).catch(function (err) {
+    t.ok(err);
+    t.end();
+  });
+});
+
+test('invalid file format', function (t) {
+  geostats(fixturePath('src/invalid.txt')).then(function () {
+    t.fail('An error should have been thrown');
+    t.end();
+  }).catch(function (err) {
+    t.ok(err);
+    t.end();
+  });
+});
+
+test('Shapefile with specified attribute', function (t) {
+  Promise.all([
+    geostats(fixturePath('src/ports/ports.shp'), {
+      attributes: ['name'],
+    }),
+    getExpected('ports-only-name'),
+  ]).then(function (output) {
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
+    t.end();
+  }).catch(logError);
+});
+
+test('GeoJSON with specified attributes', function (t) {
+  Promise.all([
+    geostats(fixturePath('src/two-thousand-properties.geojson'), {
+      attributes: ['prop-21', 'prop-1031'],
+    }),
+    getExpected('two-thousand-properties-only-two'),
+  ]).then(function (output) {
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
+    t.end();
+  }).catch(logError);
+});
 
 function fixturePath(fileName) {
   return path.join(__dirname, 'fixtures', fileName);

@@ -234,7 +234,7 @@
         {
           "values": [
             "Lazio",
-            null,
+            "",
             "Manzini",
             "Luxembourg",
             "Port of Spain",
@@ -413,7 +413,7 @@
         },
         {
           "values": [
-            null,
+            "",
             "Legislative and",
             "Claimed as inte",
             "Administrative",
@@ -437,7 +437,7 @@
           ],
           "count": 21,
           "attribute": "CAPIN",
-          "type": "Mixed"
+          "type": "String"
         },
         {
           "values": [
@@ -468,7 +468,7 @@
         },
         {
           "values": [
-            null,
+            "",
             "Lome",
             "Asuncion",
             "Panama",
@@ -525,7 +525,7 @@
           ],
           "count": 54,
           "attribute": "CITYALT",
-          "type": "Mixed"
+          "type": "String"
         },
         {
           "values": [
@@ -552,7 +552,7 @@
         {
           "values": [
             "Changed scale rank.",
-            null,
+            "",
             "Population from GeoNames. Changed scale rank.",
             "Location adjusted. Changed scale rank.",
             "Added place.",
@@ -613,7 +613,7 @@
         {
           "values": [
             "P",
-            null
+            ""
           ],
           "count": 2,
           "attribute": "FEATURE_CL",
@@ -622,7 +622,7 @@
         {
           "values": [
             "PPLC",
-            null,
+            "",
             "PPL",
             "PPLA",
             "PPLG"
@@ -747,7 +747,7 @@
             "GeoNames rough area, rough name.",
             "GeoNames spatial join with similar names only.",
             "GeoNames match general + researched.",
-            null,
+            "",
             "GeoNames match with ascii name + lat + long whole numbers.",
             "Geonames ascii name + lat.d + long.d matching.",
             "GeoNames rough area, rough name, requires further research."
@@ -767,7 +767,7 @@
             "Majuro",
             "Funafuti",
             "Melekeok",
-            null,
+            "",
             "Monaco",
             "Tarawa",
             "Moroni",
@@ -1446,7 +1446,7 @@
             "Majuro",
             "Funafuti",
             "Melekeok",
-            null,
+            "",
             "Monaco",
             "Tarawa",
             "Moroni",
@@ -3149,7 +3149,7 @@
         },
         {
           "values": [
-            null,
+            "",
             "Kigali",
             "Kyoto",
             "Montevideo",
@@ -3252,7 +3252,7 @@
           ],
           "count": 146,
           "attribute": "MEGANAME",
-          "type": "Mixed"
+          "type": "String"
         },
         {
           "values": [
@@ -4235,7 +4235,7 @@
         },
         {
           "values": [
-            null,
+            "",
             "Lomé",
             "Asunción",
             "Ciudad de Panamá|Panama City|Panama",
@@ -4282,7 +4282,7 @@
           ],
           "count": 44,
           "attribute": "NAMEALT",
-          "type": "Mixed"
+          "type": "String"
         },
         {
           "values": [
@@ -4404,7 +4404,7 @@
         },
         {
           "values": [
-            null,
+            "",
             "Beograd",
             "Bucuresti",
             "Lisboa",
@@ -4420,7 +4420,7 @@
           ],
           "count": 13,
           "attribute": "NAMEPAR",
-          "type": "Mixed"
+          "type": "String"
         },
         {
           "values": [
@@ -4441,11 +4441,11 @@
         },
         {
           "values": [
-            null
+            ""
           ],
           "count": 1,
           "attribute": "NOTE",
-          "type": "Null"
+          "type": "String"
         },
         {
           "values": [
@@ -6913,7 +6913,7 @@
             "Pacific/Majuro",
             "Pacific/Funafuti",
             "Pacific/Palau",
-            null,
+            "",
             "Europe/Monaco",
             "Pacific/Tarawa",
             "Indian/Comoro",
@@ -7011,7 +7011,7 @@
         },
         {
           "values": [
-            null,
+            "",
             "Rwanda",
             "Japan",
             "Uruguay",
@@ -7114,7 +7114,7 @@
           ],
           "count": 117,
           "attribute": "UN_ADM0",
-          "type": "Mixed"
+          "type": "String"
         },
         {
           "values": [
@@ -7527,6 +7527,17 @@
           ],
           "count": 2,
           "attribute": "a12",
+          "type": "Number",
+          "min": 0,
+          "max": 0
+        },
+        {
+          "values": [
+            0,
+            null
+          ],
+          "count": 2,
+          "attribute": "a122",
           "type": "Number",
           "min": 0,
           "max": 0
