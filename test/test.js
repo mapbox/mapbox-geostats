@@ -20,30 +20,30 @@ function getExpected(name) {
 
 test('Errors without a file path', function (t) {
   geostats().then(function () {
-    t.fail('Should have errored');
+    t.fail('should have errored');
     t.end();
   }).catch(function (err) {
-    t.ok(err);
+    t.ok(err, 'errored');
     t.end();
   });
 });
 
 test('Errors when MBTiles file not found', function (t) {
   geostats(fixturePath('doodoodoo.mbtiles')).then(function () {
-    t.fail('Should have errored');
+    t.fail('should have errored');
     t.end();
   }).catch(function (err) {
-    t.ok(err);
+    t.ok(err, 'errored');
     t.end();
   });
 });
 
 test('Errors when Mapnik-interpreted file not found', function (t) {
   geostats(fixturePath('doodoodoo.csv')).then(function () {
-    t.fail('Should have errored');
+    t.fail('should have errored');
     t.end();
   }).catch(function (err) {
-    t.ok(err);
+    t.ok(err, 'errored');
     t.end();
   });
 });
@@ -53,7 +53,7 @@ test('GeoJSON with many value types, input matching MBTiles', function (t) {
     geostats(fixturePath('src/many-types.geojson')),
     getExpected('many-types-geojson'),
   ]).then(function (output) {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -66,7 +66,7 @@ test('MBTiles with many value types, input matching GeoJSON', function (t) {
     geostats(fixturePath('src/many-types.mbtiles')),
     getExpected('many-types-mbtiles'),
   ]).then(function (output) {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -77,7 +77,7 @@ test('GeoJSON with over 100 unique attributes and values, input matching Shapefi
       geostats(fixturePath('src/populations-plus.geojson')),
       getExpected('populations-plus-geojson'),
     ]).then(function (output) {
-      t.deepEqual(output[0], output[1]);
+      t.deepEqual(output[0], output[1], 'expected output');
       t.end();
     }).catch(t.threw);
   }
@@ -92,7 +92,7 @@ test('Shapefile with over 100 unique attributes and values, input matching GeoJS
       geostats(fixturePath('src/populations-plus/populations-plus.shp')),
       getExpected('populations-plus-shp'),
     ]).then(function (output) {
-      t.deepEqual(output[0], output[1]);
+      t.deepEqual(output[0], output[1], 'expected output');
       t.end();
     }).catch(t.threw);
   }
@@ -106,7 +106,7 @@ test('CSV with over 100 unique attributes and values, input matching GeoJSON and
       geostats(fixturePath('src/populations-plus.csv')),
       getExpected('populations-plus-csv'),
     ]).then(function (output) {
-      t.deepEqual(output[0], output[1]);
+      t.deepEqual(output[0], output[1], 'expected output');
       t.end();
     }).catch(t.threw);
   }
@@ -117,7 +117,7 @@ test('Shapefile with over 1000 unique values', function (t) {
     geostats(fixturePath('src/ports/ports.shp')),
     getExpected('ports'),
   ]).then(function (output) {
-    t.deepEqual(output[0], output[1]);
+    t.deepEqual(output[0], output[1], 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -127,14 +127,14 @@ test('MBTiles with gzipped data', function (t) {
     geostats(fixturePath('src/vectorgzip.mbtiles')),
     getExpected('vectorgzip'),
   ]).then(function (output) {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
 
 test('MBTiles with raster data', function (t) {
   geostats(fixturePath('src/pngs.mbtiles')).then(function (output) {
-    t.deepEqual(output, { layerCount: 0, layers: [] });
+    t.deepEqual(output, { layerCount: 0, layers: [] }, 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -144,7 +144,7 @@ test('GeoJSON with over 1000 unique attributes', function (t) {
     geostats(fixturePath('src/two-thousand-properties.geojson')),
     getExpected('two-thousand-properties'),
   ]).then(function (output) {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -154,14 +154,14 @@ test('GeoJSON with many geometry types', function (t) {
     geostats(fixturePath('src/geometry-extravaganza.geojson')),
     getExpected('geometry-extravaganza'),
   ]).then(function (output) {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
 
 test('MBTiles with no features', function (t) {
   geostats(fixturePath('src/no-features.mbtiles')).then(function (output) {
-    t.deepEqual(output, { layerCount: 0, layers: [] });
+    t.deepEqual(output, { layerCount: 0, layers: [] }, 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -171,7 +171,7 @@ test('Shapefile with no features', function (t) {
     geostats(fixturePath('src/no-features/no-features.shp')),
     getExpected('no-features'),
   ]).then(function (output) {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -181,7 +181,7 @@ test('CSV with no features', function (t) {
     geostats(fixturePath('src/no-features.csv')),
     getExpected('no-features'),
   ]).then(function (output) {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -190,57 +190,57 @@ test('CSV with no features', function (t) {
 //
 // test('geojson with no features', function (t) {
 //   geostats(fixturePath('src/no-features.geojson')).then(function (output) {
-//     t.deepEqual(output, { layerCount: 0, layers: [] });
+//     t.deepEqual(output, { layerCount: 0, layers: [] }, 'expected output');
 //     t.end();
 //   }).catch(t.threw);
 // });
 
 test('invalid GeoJSON', function (t) {
   geostats(fixturePath('src/invalid.geojson')).then(function () {
-    t.fail('An error should have been thrown');
+    t.fail('should have errored');
     t.end();
   }).catch(function (err) {
-    t.ok(err);
+    t.ok(err, 'errored');
     t.end();
   });
 });
 
 test('invalid Shapefile', function (t) {
   geostats(fixturePath('src/invalid.shp')).then(function () {
-    t.fail('An error should have been thrown');
+    t.fail('should have errored');
     t.end();
   }).catch(function (err) {
-    t.ok(err);
+    t.ok(err, 'errored');
     t.end();
   });
 });
 
 test('invalid CSV', function (t) {
   geostats(fixturePath('src/invalid.csv')).then(function () {
-    t.fail('An error should have been thrown');
+    t.fail('should have errored');
     t.end();
   }).catch(function (err) {
-    t.ok(err);
+    t.ok(err, 'errored');
     t.end();
   });
 });
 
 test('invalid MBTiles', function (t) {
   geostats(fixturePath('src/invalid.mbtiles')).then(function () {
-    t.fail('An error should have been thrown');
+    t.fail('should have errored');
     t.end();
   }).catch(function (err) {
-    t.ok(err);
+    t.ok(err, 'errored');
     t.end();
   });
 });
 
 test('invalid file format', function (t) {
   geostats(fixturePath('src/invalid.txt')).then(function () {
-    t.fail('An error should have been thrown');
+    t.fail('should have errored');
     t.end();
   }).catch(function (err) {
-    t.ok(err);
+    t.ok(err, 'errored');
     t.end();
   });
 });
@@ -252,7 +252,7 @@ test('Shapefile with specified attribute', function (t) {
     }),
     getExpected('ports-only-name'),
   ]).then(function (output) {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -264,7 +264,7 @@ test('GeoJSON with specified attributes', function (t) {
     }),
     getExpected('two-thousand-properties-only-two'),
   ]).then(function (output) {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
