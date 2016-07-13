@@ -27,7 +27,7 @@ You'll notice the following limitations in the output:
 
 - No more than 1000 layers are counted, and no more than 100 are reported in detail.
 - For any given layer, no more than 1000 unique attributes are counted, and no more than 100 are reported in detail.
-- For any given attribute, no more than 1000 unique values are counted, and no more than 100 are reported.
+- For any given attribute, no more than 1000 unique values are counted, and no more than 100 are reported. All values will affect the numeric stats (e.g. `min` and `max`), even if they are not reported or counted.
 - Attribute values that are strings longer than 256 characters are counted but not reported.
 
 Because of this necessary limitation on the number of reported attributes, you may end up with output that does not include details about a particular attribute that you wanted to learn about. If you are the victim of this misfortune, use the `attributes` option, documented below, to specify the attribute(s) whose details you'd like to inspect.
