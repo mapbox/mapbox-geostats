@@ -18,6 +18,7 @@ Supports the following file types:
 
 - GeoJSON (`.geojson`)
 - Shapefile (`.shp`, in a directory with its supporting files)
+- CSV (`.csv`)
 - MBTiles (`.mbtiles`)
 
 ### Limitations

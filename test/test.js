@@ -5,7 +5,7 @@ var Promise = require('pinkie-promise');
 var sloppySort = require('./utils/sloppy-sort');
 var geostats = require('../');
 
-test('GeoJSON with many value types, matching MBTiles', function (t) {
+test('GeoJSON with many value types, input matching MBTiles', function (t) {
   Promise.all([
     geostats(fixturePath('src/many-types.geojson')),
     getExpected('many-types-geojson'),
@@ -18,7 +18,7 @@ test('GeoJSON with many value types, matching MBTiles', function (t) {
 // Key difference between the MBTiles and the GeoJSON output now
 // is that when Mapnik reads the GeoJSON it inserts `null` values
 // in weird places
-test('MBTiles with many value types, matching GeoJSON', function (t) {
+test('MBTiles with many value types, input matching GeoJSON', function (t) {
   Promise.all([
     geostats(fixturePath('src/many-types.mbtiles')),
     getExpected('many-types-mbtiles'),
@@ -28,28 +28,46 @@ test('MBTiles with many value types, matching GeoJSON', function (t) {
   }).catch(logError);
 });
 
-test('GeoJSON with over 100 unique attributes and values, matching Shapefile', function (t) {
-  Promise.all([
-    geostats(fixturePath('src/populations-plus.geojson')),
-    getExpected('populations-plus-geojson'),
-  ]).then(function (output) {
-    t.deepEqual(output[0], output[1]);
-    t.end();
-  }).catch(logError);
-});
+test('GeoJSON with over 100 unique attributes and values, input matching Shapefile and CSV',
+  function (t) {
+    Promise.all([
+      geostats(fixturePath('src/populations-plus.geojson')),
+      getExpected('populations-plus-geojson'),
+    ]).then(function (output) {
+      t.deepEqual(output[0], output[1]);
+      t.end();
+    }).catch(logError);
+  }
+);
 
 // Key difference between the Shapefile and the GeoJSON output right now
 // seems to be that the shapefile has converted `null` to `""` in
 // predominantly string-valued attributes
-test('Shapefile with over 100 unique attributes and values, matching GeoJSON', function (t) {
-  Promise.all([
-    geostats(fixturePath('src/populations-plus/populations-plus.shp')),
-    getExpected('populations-plus-shp'),
-  ]).then(function (output) {
-    t.deepEqual(output[0], output[1]);
-    t.end();
-  }).catch(logError);
-});
+test('Shapefile with over 100 unique attributes and values, input matching GeoJSON and CSV',
+  function (t) {
+    Promise.all([
+      geostats(fixturePath('src/populations-plus/populations-plus.shp')),
+      getExpected('populations-plus-shp'),
+    ]).then(function (output) {
+      t.deepEqual(output[0], output[1]);
+      t.end();
+    }).catch(logError);
+  }
+);
+
+// Key difference between the CSV and Shapefile and GeoJSON is that it
+// includes X and Y attributes (it also converts `null` to `""`, like Shapefile)
+test('CSV with over 100 unique attributes and values, input matching GeoJSON and Shapefile',
+  function (t) {
+    Promise.all([
+      geostats(fixturePath('src/populations-plus.csv')),
+      getExpected('populations-plus-csv'),
+    ]).then(function (output) {
+      t.deepEqual(output[0], output[1]);
+      t.end();
+    }).catch(logError);
+  }
+);
 
 test('Shapefile with over 1000 unique values', function (t) {
   Promise.all([
