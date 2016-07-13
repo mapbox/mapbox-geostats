@@ -368,3 +368,23 @@ test('GeoJSON with prototype attribute', function (t) {
     t.end();
   }).catch(t.threw);
 });
+
+test('truncate attribute names', function (t) {
+  Promise.all([
+    geostats(fixturePath('src/long-attribute-names.geojson')),
+    getExpected('long-attribute-names'),
+  ]).then(function (output) {
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.end();
+  }).catch(t.threw);
+});
+
+test('MBTiles with two layers', function (t) {
+  Promise.all([
+    geostats(fixturePath('src/two-layers.mbtiles')),
+    getExpected('two-layers'),
+  ]).then(function (output) {
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.end();
+  }).catch(t.threw);
+});

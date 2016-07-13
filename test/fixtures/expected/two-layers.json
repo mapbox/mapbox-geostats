@@ -1,0 +1,19 @@
+{
+  "layerCount": 2,
+  "layers": [
+    {
+      "layer": "point-two",
+      "count": 17,
+      "attributeCount": 0,
+      "attributes": [],
+      "geometry": "Point"
+    },
+    {
+      "layer": "point-one",
+      "count": 17,
+      "attributeCount": 0,
+      "attributes": [],
+      "geometry": "Point"
+    }
+  ]
+}
