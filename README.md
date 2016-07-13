@@ -54,3 +54,54 @@ Returns a Promise that resolves with a stats object, whose structure is describe
 `options` (*optional*) is an optional object that can have the following properties:
 
 - `attributes`: An array of strings identifying attributes that you want analyzed and reported. By default, all attributes are analyzed and reported until we reach the limitations described above.
+
+## Output: the stats
+
+The stats output have this structure:
+
+```js
+{  
+  // The number of layers in the source data (max. 1000)
+  layerCount: Number,
+  // An array of details about the first 100 layers
+  layers: [
+    {
+      // The name of this layer
+      layer: String,
+      // The number of features in this layer
+      count: Number,
+      // The dominant geometry type in this layer
+      geometry: String,
+      // The number of unique attributes in this layer (max. 1000)
+      attributeCount: Number
+      // An array of details about the first 100 attributes in this layer
+      attributes: [
+        {
+          // The name of this attribute
+          attribute: String,
+          // The number of unique values for this attribute (max. 1000)
+          count: Number,
+          // The type of this attribute's values
+          type: String, // More info below ...
+          // An array of this attribute's first 100 unique values
+          values: [
+            // ...
+          ]
+        }
+        // ...
+      ]
+    }
+    // ...
+  ]
+}
+```
+
+### Attribute type
+
+Each attribute has one of the following types:
+
+- `'String'` if all its values are strings (or `null`).
+- `'Number'` if all its values are numbers (or `null`).
+- `'Boolean'` if all its values are booleans (or `null`).
+- `'Null'` if its only value is `null`.
+- `'Mixed'` if it has values of multiple types.
