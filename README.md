@@ -138,5 +138,6 @@ Array and object values are coerced to strings.
 ## Known caveats
 
 - When reading MBTiles files, the feature count will be meaningless. This is because each feature will be included in multiple tiles, so will be analyzed multiple times.
-- `null` sometimes appears unbidden in the attribute value lists generated from GeoJSON sources.
-- MBTiles files whose vector data is not gzipped will not be understood.
+- `null` sometimes appears unbidden in the attribute value lists generated from GeoJSON sources. (cf. https://github.com/mapnik/node-mapnik/issues/668)
+- GeoJSON without any features causes a parsing error. (cf. https://github.com/mapnik/mapnik/issues/3463)
+- MBTiles files whose vector data is not gzipped will not be understood. (cf. https://github.com/mapbox/tiletype/issues/4)
