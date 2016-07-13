@@ -107,7 +107,11 @@ The stats output has this structure:
           // An array of this attribute's first 100 unique values
           values: [
             // ...
-          ]
+          ],
+          // If there are *any* numbers in the values, the following
+          // numeric stats will be reported
+          min: Number,
+          max: Number
         }
         // ...
       ]

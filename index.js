@@ -19,9 +19,7 @@ function buildGeoStats(filePath, options) {
       return tileAnalyze(filePath, options);
     }
     return mapnikAnalyze(filePath, options);
-  }).then(function (stats) {
-    return reportStats(stats);
-  });
+  }).then(reportStats);
 }
 
 module.exports = buildGeoStats;
