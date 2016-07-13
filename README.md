@@ -8,15 +8,19 @@ Generate statistics about geodata.
 npm install mapbox-geostats
 ```
 
-## Usage
+## About
 
 You feed the module a file, and it outputs stats about the geographic data in the file.
+
+### Input types
 
 Supports the following file types:
 
 - GeoJSON (`.geojson`)
 - Shapefile (`.shp`, in a directory with its supporting files)
 - MBTiles (`.mbtiles`)
+
+### Limitations
 
 You'll notice the following limitations in the output:
 
@@ -27,11 +31,11 @@ You'll notice the following limitations in the output:
 
 Because of this necessary limitation on the number of reported attributes, you may end up with output that does not include details about a particular attribute that you wanted to learn about. If you are the victim of this misfortune, use the `attributes` option, documented below, to specify the attribute(s) whose details you'd like to inspect.
 
-### CLI
+## CLI
 
 To come ...
 
-### Node
+## Node
 
 ```js
 var geostats = require('mapbox-geostats');
@@ -45,7 +49,7 @@ geostats(filePath, options).then(function (stats) {
 
 There's just one exposed function:
 
-#### geostats(filePath[, options])
+### geostats(filePath[, options])
 
 Returns a Promise that resolves with a stats object, whose structure is described below.
 
