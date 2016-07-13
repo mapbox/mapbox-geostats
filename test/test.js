@@ -358,3 +358,13 @@ test('Trying to report on more than 100 attributes', function (t) {
   }, 'throws');
   t.end();
 });
+
+test('GeoJSON with prototype attribute', function (t) {
+  Promise.all([
+    geostats(fixturePath('src/prototype.geojson')),
+    getExpected('prototype'),
+  ]).then(function (output) {
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.end();
+  }).catch(t.threw);
+});
