@@ -5,6 +5,19 @@ var Promise = require('pinkie-promise');
 var sloppySort = require('./utils/sloppy-sort');
 var geostats = require('../');
 
+function fixturePath(fileName) {
+  return path.join(__dirname, 'fixtures', fileName);
+}
+
+function getExpected(name) {
+  return new Promise(function (resolve, reject) {
+    fs.readFile(fixturePath(path.join('expected', name + '.json')), 'utf8', function (err, data) {
+      if (err) return reject(err);
+      resolve(JSON.parse(data));
+    });
+  });
+}
+
 test('Errors without a file path', function (t) {
   geostats().then(function () {
     t.fail('Should have errored');
@@ -42,7 +55,7 @@ test('GeoJSON with many value types, input matching MBTiles', function (t) {
   ]).then(function (output) {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
     t.end();
-  }).catch(logError);
+  }).catch(t.threw);
 });
 
 // Key difference between the MBTiles and the GeoJSON output now
@@ -55,7 +68,7 @@ test('MBTiles with many value types, input matching GeoJSON', function (t) {
   ]).then(function (output) {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
     t.end();
-  }).catch(logError);
+  }).catch(t.threw);
 });
 
 test('GeoJSON with over 100 unique attributes and values, input matching Shapefile and CSV',
@@ -66,7 +79,7 @@ test('GeoJSON with over 100 unique attributes and values, input matching Shapefi
     ]).then(function (output) {
       t.deepEqual(output[0], output[1]);
       t.end();
-    }).catch(logError);
+    }).catch(t.threw);
   }
 );
 
@@ -81,7 +94,7 @@ test('Shapefile with over 100 unique attributes and values, input matching GeoJS
     ]).then(function (output) {
       t.deepEqual(output[0], output[1]);
       t.end();
-    }).catch(logError);
+    }).catch(t.threw);
   }
 );
 
@@ -95,7 +108,7 @@ test('CSV with over 100 unique attributes and values, input matching GeoJSON and
     ]).then(function (output) {
       t.deepEqual(output[0], output[1]);
       t.end();
-    }).catch(logError);
+    }).catch(t.threw);
   }
 );
 
@@ -106,7 +119,7 @@ test('Shapefile with over 1000 unique values', function (t) {
   ]).then(function (output) {
     t.deepEqual(output[0], output[1]);
     t.end();
-  }).catch(logError);
+  }).catch(t.threw);
 });
 
 test('MBTiles with gzipped data', function (t) {
@@ -116,14 +129,14 @@ test('MBTiles with gzipped data', function (t) {
   ]).then(function (output) {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
     t.end();
-  }).catch(logError);
+  }).catch(t.threw);
 });
 
 test('MBTiles with raster data', function (t) {
   geostats(fixturePath('src/pngs.mbtiles')).then(function (output) {
     t.deepEqual(output, { layerCount: 0, layers: [] });
     t.end();
-  }).catch(logError);
+  }).catch(t.threw);
 });
 
 test('GeoJSON with over 1000 unique attributes', function (t) {
@@ -133,7 +146,7 @@ test('GeoJSON with over 1000 unique attributes', function (t) {
   ]).then(function (output) {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
     t.end();
-  }).catch(logError);
+  }).catch(t.threw);
 });
 
 test('GeoJSON with many geometry types', function (t) {
@@ -143,14 +156,14 @@ test('GeoJSON with many geometry types', function (t) {
   ]).then(function (output) {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
     t.end();
-  }).catch(logError);
+  }).catch(t.threw);
 });
 
 test('MBTiles with no features', function (t) {
   geostats(fixturePath('src/no-features.mbtiles')).then(function (output) {
     t.deepEqual(output, { layerCount: 0, layers: [] });
     t.end();
-  }).catch(logError);
+  }).catch(t.threw);
 });
 
 test('Shapefile with no features', function (t) {
@@ -160,7 +173,7 @@ test('Shapefile with no features', function (t) {
   ]).then(function (output) {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
     t.end();
-  }).catch(logError);
+  }).catch(t.threw);
 });
 
 test('CSV with no features', function (t) {
@@ -170,7 +183,7 @@ test('CSV with no features', function (t) {
   ]).then(function (output) {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
     t.end();
-  }).catch(logError);
+  }).catch(t.threw);
 });
 
 // Currently this is blocked by a bug in node-mapnik
@@ -179,7 +192,7 @@ test('CSV with no features', function (t) {
 //   geostats(fixturePath('src/no-features.geojson')).then(function (output) {
 //     t.deepEqual(output, { layerCount: 0, layers: [] });
 //     t.end();
-//   }).catch(logError);
+//   }).catch(t.threw);
 // });
 
 test('invalid GeoJSON', function (t) {
@@ -241,7 +254,7 @@ test('Shapefile with specified attribute', function (t) {
   ]).then(function (output) {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
     t.end();
-  }).catch(logError);
+  }).catch(t.threw);
 });
 
 test('GeoJSON with specified attributes', function (t) {
@@ -253,22 +266,5 @@ test('GeoJSON with specified attributes', function (t) {
   ]).then(function (output) {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
     t.end();
-  }).catch(logError);
+  }).catch(t.threw);
 });
-
-function fixturePath(fileName) {
-  return path.join(__dirname, 'fixtures', fileName);
-}
-
-function logError(err) {
-  console.log(err.stack); // eslint-disable-line no-console
-}
-
-function getExpected(name) {
-  return new Promise(function (resolve, reject) {
-    fs.readFile(fixturePath(path.join('expected', name + '.json')), 'utf8', function (err, data) {
-      if (err) return reject(err);
-      resolve(JSON.parse(data));
-    });
-  });
-}

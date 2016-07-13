@@ -1,6 +1,5 @@
-var Promise = require('pinkie-promise');
 var Set = require('es6-set');
-var path = require('path');
+var getFileType = require('./lib/get-file-type');
 var mapnikAnalyze = require('./lib/mapnik-analyze');
 var tileAnalyze = require('./lib/tile-analyze');
 var reportStats = require('./lib/report-stats');
@@ -13,13 +12,12 @@ function buildGeoStats(filePath, options) {
     options.attributes = new Set(options.attributes);
   }
 
-  return Promise.resolve().then(function () {
-    if (!filePath) throw new Error('File path required');
-    if (path.extname(filePath) === Constants.EXTNAME_MBTILES) {
-      return tileAnalyze(filePath, options);
-    }
-    return mapnikAnalyze(filePath, options);
-  }).then(reportStats);
+  return getFileType(filePath)
+    .then(function (fileType) {
+      if (fileType === Constants.FILETYPE_MBTILES) return tileAnalyze(filePath, options);
+      return mapnikAnalyze(filePath, fileType, options);
+    })
+    .then(reportStats);
 }
 
 module.exports = buildGeoStats;
