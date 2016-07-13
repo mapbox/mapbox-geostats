@@ -57,7 +57,7 @@ Returns a Promise that resolves with a stats object, whose structure is describe
 
 ## Output: the stats
 
-The stats output have this structure:
+The stats output has this structure:
 
 ```js
 {  
@@ -95,6 +95,8 @@ The stats output have this structure:
   ]
 }
 ```
+
+You can find more examples in the test fixtures.
 
 ### Attribute type
 
