@@ -112,6 +112,8 @@ Each attribute has one of the following types:
 - `'Null'` if its only value is `null`.
 - `'Mixed'` if it has values of multiple types.
 
+Arrays and objects are coerced to strings.
+
 ## Known caveats
 
 - When reading MBTiles files, the feature count will be meaningless. This is because each feature will be included in multiple tiles, so will be analyzed multiple times.
