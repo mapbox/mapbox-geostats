@@ -5,6 +5,36 @@ var Promise = require('pinkie-promise');
 var sloppySort = require('./utils/sloppy-sort');
 var geostats = require('../');
 
+test('Errors without a file path', function (t) {
+  geostats().then(function () {
+    t.fail('Should have errored');
+    t.end();
+  }).catch(function (err) {
+    t.ok(err);
+    t.end();
+  });
+});
+
+test('Errors when MBTiles file not found', function (t) {
+  geostats(fixturePath('doodoodoo.mbtiles')).then(function () {
+    t.fail('Should have errored');
+    t.end();
+  }).catch(function (err) {
+    t.ok(err);
+    t.end();
+  });
+});
+
+test('Errors when Mapnik-interpreted file not found', function (t) {
+  geostats(fixturePath('doodoodoo.csv')).then(function () {
+    t.fail('Should have errored');
+    t.end();
+  }).catch(function (err) {
+    t.ok(err);
+    t.end();
+  });
+});
+
 test('GeoJSON with many value types, input matching MBTiles', function (t) {
   Promise.all([
     geostats(fixturePath('src/many-types.geojson')),
@@ -100,6 +130,16 @@ test('GeoJSON with over 1000 unique attributes', function (t) {
   Promise.all([
     geostats(fixturePath('src/two-thousand-properties.geojson')),
     getExpected('two-thousand-properties'),
+  ]).then(function (output) {
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
+    t.end();
+  }).catch(logError);
+});
+
+test('GeoJSON with many geometry types', function (t) {
+  Promise.all([
+    geostats(fixturePath('src/geometry-extravaganza.geojson')),
+    getExpected('geometry-extravaganza'),
   ]).then(function (output) {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]));
     t.end();
