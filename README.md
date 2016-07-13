@@ -1,6 +1,6 @@
 # mapbox-geostats [![CircleCI](https://circleci.com/gh/mapbox/mapbox-geostats.svg?style=svg)](https://circleci.com/gh/mapbox/mapbox-geostats)
 
-Generate statistics about geodata.
+Generate statistics about geographic data.
 
 ## Installation
 
@@ -34,7 +34,23 @@ Because of this necessary limitation on the number of reported attributes, you m
 
 ## CLI
 
-To come ...
+This is what you get from `mapbox-geostats --help`:
+
+```
+Generate statistics about geographic data.
+
+Usage
+  mapbox-geostats <input> <options>
+
+  Output is logged to the console as a JSON string.
+
+Options
+  --attributes, -a Specify attributes to analyze. The provided value
+                   will be parsed as an array, split on commas.
+
+Example
+  mapbox-geostats population-centers.geojson --attributes name,pop > output.json
+```
 
 ## Node
 

@@ -1,0 +1,40 @@
+#!usr/bin/env node
+
+/* eslint-disable no-console */
+var meow = require('meow');
+var geostats = require('../');
+
+var help = (
+  'Usage\n' +
+  '  mapbox-geostats <input> <options>\n' +
+  '\n' +
+  '  Output is logged to the console as a JSON string.\n' +
+  '\n' +
+  'Options\n' +
+  '  --attributes, -a Specify attributes to analyze. The provided value\n' +
+  '                   will be parsed as an array, split on commas.\n' +
+  '\n' +
+  'Example\n' +
+  '  mapbox-geostats population-centers.geojson --attributes name,pop > output.json'
+);
+
+var cli = meow(help, {
+  alias: {
+    a: 'attributes',
+  },
+});
+
+var input = cli.input[0];
+var options = {
+  attributes: cli.flags.attributes.split(','),
+};
+
+if (!input) {
+  console.log(cli.help);
+} else {
+  geostats(input, options).then(function (stats) {
+    console.log(JSON.stringify(stats));
+  }).catch(function (err) {
+    throw new Error(err);
+  });
+}
