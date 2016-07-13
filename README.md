@@ -112,7 +112,7 @@ Each attribute has one of the following types:
 - `'Null'` if its only value is `null`.
 - `'Mixed'` if it has values of multiple types.
 
-Arrays and objects are coerced to strings.
+Array and object values are coerced to strings.
 
 ## Known caveats
 
