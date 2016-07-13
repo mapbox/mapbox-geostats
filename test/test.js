@@ -1,4 +1,5 @@
 var test = require('tap').test;
+var _ = require('lodash');
 var path = require('path');
 var fs = require('fs');
 var Promise = require('pinkie-promise');
@@ -257,7 +258,7 @@ test('Shapefile with specified attribute with over 1000 values', function (t) {
   ]).then(function (output) {
     var actual = sloppySort(output[0]);
     t.deepEqual(actual, sloppySort(output[1]), 'expected output');
-    var nameAttribute = actual.layers[0].attributes.find(function (attribute) {
+    var nameAttribute = _.find(actual.layers[0].attributes, function (attribute) {
       return attribute.attribute === 'name';
     });
     t.equal(nameAttribute.count, 1042, 'value count did not stop at 1000');
