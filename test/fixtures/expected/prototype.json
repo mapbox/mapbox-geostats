@@ -1,0 +1,19 @@
+{
+  "attributeCount": 1,
+  "attributes": [
+    {
+      "attribute": "prototype",
+      "count": 2,
+      "max": 2,
+      "min": 1,
+      "type": "Number",
+      "values": [
+        1,
+        2
+      ]
+    }
+  ],
+  "count": 2,
+  "geometry": "Point",
+  "layer": "prototype"
+}
