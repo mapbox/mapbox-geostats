@@ -12,7 +12,7 @@
           ],
           "count": 1,
           "attribute": "prop-1031",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -20,7 +20,7 @@
           ],
           "count": 1,
           "attribute": "prop-21",
-          "type": "String"
+          "type": "string"
         }
       ],
       "geometry": "Point"

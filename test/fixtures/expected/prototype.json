@@ -9,7 +9,7 @@
           "count": 2,
           "max": 2,
           "min": 1,
-          "type": "Number",
+          "type": "number",
           "values": [
             1,
             2
@@ -18,7 +18,7 @@
         {
           "attribute": "prototype",
           "count": 2,
-          "type": "String",
+          "type": "string",
           "values": [
             "foo",
             null

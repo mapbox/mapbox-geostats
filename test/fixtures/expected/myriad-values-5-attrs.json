@@ -2011,7 +2011,7 @@
           ],
           "count": 10010,
           "attribute": "prop-1",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -4018,7 +4018,7 @@
           ],
           "count": 10010,
           "attribute": "prop-2",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -6025,7 +6025,7 @@
           ],
           "count": 10010,
           "attribute": "prop-3",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -8032,7 +8032,7 @@
           ],
           "count": 10010,
           "attribute": "prop-4",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -10039,7 +10039,7 @@
           ],
           "count": 10010,
           "attribute": "prop-5",
-          "type": "String"
+          "type": "string"
         }
       ],
       "geometry": "Point"

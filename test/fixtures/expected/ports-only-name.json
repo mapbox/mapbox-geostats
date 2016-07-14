@@ -1053,7 +1053,7 @@
           ],
           "count": 1042,
           "attribute": "name",
-          "type": "String"
+          "type": "string"
         }
       ],
       "geometry": "Point"

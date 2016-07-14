@@ -111,7 +111,7 @@
           ],
           "count": 204,
           "attribute": "AREA",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 1638094
         },
@@ -220,7 +220,7 @@
           ],
           "count": 243,
           "attribute": "FIPS",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -327,7 +327,7 @@
           ],
           "count": 245,
           "attribute": "ISO2",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -434,7 +434,7 @@
           ],
           "count": 245,
           "attribute": "ISO3",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -541,7 +541,7 @@
           ],
           "count": 245,
           "attribute": "LAT",
-          "type": "Number",
+          "type": "number",
           "min": -54.422,
           "max": 78.83
         },
@@ -650,7 +650,7 @@
           ],
           "count": 244,
           "attribute": "LON",
-          "type": "Number",
+          "type": "number",
           "min": -178.131,
           "max": 179.219
         },
@@ -759,7 +759,7 @@
           ],
           "count": 245,
           "attribute": "NAME",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -866,7 +866,7 @@
           ],
           "count": 229,
           "attribute": "POP2005",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 1312978855
         },
@@ -881,7 +881,7 @@
           ],
           "count": 6,
           "attribute": "REGION",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 150
         },
@@ -913,7 +913,7 @@
           ],
           "count": 23,
           "attribute": "SUBREGION",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 155
         },
@@ -1022,7 +1022,7 @@
           ],
           "count": 245,
           "attribute": "UN",
-          "type": "Number",
+          "type": "number",
           "min": 4,
           "max": 894
         }

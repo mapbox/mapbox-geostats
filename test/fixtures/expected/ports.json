@@ -12,7 +12,7 @@
           ],
           "count": 1,
           "attribute": "featurecla",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -119,7 +119,7 @@
           ],
           "count": 1000,
           "attribute": "name",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -132,7 +132,7 @@
           ],
           "count": 6,
           "attribute": "natlscale",
-          "type": "Number",
+          "type": "number",
           "min": 5,
           "max": 75
         },
@@ -147,7 +147,7 @@
           ],
           "count": 6,
           "attribute": "scalerank",
-          "type": "Number",
+          "type": "number",
           "min": 3,
           "max": 8
         },
@@ -256,7 +256,7 @@
           ],
           "count": 578,
           "attribute": "website",
-          "type": "String"
+          "type": "string"
         }
       ],
       "geometry": "Point"

@@ -13,7 +13,7 @@
           ],
           "count": 2,
           "attribute": "ADM0CAP",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 1
         },
@@ -122,7 +122,7 @@
           ],
           "count": 198,
           "attribute": "ADM0NAME",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -229,7 +229,7 @@
           ],
           "count": 198,
           "attribute": "ADM0_A3",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -336,7 +336,7 @@
           ],
           "count": 205,
           "attribute": "ADM1NAME",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -396,7 +396,7 @@
           ],
           "count": 53,
           "attribute": "ADMIN1_COD",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 82
         },
@@ -407,7 +407,7 @@
           ],
           "count": 2,
           "attribute": "CAPALT",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 1
         },
@@ -437,7 +437,7 @@
           ],
           "count": 21,
           "attribute": "CAPIN",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -451,7 +451,7 @@
           ],
           "count": 7,
           "attribute": "CHANGED",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 40
         },
@@ -462,7 +462,7 @@
           ],
           "count": 2,
           "attribute": "CHECKME",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 5
         },
@@ -525,7 +525,7 @@
           ],
           "count": 54,
           "attribute": "CITYALT",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -534,7 +534,7 @@
           ],
           "count": 2,
           "attribute": "COMPARE",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 1
         },
@@ -545,7 +545,7 @@
           ],
           "count": 2,
           "attribute": "DIFFASCII",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 1
         },
@@ -567,7 +567,7 @@
           ],
           "count": 13,
           "attribute": "DIFFNOTE",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -593,7 +593,7 @@
           ],
           "count": 19,
           "attribute": "ELEVATION",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 2320
         },
@@ -608,7 +608,7 @@
           ],
           "count": 6,
           "attribute": "FEATURECLA",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -617,7 +617,7 @@
           ],
           "count": 2,
           "attribute": "FEATURE_CL",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -629,7 +629,7 @@
           ],
           "count": 5,
           "attribute": "FEATURE_CO",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -736,7 +736,7 @@
           ],
           "count": 242,
           "attribute": "GEONAMEID",
-          "type": "Number",
+          "type": "number",
           "min": -1,
           "max": 6942553
         },
@@ -754,7 +754,7 @@
           ],
           "count": 9,
           "attribute": "GEONAMESNO",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -861,7 +861,7 @@
           ],
           "count": 240,
           "attribute": "GN_ASCII",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -968,7 +968,7 @@
           ],
           "count": 236,
           "attribute": "GN_POP",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 14608512
         },
@@ -1077,7 +1077,7 @@
           ],
           "count": 166,
           "attribute": "GTOPO30",
-          "type": "Number",
+          "type": "number",
           "min": -9999,
           "max": 3829
         },
@@ -1186,7 +1186,7 @@
           ],
           "count": 196,
           "attribute": "ISO_A2",
-          "type": "Mixed",
+          "type": "mixed",
           "min": -99,
           "max": -99
         },
@@ -1203,7 +1203,7 @@
           ],
           "count": 8,
           "attribute": "LABELRANK",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 8
         },
@@ -1312,7 +1312,7 @@
           ],
           "count": 242,
           "attribute": "LATITUDE",
-          "type": "Number",
+          "type": "number",
           "min": -41.2999739393,
           "max": 64.1500236197
         },
@@ -1421,7 +1421,7 @@
           ],
           "count": 243,
           "attribute": "LONGITUDE",
-          "type": "Number",
+          "type": "number",
           "min": -175.220564478,
           "max": 179.216647094
         },
@@ -1433,7 +1433,7 @@
           ],
           "count": 3,
           "attribute": "LS_MATCH",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 2
         },
@@ -1542,7 +1542,7 @@
           ],
           "count": 243,
           "attribute": "LS_NAME",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -1649,7 +1649,7 @@
           ],
           "count": 212,
           "attribute": "MAX_AREAKM",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 186559
         },
@@ -1758,7 +1758,7 @@
           ],
           "count": 181,
           "attribute": "MAX_AREAMI",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 72030
         },
@@ -1867,7 +1867,7 @@
           ],
           "count": 240,
           "attribute": "MAX_BBXMAX",
-          "type": "Number",
+          "type": "number",
           "min": -175.16666667,
           "max": 178.53333333
         },
@@ -1976,7 +1976,7 @@
           ],
           "count": 241,
           "attribute": "MAX_BBXMIN",
-          "type": "Number",
+          "type": "number",
           "min": -175.23333333,
           "max": 178.425
         },
@@ -2085,7 +2085,7 @@
           ],
           "count": 239,
           "attribute": "MAX_BBYMAX",
-          "type": "Number",
+          "type": "number",
           "min": -41.2,
           "max": 64.16666667
         },
@@ -2194,7 +2194,7 @@
           ],
           "count": 240,
           "attribute": "MAX_BBYMIN",
-          "type": "Number",
+          "type": "number",
           "min": -41.35,
           "max": 64.05
         },
@@ -2208,7 +2208,7 @@
           ],
           "count": 5,
           "attribute": "MAX_NATSCA",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 300
         },
@@ -2317,7 +2317,7 @@
           ],
           "count": 198,
           "attribute": "MAX_PERKM",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 130296
         },
@@ -2426,7 +2426,7 @@
           ],
           "count": 189,
           "attribute": "MAX_PERMI",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 80962
         },
@@ -2535,7 +2535,7 @@
           ],
           "count": 241,
           "attribute": "MAX_POP10",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 16172884
         },
@@ -2644,7 +2644,7 @@
           ],
           "count": 241,
           "attribute": "MAX_POP20",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 24218878
         },
@@ -2753,7 +2753,7 @@
           ],
           "count": 219,
           "attribute": "MAX_POP300",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 87652060
         },
@@ -2807,7 +2807,7 @@
           ],
           "count": 45,
           "attribute": "MAX_POP310",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 224908923
         },
@@ -2916,7 +2916,7 @@
           ],
           "count": 238,
           "attribute": "MAX_POP50",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 53845691
         },
@@ -3025,7 +3025,7 @@
           ],
           "count": 242,
           "attribute": "MEAN_BBXC",
-          "type": "Number",
+          "type": "number",
           "min": -175.20679825,
           "max": 178.47288462
         },
@@ -3134,7 +3134,7 @@
           ],
           "count": 242,
           "attribute": "MEAN_BBYC",
-          "type": "Number",
+          "type": "number",
           "min": -41.28553922,
           "max": 64.116125
         },
@@ -3145,7 +3145,7 @@
           ],
           "count": 2,
           "attribute": "MEGACITY",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 1
         },
@@ -3254,7 +3254,7 @@
           ],
           "count": 146,
           "attribute": "MEGANAME",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -3361,7 +3361,7 @@
           ],
           "count": 200,
           "attribute": "MIN_AREAKM",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 5912
         },
@@ -3470,7 +3470,7 @@
           ],
           "count": 166,
           "attribute": "MIN_AREAMI",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 2283
         },
@@ -3579,7 +3579,7 @@
           ],
           "count": 240,
           "attribute": "MIN_BBXMAX",
-          "type": "Number",
+          "type": "number",
           "min": -175.16666667,
           "max": 178.53333333
         },
@@ -3688,7 +3688,7 @@
           ],
           "count": 238,
           "attribute": "MIN_BBXMIN",
-          "type": "Number",
+          "type": "number",
           "min": -175.23333333,
           "max": 178.425
         },
@@ -3797,7 +3797,7 @@
           ],
           "count": 241,
           "attribute": "MIN_BBYMAX",
-          "type": "Number",
+          "type": "number",
           "min": -41.2,
           "max": 64.16666667
         },
@@ -3906,7 +3906,7 @@
           ],
           "count": 237,
           "attribute": "MIN_BBYMIN",
-          "type": "Number",
+          "type": "number",
           "min": -41.35,
           "max": 64.05
         },
@@ -4015,7 +4015,7 @@
           ],
           "count": 192,
           "attribute": "MIN_PERKM",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 2296
         },
@@ -4124,7 +4124,7 @@
           ],
           "count": 181,
           "attribute": "MIN_PERMI",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 1427
         },
@@ -4233,7 +4233,7 @@
           ],
           "count": 243,
           "attribute": "NAME",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -4284,7 +4284,7 @@
           ],
           "count": 44,
           "attribute": "NAMEALT",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -4391,7 +4391,7 @@
           ],
           "count": 243,
           "attribute": "NAMEASCII",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -4400,7 +4400,7 @@
           ],
           "count": 2,
           "attribute": "NAMEDIFF",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 1
         },
@@ -4422,7 +4422,7 @@
           ],
           "count": 13,
           "attribute": "NAMEPAR",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -4437,7 +4437,7 @@
           ],
           "count": 8,
           "attribute": "NATSCALE",
-          "type": "Number",
+          "type": "number",
           "min": 10,
           "max": 600
         },
@@ -4447,7 +4447,7 @@
           ],
           "count": 1,
           "attribute": "NOTE",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -4554,7 +4554,7 @@
           ],
           "count": 135,
           "attribute": "POP1950",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 12338
         },
@@ -4663,7 +4663,7 @@
           ],
           "count": 139,
           "attribute": "POP1955",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 13713
         },
@@ -4772,7 +4772,7 @@
           ],
           "count": 141,
           "attribute": "POP1960",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 16679
         },
@@ -4881,7 +4881,7 @@
           ],
           "count": 143,
           "attribute": "POP1965",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 20284
         },
@@ -4990,7 +4990,7 @@
           ],
           "count": 138,
           "attribute": "POP1970",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 23298
         },
@@ -5099,7 +5099,7 @@
           ],
           "count": 142,
           "attribute": "POP1975",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 26615
         },
@@ -5208,7 +5208,7 @@
           ],
           "count": 143,
           "attribute": "POP1980",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 28549
         },
@@ -5317,7 +5317,7 @@
           ],
           "count": 144,
           "attribute": "POP1985",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 30304
         },
@@ -5426,7 +5426,7 @@
           ],
           "count": 144,
           "attribute": "POP1990",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 32530
         },
@@ -5535,7 +5535,7 @@
           ],
           "count": 144,
           "attribute": "POP1995",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 33587
         },
@@ -5644,7 +5644,7 @@
           ],
           "count": 141,
           "attribute": "POP2000",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 34450
         },
@@ -5753,7 +5753,7 @@
           ],
           "count": 143,
           "attribute": "POP2005",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 35327
         },
@@ -5862,7 +5862,7 @@
           ],
           "count": 143,
           "attribute": "POP2010",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 35676
         },
@@ -5971,7 +5971,7 @@
           ],
           "count": 144,
           "attribute": "POP2015",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 36094
         },
@@ -6080,7 +6080,7 @@
           ],
           "count": 143,
           "attribute": "POP2020",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 36371
         },
@@ -6189,7 +6189,7 @@
           ],
           "count": 144,
           "attribute": "POP2025",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 36399
         },
@@ -6298,7 +6298,7 @@
           ],
           "count": 143,
           "attribute": "POP2050",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 36400
         },
@@ -6407,7 +6407,7 @@
           ],
           "count": 240,
           "attribute": "POP_MAX",
-          "type": "Number",
+          "type": "number",
           "min": 500,
           "max": 35676000
         },
@@ -6516,7 +6516,7 @@
           ],
           "count": 243,
           "attribute": "POP_MIN",
-          "type": "Number",
+          "type": "number",
           "min": 200,
           "max": 14608512
         },
@@ -6625,7 +6625,7 @@
           ],
           "count": 218,
           "attribute": "POP_OTHER",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 16803572
         },
@@ -6646,7 +6646,7 @@
           ],
           "count": 12,
           "attribute": "RANK_MAX",
-          "type": "Number",
+          "type": "number",
           "min": 2,
           "max": 14
         },
@@ -6669,7 +6669,7 @@
           ],
           "count": 14,
           "attribute": "RANK_MIN",
-          "type": "Number",
+          "type": "number",
           "min": 1,
           "max": 14
         },
@@ -6686,7 +6686,7 @@
           ],
           "count": 8,
           "attribute": "SCALERANK",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 8
         },
@@ -6795,7 +6795,7 @@
           ],
           "count": 197,
           "attribute": "SOV0NAME",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -6902,7 +6902,7 @@
           ],
           "count": 197,
           "attribute": "SOV_A3",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -7009,7 +7009,7 @@
           ],
           "count": 188,
           "attribute": "TIMEZONE",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -7116,7 +7116,7 @@
           ],
           "count": 117,
           "attribute": "UN_ADM0",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -7223,7 +7223,7 @@
           ],
           "count": 145,
           "attribute": "UN_FID",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 589
         },
@@ -7332,7 +7332,7 @@
           ],
           "count": 145,
           "attribute": "UN_LAT",
-          "type": "Number",
+          "type": "number",
           "min": -37.85,
           "max": 60.19
         },
@@ -7441,7 +7441,7 @@
           ],
           "count": 144,
           "attribute": "UN_LONG",
-          "type": "Number",
+          "type": "number",
           "min": -122.96,
           "max": 174.76
         },
@@ -7452,7 +7452,7 @@
           ],
           "count": 2,
           "attribute": "WORLDCITY",
-          "type": "Number",
+          "type": "number",
           "min": 0,
           "max": 1
         },
@@ -7561,7 +7561,7 @@
           ],
           "count": 243,
           "attribute": "X",
-          "type": "Number",
+          "type": "number",
           "min": -175.22056447761656,
           "max": 179.21664709402887
         },
@@ -7670,7 +7670,7 @@
           ],
           "count": 242,
           "attribute": "Y",
-          "type": "Number",
+          "type": "number",
           "min": -41.29997393927641,
           "max": 64.15002361973922
         },
@@ -7681,7 +7681,7 @@
           ],
           "count": 2,
           "attribute": "a1",
-          "type": "Mixed",
+          "type": "mixed",
           "min": 0,
           "max": 0
         },
@@ -7692,7 +7692,7 @@
           ],
           "count": 2,
           "attribute": "a10",
-          "type": "Mixed",
+          "type": "mixed",
           "min": 0,
           "max": 0
         },
@@ -7703,7 +7703,7 @@
           ],
           "count": 2,
           "attribute": "a100",
-          "type": "Mixed",
+          "type": "mixed",
           "min": 0,
           "max": 0
         },
@@ -7714,7 +7714,7 @@
           ],
           "count": 2,
           "attribute": "a11",
-          "type": "Mixed",
+          "type": "mixed",
           "min": 0,
           "max": 0
         },
@@ -7725,7 +7725,7 @@
           ],
           "count": 2,
           "attribute": "a111",
-          "type": "Mixed",
+          "type": "mixed",
           "min": 0,
           "max": 0
         },
@@ -7736,7 +7736,7 @@
           ],
           "count": 2,
           "attribute": "a1111",
-          "type": "Mixed",
+          "type": "mixed",
           "min": 0,
           "max": 0
         }

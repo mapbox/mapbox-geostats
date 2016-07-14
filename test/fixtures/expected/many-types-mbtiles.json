@@ -12,7 +12,7 @@
           ],
           "count": 1,
           "attribute": "astonishing",
-          "type": "Boolean"
+          "type": "boolean"
         },
         {
           "values": [
@@ -21,7 +21,7 @@
           ],
           "count": 2,
           "attribute": "mixed",
-          "type": "Mixed",
+          "type": "mixed",
           "min": 7,
           "max": 7
         },
@@ -36,7 +36,7 @@
           ],
           "count": 6,
           "attribute": "name",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -44,7 +44,7 @@
           ],
           "count": 1,
           "attribute": "numbers",
-          "type": "String"
+          "type": "string"
         },
         {
           "values": [
@@ -54,7 +54,7 @@
           ],
           "count": 3,
           "attribute": "power",
-          "type": "Number",
+          "type": "number",
           "min": 6,
           "max": 99
         },
@@ -65,7 +65,7 @@
           ],
           "count": 2,
           "attribute": "data",
-          "type": "Mixed",
+          "type": "mixed",
           "min": 6,
           "max": 6
         },
@@ -73,7 +73,7 @@
           "values": [],
           "count": 1,
           "attribute": "description",
-          "type": "String"
+          "type": "string"
         }
       ],
       "geometry": "Point"

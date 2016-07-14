@@ -139,11 +139,11 @@ You can find more examples in the test fixtures.
 
 Each attribute has one of the following types:
 
-- `'String'` if all its values are strings (or `null`).
-- `'Number'` if all its values are numbers (or `null`).
-- `'Boolean'` if all its values are booleans (or `null`).
-- `'Null'` if its only value is `null`.
-- `'Mixed'` if it has values of multiple types.
+- `'string'` if all its values are strings (or `null`).
+- `'number'` if all its values are numbers (or `null`).
+- `'boolean'` if all its values are booleans (or `null`).
+- `'null'` if its only value is `null`.
+- `'mixed'` if it has values of multiple types.
 
 Array and object values are coerced to strings.
 
