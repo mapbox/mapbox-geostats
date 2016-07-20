@@ -25,9 +25,12 @@ var cli = meow(help, {
 });
 
 var input = cli.input[0];
-var options = {
-  attributes: cli.flags.attributes.split(','),
-};
+
+var options = {};
+
+if (cli.flags.attributes) {
+  options.attributes = cli.flags.attributes.split(',');
+}
 
 if (!input) {
   console.log(cli.help);
