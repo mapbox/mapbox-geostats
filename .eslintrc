@@ -1,13 +1,32 @@
 {
-  "extends": "airbnb-base/legacy",
+  "extends": "eslint:recommended",
+  "env": {
+    "node": true,
+    "es6": true
+  },
   "rules": {
-    "comma-dangle": ["error", "always-multiline"],
-    "vars-on-top": ["off"],
-    "func-names": ["off"],
-    "no-use-before-define": ["off"],
-    "consistent-return": ["off"],
-    "no-param-reassign": ["off"],
-    "no-underscore-dangle": ["off"],
-    "no-new": ["off"]
+    "no-var": 2,
+    "prefer-const": 2,
+    "array-bracket-spacing": [2, "never"],
+    "brace-style": [2, "1tbs"],
+    "comma-dangle": [2, "always-multiline"],
+    "computed-property-spacing": [2, "never"],
+    "curly": [2, "multi-line"],
+    "eol-last": 2,
+    "eqeqeq": [2, "smart"],
+    "no-extend-native": 2,
+    "no-mixed-spaces-and-tabs": 2,
+    "no-spaced-func": 2,
+    "no-trailing-spaces": 2,
+    "no-unused-vars": 2,
+    "no-use-before-define": [2, "nofunc"],
+    "object-curly-spacing": [2, "always"],
+    "quotes": [2, "single", "avoid-escape"],
+    "semi": [2, "always"],
+    "space-before-function-paren": [2, "never"],
+    "space-infix-ops": 2,
+    "spaced-comment": [2, "always"],
+    "keyword-spacing": [2, { before: true, after: true }],
+    "strict": 2
   }
 }

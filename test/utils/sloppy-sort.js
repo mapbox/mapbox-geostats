@@ -1,4 +1,6 @@
-var _ = require('lodash');
+'use strict';
+
+const _ = require('lodash');
 
 // The purpose of the sloppy sort is only to ensure some
 // deterministic order in this module's JSON output.
@@ -8,8 +10,8 @@ var _ = require('lodash');
 // have the same items.
 
 function sloppySortComparator(first, second) {
-  var isFirstObject = _.isPlainObject(first);
-  var isSecondObject = _.isPlainObject(second);
+  const isFirstObject = _.isPlainObject(first);
+  const isSecondObject = _.isPlainObject(second);
   if (!isFirstObject && isSecondObject) return -1;
   if (isFirstObject && !isSecondObject) return 1;
   if (isFirstObject && isSecondObject) {
@@ -18,8 +20,8 @@ function sloppySortComparator(first, second) {
     return 0;
   }
 
-  var isFirstNumber = _.isNumber(first);
-  var isSecondNumber = _.isNumber(second);
+  const isFirstNumber = _.isNumber(first);
+  const isSecondNumber = _.isNumber(second);
   if (!isFirstNumber && isSecondNumber) return -1;
   if (isFirstNumber && !isSecondNumber) return 1;
   if (isFirstNumber && isSecondNumber) {
@@ -28,8 +30,8 @@ function sloppySortComparator(first, second) {
     return 0;
   }
 
-  var isFirstNull = _.isNull(first);
-  var isSecondNull = _.isNull(second);
+  const isFirstNull = _.isNull(first);
+  const isSecondNull = _.isNull(second);
   if (!isFirstNull && isSecondNull) return -1;
   if (isFirstNull && !isSecondNull) return 1;
   if (isFirstNull && isSecondNull) return 0;
