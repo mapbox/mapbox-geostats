@@ -1,59 +1,60 @@
-var test = require('tap').test;
-var _ = require('lodash');
-var path = require('path');
-var fs = require('fs');
-var Promise = require('pinkie-promise');
-var sloppySort = require('./utils/sloppy-sort');
-var geostats = require('../');
+'use strict';
+
+const test = require('tap').test;
+const _ = require('lodash');
+const path = require('path');
+const fs = require('fs');
+const sloppySort = require('./utils/sloppy-sort');
+const geostats = require('../');
 
 function fixturePath(fileName) {
   return path.join(__dirname, 'fixtures', fileName);
 }
 
 function getExpected(name) {
-  return new Promise(function (resolve, reject) {
-    fs.readFile(fixturePath(path.join('expected', name + '.json')), 'utf8', function (err, data) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(fixturePath(path.join('expected', name + '.json')), 'utf8', (err, data) => {
       if (err) return reject(err);
       resolve(JSON.parse(data));
     });
   });
 }
 
-test('Errors without a file path', function (t) {
-  geostats().then(function () {
+test('Errors without a file path', t => {
+  geostats().then(() => {
     t.fail('should have errored');
     t.end();
-  }).catch(function (err) {
+  }).catch(err => {
     t.ok(err, 'errored');
     t.end();
   });
 });
 
-test('Errors when MBTiles file not found', function (t) {
-  geostats(fixturePath('doodoodoo.mbtiles')).then(function () {
+test('Errors when MBTiles file not found', t => {
+  geostats(fixturePath('doodoodoo.mbtiles')).then(() => {
     t.fail('should have errored');
     t.end();
-  }).catch(function (err) {
+  }).catch(err => {
     t.ok(err, 'errored');
     t.end();
   });
 });
 
-test('Errors when Mapnik-interpreted file not found', function (t) {
-  geostats(fixturePath('doodoodoo.csv')).then(function () {
+test('Errors when Mapnik-interpreted file not found', t => {
+  geostats(fixturePath('doodoodoo.csv')).then(() => {
     t.fail('should have errored');
     t.end();
-  }).catch(function (err) {
+  }).catch(err => {
     t.ok(err, 'errored');
     t.end();
   });
 });
 
-test('GeoJSON with many value types, input matching MBTiles', function (t) {
+test('GeoJSON with many value types, input matching MBTiles', t => {
   Promise.all([
     geostats(fixturePath('src/many-types.geojson')),
     getExpected('many-types-geojson'),
-  ]).then(function (output) {
+  ]).then((output) => {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
@@ -62,22 +63,22 @@ test('GeoJSON with many value types, input matching MBTiles', function (t) {
 // Key difference between the MBTiles and the GeoJSON output now
 // is that when Mapnik reads the GeoJSON it inserts `null` values
 // in weird places
-test('MBTiles with many value types, input matching GeoJSON', function (t) {
+test('MBTiles with many value types, input matching GeoJSON', t => {
   Promise.all([
     geostats(fixturePath('src/many-types.mbtiles')),
     getExpected('many-types-mbtiles'),
-  ]).then(function (output) {
+  ]).then((output) => {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
 
 test('GeoJSON with over 100 unique attributes and values, input matching Shapefile and CSV',
-  function (t) {
+  t => {
     Promise.all([
       geostats(fixturePath('src/populations-plus.geojson')),
       getExpected('populations-plus-geojson'),
-    ]).then(function (output) {
+    ]).then((output) => {
       t.deepEqual(output[0], output[1], 'expected output');
       t.end();
     }).catch(t.threw);
@@ -88,11 +89,11 @@ test('GeoJSON with over 100 unique attributes and values, input matching Shapefi
 // seems to be that the shapefile has converted `null` to `""` in
 // predominantly string-valued attributes
 test('Shapefile with over 100 unique attributes and values, input matching GeoJSON and CSV',
-  function (t) {
+  t => {
     Promise.all([
       geostats(fixturePath('src/populations-plus/populations-plus.shp')),
       getExpected('populations-plus-shp'),
-    ]).then(function (output) {
+    ]).then((output) => {
       t.deepEqual(output[0], output[1], 'expected output');
       t.end();
     }).catch(t.threw);
@@ -102,50 +103,50 @@ test('Shapefile with over 100 unique attributes and values, input matching GeoJS
 // Key difference between the CSV and Shapefile and GeoJSON is that it
 // includes X and Y attributes (it also converts `null` to `""`, like Shapefile)
 test('CSV with over 100 unique attributes and values, input matching GeoJSON and Shapefile',
-  function (t) {
+  t => {
     Promise.all([
       geostats(fixturePath('src/populations-plus.csv')),
       getExpected('populations-plus-csv'),
-    ]).then(function (output) {
+    ]).then((output) => {
       t.deepEqual(output[0], output[1], 'expected output');
       t.end();
     }).catch(t.threw);
   }
 );
 
-test('Shapefile with over 1000 unique values', function (t) {
+test('Shapefile with over 1000 unique values', t => {
   Promise.all([
     geostats(fixturePath('src/ports/ports.shp')),
     getExpected('ports'),
-  ]).then(function (output) {
+  ]).then((output) => {
     t.deepEqual(output[0], output[1], 'expected output');
     t.end();
   }).catch(t.threw);
 });
 
-test('MBTiles with gzipped data', function (t) {
+test('MBTiles with gzipped data', t => {
   Promise.all([
     geostats(fixturePath('src/vectorgzip.mbtiles')),
     getExpected('vectorgzip'),
-  ]).then(function (output) {
+  ]).then((output) => {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
 
-test('MBTiles with raster data', function (t) {
-  geostats(fixturePath('src/pngs.mbtiles')).then(function (output) {
+test('MBTiles with raster data', t => {
+  geostats(fixturePath('src/pngs.mbtiles')).then((output) => {
     t.deepEqual(output, { layerCount: 0, layers: [] }, 'empty output');
     t.end();
   }).catch(t.threw);
 });
 
-test('GeoJSON with over 1000 unique attributes', function (t) {
+test('GeoJSON with over 1000 unique attributes', t => {
   Promise.all([
     geostats(fixturePath('src/two-thousand-properties.geojson')),
     getExpected('two-thousand-properties'),
-  ]).then(function (output) {
-    var actual = sloppySort(output[0]);
+  ]).then((output) => {
+    const actual = sloppySort(output[0]);
     t.deepEqual(actual, sloppySort(output[1]), 'expected output');
     t.equal(actual.layers[0].attributeCount, 1000, 'attributeCount stops at 1000');
     t.equal(actual.layers[0].attributes.length, 100, 'attribute details stop at 100');
@@ -153,38 +154,38 @@ test('GeoJSON with over 1000 unique attributes', function (t) {
   }).catch(t.threw);
 });
 
-test('GeoJSON with many geometry types', function (t) {
+test('GeoJSON with many geometry types', t => {
   Promise.all([
     geostats(fixturePath('src/geometry-extravaganza.geojson')),
     getExpected('geometry-extravaganza'),
-  ]).then(function (output) {
+  ]).then((output) => {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
 
-test('MBTiles with no features', function (t) {
-  geostats(fixturePath('src/no-features.mbtiles')).then(function (output) {
+test('MBTiles with no features', t => {
+  geostats(fixturePath('src/no-features.mbtiles')).then((output) => {
     t.deepEqual(output, { layerCount: 0, layers: [] }, 'empty output');
     t.end();
   }).catch(t.threw);
 });
 
-test('Shapefile with no features', function (t) {
+test('Shapefile with no features', t => {
   Promise.all([
     geostats(fixturePath('src/no-features/no-features.shp')),
     getExpected('no-features'),
-  ]).then(function (output) {
+  ]).then((output) => {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
 
-test('CSV with no features', function (t) {
+test('CSV with no features', t => {
   Promise.all([
     geostats(fixturePath('src/no-features.csv')),
     getExpected('no-features'),
-  ]).then(function (output) {
+  ]).then((output) => {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
@@ -192,73 +193,73 @@ test('CSV with no features', function (t) {
 
 // Currently this is blocked by a bug in node-mapnik
 //
-// test('geojson with no features', function (t) {
-//   geostats(fixturePath('src/no-features.geojson')).then(function (output) {
+// test('geojson with no features', t => {
+//   geostats(fixturePath('src/no-features.geojson')).then((output) => {
 //     t.deepEqual(output, { layerCount: 0, layers: [] }, 'expected output');
 //     t.end();
 //   }).catch(t.threw);
 // });
 
-test('invalid GeoJSON', function (t) {
-  geostats(fixturePath('src/invalid.geojson')).then(function () {
+test('invalid GeoJSON', t => {
+  geostats(fixturePath('src/invalid.geojson')).then(() => {
     t.fail('should have errored');
     t.end();
-  }).catch(function (err) {
+  }).catch(err => {
     t.ok(err, 'errored');
     t.end();
   });
 });
 
-test('invalid Shapefile', function (t) {
-  geostats(fixturePath('src/invalid.shp')).then(function () {
+test('invalid Shapefile', t => {
+  geostats(fixturePath('src/invalid.shp')).then(() => {
     t.fail('should have errored');
     t.end();
-  }).catch(function (err) {
+  }).catch(err => {
     t.ok(err, 'errored');
     t.end();
   });
 });
 
-test('invalid CSV', function (t) {
-  geostats(fixturePath('src/invalid.csv')).then(function () {
+test('invalid CSV', t => {
+  geostats(fixturePath('src/invalid.csv')).then(() => {
     t.fail('should have errored');
     t.end();
-  }).catch(function (err) {
+  }).catch(err => {
     t.ok(err, 'errored');
     t.end();
   });
 });
 
-test('invalid MBTiles', function (t) {
-  geostats(fixturePath('src/invalid.mbtiles')).then(function () {
+test('invalid MBTiles', t => {
+  geostats(fixturePath('src/invalid.mbtiles')).then(() => {
     t.fail('should have errored');
     t.end();
-  }).catch(function (err) {
+  }).catch(err => {
     t.ok(err, 'errored');
     t.end();
   });
 });
 
-test('invalid file format', function (t) {
-  geostats(fixturePath('src/invalid.txt')).then(function () {
+test('invalid file format', t => {
+  geostats(fixturePath('src/invalid.txt')).then(() => {
     t.fail('should have errored');
     t.end();
-  }).catch(function (err) {
+  }).catch(err => {
     t.ok(err, 'errored');
     t.end();
   });
 });
 
-test('Shapefile with specified attribute with over 1000 values', function (t) {
+test('Shapefile with specified attribute with over 1000 values', t => {
   Promise.all([
     geostats(fixturePath('src/ports/ports.shp'), {
       attributes: ['name'],
     }),
     getExpected('ports-only-name'),
-  ]).then(function (output) {
-    var actual = sloppySort(output[0]);
+  ]).then((output) => {
+    const actual = sloppySort(output[0]);
     t.deepEqual(actual, sloppySort(output[1]), 'expected output');
-    var nameAttribute = _.find(actual.layers[0].attributes, function (attribute) {
+    const nameAttribute = _.find(actual.layers[0].attributes, attribute => {
       return attribute.attribute === 'name';
     });
     t.equal(nameAttribute.count, 1042, 'value count did not stop at 1000');
@@ -267,75 +268,75 @@ test('Shapefile with specified attribute with over 1000 values', function (t) {
   }).catch(t.threw);
 });
 
-test('GeoJSON with specified attributes', function (t) {
+test('GeoJSON with specified attributes', t => {
   Promise.all([
     geostats(fixturePath('src/two-thousand-properties.geojson'), {
       attributes: ['prop-21', 'prop-1031'],
     }),
     getExpected('two-thousand-properties-only-two'),
-  ]).then(function (output) {
+  ]).then((output) => {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
 
-test('GeoJSON with over 10000 unique values and no specified attributes', function (t) {
+test('GeoJSON with over 10000 unique values and no specified attributes', t => {
   Promise.all([
     geostats(fixturePath('src/myriad-values.geojson')),
     getExpected('myriad-values-all-attrs'),
-  ]).then(function (output) {
-    var actual = sloppySort(output[1]);
+  ]).then((output) => {
+    const actual = sloppySort(output[1]);
     t.deepEqual(sloppySort(output[0]), actual, 'expected output');
-    t.ok(actual.layers[0].attributes.every(function (attribute) {
+    t.ok(actual.layers[0].attributes.every(attribute => {
       return attribute.count === 1000;
     }), 'value counts stop at 1000');
-    t.ok(actual.layers[0].attributes.every(function (attribute) {
+    t.ok(actual.layers[0].attributes.every(attribute => {
       return attribute.values.length === 100;
     }), 'value details stop at 100');
     t.end();
   }).catch(t.threw);
 });
 
-test('GeoJSON with over 10000 unique values and one specified attribute', function (t) {
+test('GeoJSON with over 10000 unique values and one specified attribute', t => {
   Promise.all([
     geostats(fixturePath('src/myriad-values.geojson'), {
       attributes: ['prop-3'],
     }),
     getExpected('myriad-values-1-attr'),
-  ]).then(function (output) {
-    var actual = sloppySort(output[1]);
+  ]).then((output) => {
+    const actual = sloppySort(output[1]);
     t.deepEqual(sloppySort(output[0]), actual, 'expected output');
-    t.ok(actual.layers[0].attributes.every(function (attribute) {
+    t.ok(actual.layers[0].attributes.every(attribute => {
       return attribute.count === 10010;
     }), 'value count does not stop yet');
-    t.ok(actual.layers[0].attributes.every(function (attribute) {
+    t.ok(actual.layers[0].attributes.every(attribute => {
       return attribute.values.length === 10000;
     }), 'value details stop at 10000');
     t.end();
   }).catch(t.threw);
 });
 
-test('GeoJSON with over 10000 unique values and five specified attribute', function (t) {
+test('GeoJSON with over 10000 unique values and five specified attribute', t => {
   Promise.all([
     geostats(fixturePath('src/myriad-values.geojson'), {
       attributes: ['prop-1', 'prop-2', 'prop-3', 'prop-4', 'prop-5'],
     }),
     getExpected('myriad-values-5-attrs'),
-  ]).then(function (output) {
-    var actual = sloppySort(output[1]);
+  ]).then((output) => {
+    const actual = sloppySort(output[1]);
     t.deepEqual(sloppySort(output[0]), actual, 'expected output');
-    t.ok(actual.layers[0].attributes.every(function (attribute) {
+    t.ok(actual.layers[0].attributes.every(attribute => {
       return attribute.count === 10010;
     }), 'value counts does not stop yet');
-    t.ok(actual.layers[0].attributes.every(function (attribute) {
+    t.ok(actual.layers[0].attributes.every(attribute => {
       return attribute.values.length === 2000;
     }), 'value details stop at 2000');
     t.end();
   }).catch(t.threw);
 });
 
-test('Trying to report on more than 100 attributes', function (t) {
-  t.throws(function () {
+test('Trying to report on more than 100 attributes', t => {
+  t.throws(() => {
     geostats(fixturePath('src/populations-plus.geojson'), {
       attributes: ['attr-0', 'attr-1', 'attr-2', 'attr-3', 'attr-4', 'attr-5',
       'attr-6', 'attr-7', 'attr-8', 'attr-9', 'attr-10', 'attr-11', 'attr-12',
@@ -359,31 +360,31 @@ test('Trying to report on more than 100 attributes', function (t) {
   t.end();
 });
 
-test('GeoJSON with prototype attribute', function (t) {
+test('GeoJSON with prototype attribute', t => {
   Promise.all([
     geostats(fixturePath('src/prototype.geojson')),
     getExpected('prototype'),
-  ]).then(function (output) {
+  ]).then((output) => {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
 
-test('truncate attribute names', function (t) {
+test('truncate attribute names', t => {
   Promise.all([
     geostats(fixturePath('src/long-attribute-names.geojson')),
     getExpected('long-attribute-names'),
-  ]).then(function (output) {
+  ]).then((output) => {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
 
-test('MBTiles with two layers', function (t) {
+test('MBTiles with two layers', t => {
   Promise.all([
     geostats(fixturePath('src/two-layers.mbtiles')),
     getExpected('two-layers'),
-  ]).then(function (output) {
+  ]).then((output) => {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);

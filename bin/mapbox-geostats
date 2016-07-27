@@ -1,10 +1,11 @@
 #!/usr/bin/env node
+'use strict';
 
 /* eslint-disable no-console */
-var meow = require('meow');
-var geostats = require('../');
+const meow = require('meow');
+const geostats = require('../');
 
-var help = (
+const help = (
   'Usage\n' +
   '  mapbox-geostats <input> <options>\n' +
   '\n' +
@@ -18,15 +19,15 @@ var help = (
   '  mapbox-geostats population-centers.geojson --attributes name,pop > output.json'
 );
 
-var cli = meow(help, {
+const cli = meow(help, {
   alias: {
     a: 'attributes',
   },
 });
 
-var input = cli.input[0];
+const input = cli.input[0];
 
-var options = {};
+const options = {};
 
 if (cli.flags.attributes) {
   options.attributes = cli.flags.attributes.split(',');
@@ -35,9 +36,9 @@ if (cli.flags.attributes) {
 if (!input) {
   console.log(cli.help);
 } else {
-  geostats(input, options).then(function (stats) {
+  geostats(input, options).then((stats) => {
     console.log(JSON.stringify(stats));
-  }).catch(function (err) {
+  }).catch((err) => {
     throw new Error(err);
   });
 }

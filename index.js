@@ -1,4 +1,3 @@
-var Set = require('es6-set');
 var getFileType = require('./lib/get-file-type');
 var mapnikAnalyze = require('./lib/mapnik-analyze');
 var tileAnalyze = require('./lib/tile-analyze');
