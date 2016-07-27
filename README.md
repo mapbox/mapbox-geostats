@@ -10,6 +10,8 @@ Generate statistics about geographic data.
 npm install mapbox-geostats
 ```
 
+Requires Node v4+.
+
 ## About
 
 You feed the module a file, and it outputs stats about the geographic data in the file.
