@@ -1,6 +1,6 @@
 {
   "name": "mapbox-geostats",
-  "version": "0.1.4",
+  "version": "0.2.1",
   "description": "Generate statistics about geographic data.",
   "main": "index.js",
   "engines": {
