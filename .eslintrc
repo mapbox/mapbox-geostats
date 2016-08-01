@@ -4,6 +4,9 @@
     "node": true,
     "es6": true
   },
+  "plugins": [
+    "node"
+  ],
   "rules": {
     "no-var": 2,
     "prefer-const": 2,
@@ -27,6 +30,9 @@
     "space-infix-ops": 2,
     "spaced-comment": [2, "always"],
     "keyword-spacing": [2, { before: true, after: true }],
-    "strict": 2
+    "strict": 2,
+
+    "node/no-unsupported-features": [2, {"version": 4}],
+    "node/no-missing-require": 2
   }
 }
