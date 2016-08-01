@@ -5,19 +5,19 @@
 const meow = require('meow');
 const geostats = require('../');
 
-const help = (
-  'Usage\n' +
-  '  mapbox-geostats <input> <options>\n' +
-  '\n' +
-  '  Output is logged to the console as a JSON string.\n' +
-  '\n' +
-  'Options\n' +
-  '  --attributes, -a Specify attributes to analyze. The provided value\n' +
-  '                   will be parsed as an array, split on commas.\n' +
-  '\n' +
-  'Example\n' +
-  '  mapbox-geostats population-centers.geojson --attributes name,pop > output.json'
-);
+const help = `
+  Usage
+    mapbox-geostats <input> <options>
+
+    Output is logged to the console as a JSON string.
+
+  Options
+    --attributes, -a Specify attributes to analyze. The provided value
+                     will be parsed as an array, split on commas.
+
+  Example
+    mapbox-geostats cities.geojson --attributes name,pop > output.json
+  `;
 
 const cli = meow(help, {
   alias: {
@@ -39,6 +39,6 @@ if (!input) {
   geostats(input, options).then((stats) => {
     console.log(JSON.stringify(stats));
   }).catch((err) => {
-    throw new Error(err);
+    console.error(err.stack);
   });
 }
