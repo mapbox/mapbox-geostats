@@ -3,9 +3,6 @@
   "version": "0.2.1",
   "description": "Generate statistics about geographic data.",
   "main": "index.js",
-  "engines": {
-    "node": ">=4"
-  },
   "bin": {
     "mapbox-geostats": "bin/mapbox-geostats"
   },
@@ -26,12 +23,12 @@
   "homepage": "https://github.com/mapbox/mapbox-geostats#readme",
   "dependencies": {
     "lodash": "^4.13.1",
-    "mapbox-file-sniff": "^0.5.0",
-    "mapnik": "^3.5.13",
-    "mbtiles": "^0.8.2",
+    "mapbox-file-sniff": "git://github.com/mapbox/mapbox-file-sniff.git#smelloscope",
+    "mapnik": "~3.5.14",
+    "mbtiles": "~0.9.0",
     "meow": "^3.7.0",
     "pbf": "^2.0.1",
-    "tilelive": "^5.12.2",
+    "tilelive": "~5.12.2",
     "tiletype": "^0.3.0",
     "vector-tile": "^1.2.1"
   },
