@@ -7,7 +7,7 @@ Generate statistics about geographic data.
 ## Installation
 
 ```
-npm install mapbox-geostats
+npm install @mapbox/mapbox-geostats
 ```
 
 ## About
@@ -69,7 +69,7 @@ Example
 ## Node
 
 ```js
-var geostats = require('mapbox-geostats');
+var geostats = require('@mapbox/mapbox-geostats');
 
 geostats(filePath, options).then(function (stats) {
   // Do something with the stats
