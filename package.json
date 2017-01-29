@@ -1,5 +1,5 @@
 {
-  "name": "mapbox-geostats",
+  "name": "@mapbox/mapbox-geostats",
   "version": "0.3.1",
   "description": "Generate statistics about geographic data.",
   "main": "index.js",
