@@ -1,0 +1,35 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "foo": "bar"
+      },
+      "geometry": {
+        "type": "doodoodoo",
+        "coordinates": []
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "foo": "bar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1, 1]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "baz": true
+      },
+      "geometry": {
+        "type": "doodoodoo",
+        "coordinates": []
+      }
+    }
+  ]
+}

@@ -3,8 +3,8 @@
   "layers": [
     {
       "layer": "geometry-extravaganza",
-      "count": 4,
-      "attributeCount": 3,
+      "count": 6,
+      "attributeCount": 4,
       "attributes": [
         {
           "values": [
@@ -28,14 +28,23 @@
         },
         {
           "values": [
-            "doo"
+            "doo",
+            null
           ],
-          "count": 1,
+          "count": 2,
           "attribute": "doodoo",
           "type": "string"
+        },
+        {
+          "values": [
+            true
+          ],
+          "count": 1,
+          "attribute": "baz",
+          "type": "boolean"
         }
       ],
-      "geometry": "MultiPoint"
+      "geometry": "Point"
     }
   ]
 }

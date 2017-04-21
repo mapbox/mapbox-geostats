@@ -192,10 +192,20 @@ test('CSV with no features', t => {
 });
 
 // Currently this is blocked by a bug in node-mapnik
-//
-// test('geojson with no features', t => {
+// test('GeoJSON with no features still outputs', t => {
 //   geostats(fixturePath('src/no-features.geojson')).then((output) => {
-//     t.deepEqual(output, { layerCount: 0, layers: [] }, 'expected output');
+//     var expected = {
+//       layerCount: 1,
+//       layers: [
+//         {
+//           attributeCount: 0,
+//           attributes: [],
+//           count: 0,
+//           layer: 'no-features'
+//         }
+//       ]
+//     };
+//     t.deepEqual(output, expected, 'expected output');
 //     t.end();
 //   }).catch(t.threw);
 // });
@@ -204,6 +214,15 @@ test('invalid GeoJSON', t => {
   geostats(fixturePath('src/invalid.geojson')).then(() => {
     t.fail('should have errored');
     t.end();
+  }).catch(err => {
+    t.ok(err, 'errored');
+    t.end();
+  });
+});
+
+test('GeoJSON fails with invalid geometry type', t => {
+  geostats(fixturePath('src/geometry-invalid-types.geojson')).then((output) => {
+    t.fail(output);
   }).catch(err => {
     t.ok(err, 'errored');
     t.end();

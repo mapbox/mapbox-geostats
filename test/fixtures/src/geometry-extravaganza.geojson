@@ -7,8 +7,8 @@
         "foo": "bar"
       },
       "geometry": {
-        "type": "doodoodoo",
-        "coordinates": []
+        "type": "Point",
+        "coordinates": [125.6, 10.1]
       }
     },
     {
@@ -92,8 +92,8 @@
         "baz": true
       },
       "geometry": {
-        "type": "doodoodoo",
-        "coordinates": []
+        "type": "Point",
+        "coordinates": [100.6, 4.1]
       }
     }
   ]
