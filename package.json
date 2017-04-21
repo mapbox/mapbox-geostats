@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/mapbox/mapbox-geostats#readme",
   "dependencies": {
+    "@mapbox/mapbox-file-sniff": "~1.0.1",
     "lodash": "^4.13.1",
-    "mapbox-file-sniff": "~0.5.2",
     "mapnik": "~3.6.0",
     "mbtiles": "~0.9.0",
     "meow": "^3.7.0",
