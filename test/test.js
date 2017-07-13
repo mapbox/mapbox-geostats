@@ -408,3 +408,23 @@ test('MBTiles with two layers', t => {
     t.end();
   }).catch(t.threw);
 });
+
+test('MBTiles limits max tiles', t => {
+  // the four-tiles.mbtiles fixture has four tiles at z1, each tile has a different
+  // "color" property, meaning if all four tiles are counted, there will be four unique
+  // values for "color"
+  Promise.all([
+    geostats(fixturePath('src/four-tiles.mbtiles'), {maxTiles: 1}),
+    geostats(fixturePath('src/four-tiles.mbtiles'), {maxTiles: 2}),
+    geostats(fixturePath('src/four-tiles.mbtiles'), {maxTiles: 3}),
+    geostats(fixturePath('src/four-tiles.mbtiles'), {maxTiles: 4}),
+    geostats(fixturePath('src/four-tiles.mbtiles')),
+  ]).then((output) => {
+    t.equal(output[0].layers[0].attributes[0].values.length, 1, 'expected one value');
+    t.equal(output[1].layers[0].attributes[0].values.length, 2, 'expected two values');
+    t.equal(output[2].layers[0].attributes[0].values.length, 3, 'expected three values');
+    t.equal(output[3].layers[0].attributes[0].values.length, 4, 'expected all four values');
+    t.equal(output[4].layers[0].attributes[0].values.length, 4, 'expected all four values');
+    t.end();
+  }).catch(t.threw);
+});

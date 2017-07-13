@@ -23,6 +23,7 @@ function buildGeoStats(filePath, options) {
     : Constants.ATTRIBUTES_MAX_REPORT;
   options.maxValuesToCount = Math.floor(Constants.VALUES_MAX_COUNT / divisor);
   options.maxValuesToReport = Math.floor(Constants.VALUES_MAX_REPORT / divisor);
+  options.maxTilesToCount = (options.maxTiles) ? options.maxTiles : Constants.MBTILES_MAX_TILE_COUNT;
 
   return getFileType(filePath)
     .then(function (fileType) {
