@@ -414,10 +414,10 @@ test('MBTiles limits max tiles', t => {
   // "color" property, meaning if all four tiles are counted, there will be four unique
   // values for "color"
   Promise.all([
-    geostats(fixturePath('src/four-tiles.mbtiles'), {maxTiles: 1}),
-    geostats(fixturePath('src/four-tiles.mbtiles'), {maxTiles: 2}),
-    geostats(fixturePath('src/four-tiles.mbtiles'), {maxTiles: 3}),
-    geostats(fixturePath('src/four-tiles.mbtiles'), {maxTiles: 4}),
+    geostats(fixturePath('src/four-tiles.mbtiles'), { maxTiles: 1 }),
+    geostats(fixturePath('src/four-tiles.mbtiles'), { maxTiles: 2 }),
+    geostats(fixturePath('src/four-tiles.mbtiles'), { maxTiles: 3 }),
+    geostats(fixturePath('src/four-tiles.mbtiles'), { maxTiles: 4 }),
     geostats(fixturePath('src/four-tiles.mbtiles')),
   ]).then((output) => {
     t.equal(output[0].layers[0].attributes[0].values.length, 1, 'expected one value');

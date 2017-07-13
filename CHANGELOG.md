@@ -1,3 +1,7 @@
+# 0.5.0
+
+- add `--maxTiles` option which limits the number of mbtiles tiles used when generating stats
+
 # 0.4.0
 
 - Upgrade mapnik@3.6.0
