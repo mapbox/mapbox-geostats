@@ -84,7 +84,7 @@ There's just one exposed function:
 
 Returns a Promise that resolves with a stats object, whose structure is described below.
 
-`filepath` (*reqiured*) is the path to the file that you'd like to analyze.
+`filepath` (*required*) is the path to the file that you'd like to analyze.
 
 `options` (*optional*) is an optional object that can have the following properties:
 
