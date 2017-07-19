@@ -1,0 +1,19 @@
+{
+  "id": "/attribute",
+  "type": "object",
+  "properties": {
+    "attribute": { "type": "string" },
+    "count": { "type": "number" },
+    "type": {
+      "type": "string",
+      "enum": ["string", "number", "boolean", "null", "mixed"]
+    },
+    "values": {
+      "type": "array",
+      "items": { "type": ["number", "boolean", "string", "null"] }
+    },
+    "min": { "type": "number" },
+    "max": { "type": "number" }
+  },
+  "required": [ "attribute", "count", "type", "values" ]
+}

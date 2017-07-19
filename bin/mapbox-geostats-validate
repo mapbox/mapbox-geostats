@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+'use strict';
+
+/* eslint-disable no-console */
+const meow = require('meow');
+const fs = require('fs');
+const validate = require('../lib/validate-stats');
+
+const help = `
+  Usage
+    mapbox-geostats-validate <file>
+
+    Output is empty if valid, or a list of errors.
+
+  Example
+    mapbox-geostats-validate ./path/to/stats.json
+  `;
+
+const cli = meow(help);
+const file = process.argv[2];
+
+if (!file) {
+  console.log(help);
+  process.exit(1);
+}
+
+let stats;
+try {
+  stats = JSON.parse(fs.readFileSync(file));
+} catch(err) {
+  console.log('Unable to read file');
+  console.error(err);
+  console.log(help);
+}
+
+const results = validate(stats);
+if (results.length) {
+  console.log('✘ Invalid');
+  results.forEach(function(s) { console.log(`- ${s}`) });
+} else {
+  console.log('✔ Valid');
+}
+
+process.exit(0);

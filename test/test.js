@@ -6,6 +6,7 @@ const path = require('path');
 const fs = require('fs');
 const sloppySort = require('./utils/sloppy-sort');
 const geostats = require('../');
+const validator = require('../lib/validate-stats');
 
 function fixturePath(fileName) {
   return path.join(__dirname, 'fixtures', fileName);
@@ -407,4 +408,98 @@ test('MBTiles with two layers', t => {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
+});
+
+test('[validator] valid stats object', t => {
+  const stats = {
+    layerCount: 1,
+    layers: [
+      {
+        layer: 'test-layer',
+        count: 3,
+        geometry: 'point',
+        attributeCount: 1,
+        attributes: [
+          {
+            attribute: 'test-attribute',
+            count: 3,
+            type: 'number',
+            values: [2, 5, 19],
+            min: 2,
+            max: 19,
+          },
+        ],
+      },
+    ],
+  };
+
+  t.ok(validator(stats));
+  t.end();
+});
+
+test('[validator] invalid stats object - no layers', t => {
+  const stats = {
+    layerCount: 1,
+  };
+
+  const results = validator(stats);
+  t.equal(results[0], 'requires property "layers"', 'expected error message');
+  t.end();
+});
+
+test('[validator] invalid layer object - no layer name', t => {
+  const stats = {
+    layerCount: 1,
+    layers: [
+      {
+        count: 3,
+        geometry: 'point',
+        attributeCount: 1,
+        attributes: [
+          {
+            attribute: 'test-attribute',
+            count: 3,
+            type: 'number',
+            values: [2, 5, 19],
+            min: 2,
+            max: 19,
+          },
+        ],
+      },
+    ],
+  };
+
+  const results = validator(stats);
+  t.equal(results[0], 'requires property "layer"', 'expected error message');
+  t.end();
+});
+
+test('[validator] invalid layer object - no layer name', t => {
+  const stats = {
+    layerCount: 'wrong type',
+    layers: [
+      {
+        geometry: 'point',
+        attributes: [
+          {
+            attribute: 'test-attribute',
+            type: 'number',
+            min: 2,
+            max: 19,
+          },
+        ],
+      },
+    ],
+  };
+
+  const results = validator(stats);
+  t.deepEqual(results, [
+    'is not of a type(s) number',
+    'requires property "count"',
+    'requires property "values"',
+    'requires property "layer"',
+    'requires property "count"',
+    'requires property "attributeCount"',
+  ], 'expect lots of errors');
+  t.end();
 });
