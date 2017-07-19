@@ -12,16 +12,21 @@ const help = `
     Output is logged to the console as a JSON string.
 
   Options
-    --attributes, -a Specify attributes to analyze. The provided value
-                     will be parsed as an array, split on commas.
+    --attributes, -a  Specify attributes to analyze. The provided value
+                      will be parsed as an array, split on commas.
+    --maxTiles, -m    The maximum number of tiles to generate statistics from
+                      an mbtiles file. Default to all tiles. Provided value will be parsed
+                      as an integer.
 
   Example
     mapbox-geostats cities.geojson --attributes name,pop > output.json
+    mapbox-geostats cities.mbtiles --maxTiles 100000 > output.json
   `;
 
 const cli = meow(help, {
   alias: {
     a: 'attributes',
+    m: 'maxTiles'
   },
 });
 
@@ -31,6 +36,10 @@ const options = {};
 
 if (cli.flags.attributes) {
   options.attributes = cli.flags.attributes.split(',');
+}
+
+if (cli.flags.maxTiles) {
+  options.maxTiles = +cli.flags.maxTiles;
 }
 
 if (!input) {

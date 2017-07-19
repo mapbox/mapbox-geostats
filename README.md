@@ -59,21 +59,25 @@ Usage
   Output is logged to the console as a JSON string.
 
 Options
-  --attributes, -a Specify attributes to analyze. The provided value
-                   will be parsed as an array, split on commas.
+  --attributes, -a  Specify attributes to analyze. The provided value
+                    will be parsed as an array, split on commas.
+  --maxTiles, -m    The maximum number of tiles to generate statistics from
+                    an mbtiles file. Default to all tiles. Provided value will be parsed
+                    as an integer.
 
 Example
   mapbox-geostats population-centers.geojson --attributes name,pop > output.json
+  mapbox-geostats cities.mbtiles --maxTiles 100000 > output.json
 ```
 
 ## Node
 
 ```js
-var geostats = require('@mapbox/mapbox-geostats');
+const geostats = require('@mapbox/mapbox-geostats');
 
-geostats(filePath, options).then(function (stats) {
+geostats(filePath, options).then(stats => {
   // Do something with the stats
-}).catch(function (err) {
+}).catch(err => {
   // Do something with the error
 });
 ```
@@ -89,6 +93,7 @@ Returns a Promise that resolves with a stats object, whose structure is describe
 `options` (*optional*) is an optional object that can have the following properties:
 
 - `attributes`: An array of strings identifying attributes that you want analyzed and reported. By default, all attributes are analyzed and reported until we reach the limitations described above.
+- `maxTiles`: An integer setting the maximum number of tiles to count when generating stats from an MBTiles file (does not affect any other formats) - helpful for very large MBTiles files where stats generation takes a long time. Default is to analyze _every_ tile.
 
 ## Output: the stats
 
