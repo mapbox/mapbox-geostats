@@ -427,7 +427,7 @@ test('[validator] valid stats object', t => {
       {
         layer: 'test-layer',
         count: 3,
-        geometry: 'point',
+        geometry: 'Point',
         attributeCount: 1,
         attributes: [
           {
@@ -453,6 +453,7 @@ test('[validator] invalid stats object - no layers', t => {
   };
 
   const results = validator(stats);
+  t.equal(results.length, 1, 'only one error');
   t.equal(results[0], 'requires property "layers"', 'expected error message');
   t.end();
 });
@@ -463,7 +464,7 @@ test('[validator] invalid layer object - no layer name', t => {
     layers: [
       {
         count: 3,
-        geometry: 'point',
+        geometry: 'Point',
         attributeCount: 1,
         attributes: [
           {
@@ -480,6 +481,7 @@ test('[validator] invalid layer object - no layer name', t => {
   };
 
   const results = validator(stats);
+  t.equal(results.length, 1, 'only one error');
   t.equal(results[0], 'requires property "layer"', 'expected error message');
   t.end();
 });
@@ -489,7 +491,7 @@ test('[validator] invalid layer object - no layer name', t => {
     layerCount: 'wrong type',
     layers: [
       {
-        geometry: 'point',
+        geometry: 'Point',
         attributes: [
           {
             attribute: 'test-attribute',
@@ -502,14 +504,16 @@ test('[validator] invalid layer object - no layer name', t => {
     ],
   };
 
-  const results = validator(stats);
-  t.deepEqual(results, [
+  const expected = sloppySort([
     'is not of a type(s) number',
     'requires property "count"',
     'requires property "values"',
     'requires property "layer"',
     'requires property "count"',
     'requires property "attributeCount"',
-  ], 'expect lots of errors');
+  ]);
+
+  const results = validator(stats);
+  t.deepEqual(sloppySort(results), expected, 'expect lots of errors');
   t.end();
 });

@@ -17,12 +17,9 @@ const help = `
   `;
 
 const cli = meow(help);
-const file = process.argv[2];
+const file = cli.input[0];
 
-if (!file) {
-  console.log(help);
-  process.exit(1);
-}
+if (!file) cli.showHelp();
 
 let stats;
 try {
@@ -40,5 +37,3 @@ if (results.length) {
 } else {
   console.log('✔ Valid');
 }
-
-process.exit(0);

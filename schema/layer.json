@@ -4,7 +4,10 @@
   "properties": {
     "layer": { "type": "string" },
     "count": { "type": "number" },
-    "geometry": { "type": "string" },
+    "geometry": {
+      "type": "string",
+      "enum": [ "Point", "Line", "Polygon" ]
+    },
     "attributeCount": { "type": "number" },
     "attributes": {
       "type": "array",
