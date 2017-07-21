@@ -29,7 +29,7 @@ function buildGeoStats(filePath, options) {
       if (fileType === Constants.FILETYPE_MBTILES) return tileAnalyze(filePath, options);
       return mapnikAnalyze(filePath, fileType, options);
     })
-    .then(function (stats) {
+    .then(function(stats) {
       return reportStats(stats, options);
     });
 }

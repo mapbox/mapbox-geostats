@@ -410,6 +410,16 @@ test('MBTiles with two layers', t => {
   }).catch(t.threw);
 });
 
+test('MBTiles with tilestats metadata table returns as expected', t => {
+  Promise.all([
+    geostats(fixturePath('src/tilestats-metadata.mbtiles')),
+    getExpected('tilestats-metadata'),
+  ]).then((output) => {
+    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.end();
+  }).catch(t.threw);
+});
+
 test('[validator] valid stats object', t => {
   const stats = {
     layerCount: 1,
