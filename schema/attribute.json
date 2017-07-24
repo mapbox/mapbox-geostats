@@ -9,8 +9,12 @@
       "enum": ["string", "number", "boolean", "null", "mixed"]
     },
     "values": {
-      "type": "array",
-      "items": { "type": ["number", "boolean", "string", "null"] }
+      "anyOf": [
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "array", "items": { "type": "number" } },
+        { "type": "array", "items": { "type": "boolean" } },
+        { "type": "array", "items": { "type": "null" } }
+      ]
     },
     "min": { "type": "number" },
     "max": { "type": "number" }

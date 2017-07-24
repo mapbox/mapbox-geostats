@@ -23,7 +23,10 @@ if (!file) cli.showHelp();
 
 let stats;
 try {
-  stats = JSON.parse(fs.readFileSync(file));
+  var raw = fs.readFileSync(file);
+  console.log(raw);
+  stats = JSON.parse(raw);
+  // stats = JSON.parse(fs.readFileSync(file));
 } catch(err) {
   console.log('Unable to read file');
   console.error(err);
