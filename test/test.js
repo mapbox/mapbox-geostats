@@ -412,8 +412,8 @@ test('MBTiles with two layers', t => {
 
 test('MBTiles with tilestats metadata table returns as expected', t => {
   Promise.all([
-    geostats(fixturePath('src/tilestats-metadata.mbtiles')),
-    getExpected('tilestats-metadata'),
+    geostats(fixturePath('src/tilestats.mbtiles')),
+    getExpected('tilestats'),
   ]).then((output) => {
     t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
