@@ -1,0 +1,23 @@
+{
+  "id": "/attribute",
+  "type": "object",
+  "properties": {
+    "attribute": { "type": "string" },
+    "count": { "type": "number" },
+    "type": {
+      "type": "string",
+      "enum": ["string", "number", "boolean", "null", "mixed"]
+    },
+    "values": {
+      "anyOf": [
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "array", "items": { "type": "number" } },
+        { "type": "array", "items": { "type": "boolean" } },
+        { "type": "array", "items": { "type": "null" } }
+      ]
+    },
+    "min": { "type": "number" },
+    "max": { "type": "number" }
+  },
+  "required": [ "attribute", "count", "type", "values" ]
+}

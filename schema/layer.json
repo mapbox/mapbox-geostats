@@ -1,0 +1,18 @@
+{
+  "id": "/layer",
+  "type": "object",
+  "properties": {
+    "layer": { "type": "string" },
+    "count": { "type": "number" },
+    "geometry": {
+      "type": "string",
+      "enum": [ "Point", "LineString", "Polygon" ]
+    },
+    "attributeCount": { "type": "number" },
+    "attributes": {
+      "type": "array",
+      "items": { "$ref": "/attribute" }
+    }
+  },
+  "required": [ "layer", "count", "geometry", "attributeCount" ]
+}

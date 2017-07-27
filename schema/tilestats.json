@@ -1,0 +1,12 @@
+{
+  "id": "/tilestats",
+  "type": "object",
+  "properties": {
+    "layerCount": { "type": "number" },
+    "layers": {
+      "type": "array",
+      "items": { "$ref": "/layer" }
+    }
+  },
+  "required": [ "layerCount", "layers" ]
+}
