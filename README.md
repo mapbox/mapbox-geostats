@@ -48,8 +48,7 @@ So if you've specified a limited number of attributes to inspect, the number of 
 
 ## CLI
 
-This is what you get from `mapbox-geostats --help`:
-
+`mapbox-geostats` generate a tilestats JSON object
 ```
 Generate statistics about geographic data.
 
@@ -64,6 +63,17 @@ Options
 
 Example
   mapbox-geostats population-centers.geojson --attributes name,pop > output.json
+```
+
+`mapbox-geostats-validate`: validate a tilestats JSON object
+```
+Usage
+  mapbox-geostats-validate <file>
+
+  Output is empty if valid, or a list of errors.
+
+Example
+  mapbox-geostats-validate ./path/to/stats.json
 ```
 
 ## Node
@@ -92,40 +102,42 @@ Returns a Promise that resolves with a stats object, whose structure is describe
 
 ## Output: the stats
 
+The tilestats jsonschema is specified in the /schema directory under schema/tilestats.json
+
 The stats output has this structure:
 
 ```js
 {  
   // The number of layers in the source data (max. 1000)
-  layerCount: Number,
+  "layerCount": Number,
   // An array of details about the first 100 layers
-  layers: [
+  "layers": [
     {
       // The name of this layer
-      layer: String,
+      "layer": String,
       // The number of features in this layer
-      count: Number,
+      "count": Number,
       // The dominant geometry type in this layer
-      geometry: String,
+      "geometry": String,
       // The number of unique attributes in this layer (max. 1000)
-      attributeCount: Number
+      "attributeCount": Number
       // An array of details about the first 100 attributes in this layer
-      attributes: [
+      "attributes": [
         {
           // The name of this attribute
-          attribute: String,
+          "attribute": String,
           // The number of unique values for this attribute (max. 1000)
-          count: Number,
+          "count": Number,
           // The type of this attribute's values
-          type: String, // More info below ...
+          "type": String, // More info below ...
           // An array of this attribute's first 100 unique values
-          values: [
+          "values": [
             // ...
           ],
           // If there are *any* numbers in the values, the following
           // numeric stats will be reported
-          min: Number,
-          max: Number
+          "min": Number,
+          "max": Number
         }
         // ...
       ]
@@ -156,3 +168,4 @@ Array and object values are coerced to strings.
 - GeoJSON without any features causes a parsing error. (cf. https://github.com/mapnik/mapnik/issues/3463)
 - MBTiles files whose vector data is not gzipped will not be understood. (cf. https://github.com/mapbox/tiletype/issues/4)
 - Because layer and attribute names are truncated at 256 characters (see above), if two attribute or layer names only vary after their 256th character, they will be considered the same --- that is, their data will be merged.
+- if an MBTiles file has a `tilestats` object in the `json` row of the `metadata` table that will be used instead of generating stats from the raw tiles.
