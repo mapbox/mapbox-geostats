@@ -1,3 +1,7 @@
+# 0.5.1
+
+- Fix issue where tile-analyze Promise was not finishing execution on resolve [#34](https://github.com/mapbox/mapbox-geostats/issues/34)
+
 # 0.5.0
 
 - Adds a tilestats schema [#33](https://github.com/mapbox/mapbox-geostats/pull/33)
