@@ -1,3 +1,7 @@
+# 0.6.0
+
+- Upgrade to mapnik 3.7.0
+
 # 0.5.1
 
 - Fix issue where tile-analyze Promise was not finishing execution on resolve [#34](https://github.com/mapbox/mapbox-geostats/issues/34)
