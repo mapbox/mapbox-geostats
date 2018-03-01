@@ -1,0 +1,21 @@
+{
+  "layerCount": 1,
+  "layers": [
+    {
+      "layer": "geometry-invalid-types",
+      "count": 1,
+      "attributeCount": 1,
+      "attributes": [
+        {
+          "values": [
+            "bar"
+          ],
+          "count": 1,
+          "attribute": "foo",
+          "type": "string"
+        }
+      ],
+      "geometry": "Point"
+    }
+  ]
+}
