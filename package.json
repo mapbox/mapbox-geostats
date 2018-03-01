@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/mapbox-geostats",
-  "version": "0.5.1",
+  "version": "1.0.0",
   "description": "Generate statistics about geographic data.",
   "main": "index.js",
   "bin": {
@@ -30,7 +30,7 @@
     "@mapbox/vector-tile": "^1.2.1",
     "jsonschema": "^1.1.1",
     "lodash": "^4.13.1",
-    "mapnik": "~3.6.0",
+    "mapnik": "~3.7.0",
     "meow": "^3.7.0",
     "pbf": "^2.0.1"
   },

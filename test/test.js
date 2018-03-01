@@ -221,12 +221,15 @@ test('invalid GeoJSON', t => {
   });
 });
 
-test('GeoJSON fails with invalid geometry type', t => {
-  geostats(fixturePath('src/geometry-invalid-types.geojson')).then((output) => {
-    t.fail(output);
-  }).catch(err => {
-    t.ok(err, 'errored');
+test('GeoJSON skips invalid geometry types', t => {
+  Promise.all([
+    geostats(fixturePath('src/geometry-invalid-types.geojson')),
+    getExpected('geojson-invalid-geometry-types'),
+  ]).then((output) => {
+    t.deepEqual(output[0], output[1], 'expected geostats');
     t.end();
+  }).catch((err) => {
+    t.fail(err);
   });
 });
 
