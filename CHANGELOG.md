@@ -1,6 +1,7 @@
-# 0.6.0
+# 1.0.0
 
 - Upgrade to mapnik 3.7.0
+- Drops windows support
 
 # 0.5.1
 
