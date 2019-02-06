@@ -6,3 +6,8 @@ node_js:
   - "lts/argon"
   - "lts/boron"
   - "lts/carbon"
+
+addons:
+  apt:
+    packages:
+     - libstdc++6 # upgrade libstdc++ on linux to support C++11
