@@ -9,5 +9,7 @@ node_js:
 
 addons:
   apt:
+    sources:
+     - ubuntu-toolchain-r-test
     packages:
      - libstdc++6 # upgrade libstdc++ on linux to support C++11
