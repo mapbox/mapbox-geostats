@@ -1,0 +1,15 @@
+language: node_js
+
+sudo: false
+
+node_js:
+  - "lts/argon"
+  - "lts/boron"
+  - "lts/carbon"
+
+addons:
+  apt:
+    sources:
+     - ubuntu-toolchain-r-test
+    packages:
+     - libstdc++6 # upgrade libstdc++ on linux to support C++11
