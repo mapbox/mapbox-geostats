@@ -23,11 +23,11 @@ if (!file) cli.showHelp();
 
 let stats;
 try {
-  var raw = fs.readFileSync(file);
+  const raw = fs.readFileSync(file);
   console.log(raw);
   stats = JSON.parse(raw);
   // stats = JSON.parse(fs.readFileSync(file));
-} catch(err) {
+} catch (err) {
   console.log('Unable to read file');
   console.error(err);
   console.log(help);
@@ -36,7 +36,9 @@ try {
 const results = validate(stats);
 if (results.length) {
   console.log('✘ Invalid');
-  results.forEach(function(s) { console.log(`- ${s}`) });
+  results.forEach(function(s) {
+ console.log(`- ${s}`);
+});
 } else {
   console.log('✔ Valid');
 }
