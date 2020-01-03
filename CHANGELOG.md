@@ -1,4 +1,8 @@
-# 1.1.0
+# 1.1.1
+
+- Republish of 1.1.0 without accidental large log file, bloating package size
+
+# 1.1.0 (deprecated)
 
 - Upgrade to mapnik 4.3.1
 - Test on node 8 + 10
