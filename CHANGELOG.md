@@ -1,3 +1,8 @@
+# 1.1.0
+
+- Upgrade to mapnik 4.3.1
+- Test on node 8 + 10
+
 # 1.0.0
 
 - Upgrade to mapnik 3.7.0
