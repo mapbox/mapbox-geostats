@@ -7,7 +7,10 @@ Generate statistics about geographic data.
 ## Installation
 
 ```
-npm install @mapbox/mapbox-geostats
+git clone https://github.com/maptiler/mapbox-geostats.git
+cd mapbox-geostats
+npm i
+./bin/mapbox-geostats <input> <options>
 ```
 
 ## About
