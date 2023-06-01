@@ -1,3 +1,8 @@
+# 1.1.2
+
+- Upgrade to node 16+
+
+
 # 1.1.1
 
 - Republish of 1.1.0 without accidental large log file, bloating package size
