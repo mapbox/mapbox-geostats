@@ -14,20 +14,41 @@ const help = `
   Options
     --attributes, -a Specify attributes to analyze. The provided value
                      will be parsed as an array, split on commas.
+    --force-all-attributes, -f Include values of these attributes: id,
+                               name, name1, name2, name_en, name_de,
+                               originalid, adm0_l, amd0_r, disputed_name,
+                               ref, fid, uuid.
+    --tile-stats-values-limit Limit the number of unique attribute values to
+                              report. Default: 50. If exceeded, show min and
+                              max instead.
 
   Example
     mapbox-geostats cities.geojson --attributes name,pop > output.json
   `;
 
 const cli = meow(help, {
-  alias: {
-    a: 'attributes',
+  flags: {
+    attributes: {
+      type: 'string',
+      alias: 'a',
+    },
+    forceAllAttributes: {
+      type: 'boolean',
+      alias: 'f',
+    },
+    tileStatsValuesLimit: {
+      type: 'number',
+      default: 50,
+    },
   },
 });
 
 const input = cli.input[0];
 
-const options = {};
+const options = {
+  forceAllAttributes: cli.flags.forceAllAttributes,
+  maxValuesToReport: cli.flags.tileStatsValuesLimit,
+};
 
 if (cli.flags.attributes) {
   options.attributes = cli.flags.attributes.split(',');

@@ -32,9 +32,7 @@ You'll notice the following limitations in the output:
 
 - No more than 1000 layers are counted, and no more than 100 are reported in detail.
 - For any given layer, no more than 1000 unique attributes are counted, and no more than 100 are reported in detail.
-- For any given attribute, no more than 1000 unique values are counted, and no more than 100 are reported. All values will affect the numeric stats (e.g. `min` and `max`), even if they are not reported or counted.
-- Attribute values that are strings longer than 256 characters are counted but not reported.
-- Layer names and attribute names that are strings longer than 256 characters are truncated to a length of 256. (This means that if two attribute names only vary after their 256th character, they will be considered the same. Same for layers.)
+- Layer names, attribute names and attribute values that are strings longer than 256 characters are truncated to a length of 256. (This means that if two attribute names only vary after their 256th character, they will be considered the same. Same for layers.)
 
 #### Avoid limitations by specifying attributes
 

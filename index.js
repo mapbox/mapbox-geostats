@@ -16,14 +16,6 @@ function buildGeoStats(filePath, options) {
     options.attributes = new Set(options.attributes);
   }
 
-  // The number of unique values we'll count and record depends on
-  // the number of attributes we might record
-  var divisor = (options.attributes)
-    ? Math.min(options.attributes.size, Constants.ATTRIBUTES_MAX_REPORT)
-    : Constants.ATTRIBUTES_MAX_REPORT;
-  options.maxValuesToCount = Math.floor(Constants.VALUES_MAX_COUNT / divisor);
-  options.maxValuesToReport = Math.floor(Constants.VALUES_MAX_REPORT / divisor);
-
   return getFileType(filePath)
     .then(function (fileType) {
       if (fileType === Constants.FILETYPE_MBTILES) return tileAnalyze(filePath, options);
