@@ -1,3 +1,7 @@
+# DEVEL
+
+- Ignore/limit attribute values [#1](https://github.com/maptiler/mapbox-geostats/pull/1)
+
 # 1.1.2
 
 - Upgrade to node 16+

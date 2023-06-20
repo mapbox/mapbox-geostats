@@ -1,6 +1,6 @@
 'use strict';
 
-const _ = require('lodash');
+const isPlainObject = require('lodash.isplainobject');
 
 // The purpose of the sloppy sort is only to ensure some
 // deterministic order in this module's JSON output.
@@ -10,8 +10,8 @@ const _ = require('lodash');
 // have the same items.
 
 function sloppySortComparator(first, second) {
-  const isFirstObject = _.isPlainObject(first);
-  const isSecondObject = _.isPlainObject(second);
+  const isFirstObject = isPlainObject(first);
+  const isSecondObject = isPlainObject(second);
   if (!isFirstObject && isSecondObject) return -1;
   if (isFirstObject && !isSecondObject) return 1;
   if (isFirstObject && isSecondObject) {
@@ -20,8 +20,8 @@ function sloppySortComparator(first, second) {
     return 0;
   }
 
-  const isFirstNumber = _.isNumber(first);
-  const isSecondNumber = _.isNumber(second);
+  const isFirstNumber = typeof first == 'number';
+  const isSecondNumber = typeof second == 'number';
   if (!isFirstNumber && isSecondNumber) return -1;
   if (isFirstNumber && !isSecondNumber) return 1;
   if (isFirstNumber && isSecondNumber) {
@@ -30,8 +30,8 @@ function sloppySortComparator(first, second) {
     return 0;
   }
 
-  const isFirstNull = _.isNull(first);
-  const isSecondNull = _.isNull(second);
+  const isFirstNull = first === null;
+  const isSecondNull = second === null;
   if (!isFirstNull && isSecondNull) return -1;
   if (isFirstNull && !isSecondNull) return 1;
   if (isFirstNull && isSecondNull) return 0;
@@ -46,12 +46,16 @@ function sloppySortArray(arr) {
 }
 
 function sloppySortObject(obj) {
-  return _.mapValues(obj, sloppySort);
+  const sortedObj = {};
+  for (const key in obj) {
+    sortedObj[key] = sloppySort(obj[key], sloppySort);
+  }
+  return sortedObj;
 }
 
 function sloppySort(item) {
-  if (_.isPlainObject(item)) return sloppySortObject(item);
-  if (_.isArray(item)) return sloppySortArray(item);
+  if (isPlainObject(item)) return sloppySortObject(item);
+  if (Array.isArray(item)) return sloppySortArray(item);
   return item;
 }
 

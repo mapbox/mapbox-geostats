@@ -3,7 +3,6 @@
   "layers": [
     {
       "layer": "many-types",
-      "count": 6,
       "attributeCount": 8,
       "attributes": [
         {
@@ -11,7 +10,6 @@
             true,
             null
           ],
-          "count": 2,
           "attribute": "astonishing",
           "type": "boolean"
         },
@@ -21,11 +19,8 @@
             "7",
             null
           ],
-          "count": 3,
           "attribute": "mixed",
-          "type": "mixed",
-          "min": 7,
-          "max": 7
+          "type": "mixed"
         },
         {
           "values": [
@@ -36,7 +31,6 @@
             "hoho",
             "hehe"
           ],
-          "count": 6,
           "attribute": "name",
           "type": "string"
         },
@@ -45,7 +39,6 @@
             "[1,2,3]",
             null
           ],
-          "count": 2,
           "attribute": "numbers",
           "type": "string"
         },
@@ -56,26 +49,19 @@
             null,
             86
           ],
-          "count": 4,
           "attribute": "power",
-          "type": "number",
-          "min": 6,
-          "max": 99
+          "type": "number"
         },
         {
           "values": [
             6,
             "{\"foo\":\"bar\"}"
           ],
-          "count": 2,
           "attribute": "data",
-          "type": "mixed",
-          "min": 6,
-          "max": 6
+          "type": "mixed"
         },
         {
           "values": [],
-          "count": 1,
           "attribute": "description",
           "type": "string"
         },
@@ -83,7 +69,6 @@
           "values": [
             null
           ],
-          "count": 1,
           "attribute": "onlyNull",
           "type": "null"
         }

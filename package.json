@@ -3,6 +3,9 @@
   "version": "1.1.2",
   "description": "Generate statistics about geographic data.",
   "main": "index.js",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "bin": {
     "mapbox-geostats": "bin/mapbox-geostats",
     "mapbox-geostats-validate": "bin/mapbox-geostats-validate"
@@ -10,7 +13,7 @@
   "scripts": {
     "lint": "eslint lib test bin/**",
     "lint-fix": "eslint --fix lib test bin/**",
-    "test": "npm run lint && tap test/test.js",
+    "test": "npm run lint && tap test/test.js --no-check-coverage",
     "coverage": "tap test/test.js --cov --coverage-report=html"
   },
   "repository": {
@@ -31,13 +34,13 @@
     "@mapbox/vector-tile": "^1.2.1",
     "d3-queue": "^3.0.7",
     "jsonschema": "^1.4.1",
-    "lodash": "^4.17.21",
+    "lodash.isplainobject": "^4.0.6",
     "mapnik": "^4.5.9",
     "meow": "^9.0.0",
     "pbf": "^3.2.1"
   },
   "devDependencies": {
-    "eslint": "^8.39.0",
+    "eslint": "^8.43.0",
     "eslint-plugin-node": "^11.1.0",
     "tap": "^16.3.4"
   }

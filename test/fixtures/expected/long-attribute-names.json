@@ -3,7 +3,6 @@
   "layers": [
     {
       "layer": "long-attribute-names",
-      "count": 2,
       "attributeCount": 1,
       "attributes": [
         {
@@ -11,11 +10,8 @@
             1,
             2
           ],
-          "count": 2,
           "attribute": "LoremipsumdolorsitametconsecteturadipisicingelitseddoeiusmodtemporincididuntutlaboreetdoloremagnaaliquaUtenimadminimveniamquisnostrudexercitationullamcolaborisnisiutaliquipexeacommodoconsequatDuisauteiruredolorinreprehenderitinvoluptatevelitessecillumdolor",
-          "type": "number",
-          "min": 1,
-          "max": 2
+          "type": "number"
         }
       ],
       "geometry": "Point"

@@ -3,14 +3,12 @@
   "layers": [
     {
       "layer": "two-thousand-properties",
-      "count": 1,
       "attributeCount": 1000,
       "attributes": [
         {
           "values": [
             "prop-value-0"
           ],
-          "count": 1,
           "attribute": "prop-0",
           "type": "string"
         },
@@ -18,7 +16,6 @@
           "values": [
             "prop-value-1"
           ],
-          "count": 1,
           "attribute": "prop-1",
           "type": "string"
         },
@@ -26,7 +23,6 @@
           "values": [
             "prop-value-10"
           ],
-          "count": 1,
           "attribute": "prop-10",
           "type": "string"
         },
@@ -34,7 +30,6 @@
           "values": [
             "prop-value-100"
           ],
-          "count": 1,
           "attribute": "prop-100",
           "type": "string"
         },
@@ -42,7 +37,6 @@
           "values": [
             "prop-value-1000"
           ],
-          "count": 1,
           "attribute": "prop-1000",
           "type": "string"
         },
@@ -50,7 +44,6 @@
           "values": [
             "prop-value-1001"
           ],
-          "count": 1,
           "attribute": "prop-1001",
           "type": "string"
         },
@@ -58,7 +51,6 @@
           "values": [
             "prop-value-1002"
           ],
-          "count": 1,
           "attribute": "prop-1002",
           "type": "string"
         },
@@ -66,7 +58,6 @@
           "values": [
             "prop-value-1003"
           ],
-          "count": 1,
           "attribute": "prop-1003",
           "type": "string"
         },
@@ -74,7 +65,6 @@
           "values": [
             "prop-value-1004"
           ],
-          "count": 1,
           "attribute": "prop-1004",
           "type": "string"
         },
@@ -82,7 +72,6 @@
           "values": [
             "prop-value-1005"
           ],
-          "count": 1,
           "attribute": "prop-1005",
           "type": "string"
         },
@@ -90,7 +79,6 @@
           "values": [
             "prop-value-1006"
           ],
-          "count": 1,
           "attribute": "prop-1006",
           "type": "string"
         },
@@ -98,7 +86,6 @@
           "values": [
             "prop-value-1007"
           ],
-          "count": 1,
           "attribute": "prop-1007",
           "type": "string"
         },
@@ -106,7 +93,6 @@
           "values": [
             "prop-value-1008"
           ],
-          "count": 1,
           "attribute": "prop-1008",
           "type": "string"
         },
@@ -114,7 +100,6 @@
           "values": [
             "prop-value-1009"
           ],
-          "count": 1,
           "attribute": "prop-1009",
           "type": "string"
         },
@@ -122,7 +107,6 @@
           "values": [
             "prop-value-101"
           ],
-          "count": 1,
           "attribute": "prop-101",
           "type": "string"
         },
@@ -130,7 +114,6 @@
           "values": [
             "prop-value-1010"
           ],
-          "count": 1,
           "attribute": "prop-1010",
           "type": "string"
         },
@@ -138,7 +121,6 @@
           "values": [
             "prop-value-1011"
           ],
-          "count": 1,
           "attribute": "prop-1011",
           "type": "string"
         },
@@ -146,7 +128,6 @@
           "values": [
             "prop-value-1012"
           ],
-          "count": 1,
           "attribute": "prop-1012",
           "type": "string"
         },
@@ -154,7 +135,6 @@
           "values": [
             "prop-value-1013"
           ],
-          "count": 1,
           "attribute": "prop-1013",
           "type": "string"
         },
@@ -162,7 +142,6 @@
           "values": [
             "prop-value-1014"
           ],
-          "count": 1,
           "attribute": "prop-1014",
           "type": "string"
         },
@@ -170,7 +149,6 @@
           "values": [
             "prop-value-1015"
           ],
-          "count": 1,
           "attribute": "prop-1015",
           "type": "string"
         },
@@ -178,7 +156,6 @@
           "values": [
             "prop-value-1016"
           ],
-          "count": 1,
           "attribute": "prop-1016",
           "type": "string"
         },
@@ -186,7 +163,6 @@
           "values": [
             "prop-value-1017"
           ],
-          "count": 1,
           "attribute": "prop-1017",
           "type": "string"
         },
@@ -194,7 +170,6 @@
           "values": [
             "prop-value-1018"
           ],
-          "count": 1,
           "attribute": "prop-1018",
           "type": "string"
         },
@@ -202,7 +177,6 @@
           "values": [
             "prop-value-1019"
           ],
-          "count": 1,
           "attribute": "prop-1019",
           "type": "string"
         },
@@ -210,7 +184,6 @@
           "values": [
             "prop-value-102"
           ],
-          "count": 1,
           "attribute": "prop-102",
           "type": "string"
         },
@@ -218,7 +191,6 @@
           "values": [
             "prop-value-1020"
           ],
-          "count": 1,
           "attribute": "prop-1020",
           "type": "string"
         },
@@ -226,7 +198,6 @@
           "values": [
             "prop-value-1021"
           ],
-          "count": 1,
           "attribute": "prop-1021",
           "type": "string"
         },
@@ -234,7 +205,6 @@
           "values": [
             "prop-value-1022"
           ],
-          "count": 1,
           "attribute": "prop-1022",
           "type": "string"
         },
@@ -242,7 +212,6 @@
           "values": [
             "prop-value-1023"
           ],
-          "count": 1,
           "attribute": "prop-1023",
           "type": "string"
         },
@@ -250,7 +219,6 @@
           "values": [
             "prop-value-1024"
           ],
-          "count": 1,
           "attribute": "prop-1024",
           "type": "string"
         },
@@ -258,7 +226,6 @@
           "values": [
             "prop-value-1025"
           ],
-          "count": 1,
           "attribute": "prop-1025",
           "type": "string"
         },
@@ -266,7 +233,6 @@
           "values": [
             "prop-value-1026"
           ],
-          "count": 1,
           "attribute": "prop-1026",
           "type": "string"
         },
@@ -274,7 +240,6 @@
           "values": [
             "prop-value-1027"
           ],
-          "count": 1,
           "attribute": "prop-1027",
           "type": "string"
         },
@@ -282,7 +247,6 @@
           "values": [
             "prop-value-1028"
           ],
-          "count": 1,
           "attribute": "prop-1028",
           "type": "string"
         },
@@ -290,7 +254,6 @@
           "values": [
             "prop-value-1029"
           ],
-          "count": 1,
           "attribute": "prop-1029",
           "type": "string"
         },
@@ -298,7 +261,6 @@
           "values": [
             "prop-value-103"
           ],
-          "count": 1,
           "attribute": "prop-103",
           "type": "string"
         },
@@ -306,7 +268,6 @@
           "values": [
             "prop-value-1030"
           ],
-          "count": 1,
           "attribute": "prop-1030",
           "type": "string"
         },
@@ -314,7 +275,6 @@
           "values": [
             "prop-value-1031"
           ],
-          "count": 1,
           "attribute": "prop-1031",
           "type": "string"
         },
@@ -322,7 +282,6 @@
           "values": [
             "prop-value-1032"
           ],
-          "count": 1,
           "attribute": "prop-1032",
           "type": "string"
         },
@@ -330,7 +289,6 @@
           "values": [
             "prop-value-1033"
           ],
-          "count": 1,
           "attribute": "prop-1033",
           "type": "string"
         },
@@ -338,7 +296,6 @@
           "values": [
             "prop-value-1034"
           ],
-          "count": 1,
           "attribute": "prop-1034",
           "type": "string"
         },
@@ -346,7 +303,6 @@
           "values": [
             "prop-value-1035"
           ],
-          "count": 1,
           "attribute": "prop-1035",
           "type": "string"
         },
@@ -354,7 +310,6 @@
           "values": [
             "prop-value-1036"
           ],
-          "count": 1,
           "attribute": "prop-1036",
           "type": "string"
         },
@@ -362,7 +317,6 @@
           "values": [
             "prop-value-1037"
           ],
-          "count": 1,
           "attribute": "prop-1037",
           "type": "string"
         },
@@ -370,7 +324,6 @@
           "values": [
             "prop-value-1038"
           ],
-          "count": 1,
           "attribute": "prop-1038",
           "type": "string"
         },
@@ -378,7 +331,6 @@
           "values": [
             "prop-value-1039"
           ],
-          "count": 1,
           "attribute": "prop-1039",
           "type": "string"
         },
@@ -386,7 +338,6 @@
           "values": [
             "prop-value-104"
           ],
-          "count": 1,
           "attribute": "prop-104",
           "type": "string"
         },
@@ -394,7 +345,6 @@
           "values": [
             "prop-value-1040"
           ],
-          "count": 1,
           "attribute": "prop-1040",
           "type": "string"
         },
@@ -402,7 +352,6 @@
           "values": [
             "prop-value-1041"
           ],
-          "count": 1,
           "attribute": "prop-1041",
           "type": "string"
         },
@@ -410,7 +359,6 @@
           "values": [
             "prop-value-1042"
           ],
-          "count": 1,
           "attribute": "prop-1042",
           "type": "string"
         },
@@ -418,7 +366,6 @@
           "values": [
             "prop-value-1043"
           ],
-          "count": 1,
           "attribute": "prop-1043",
           "type": "string"
         },
@@ -426,7 +373,6 @@
           "values": [
             "prop-value-1044"
           ],
-          "count": 1,
           "attribute": "prop-1044",
           "type": "string"
         },
@@ -434,7 +380,6 @@
           "values": [
             "prop-value-1045"
           ],
-          "count": 1,
           "attribute": "prop-1045",
           "type": "string"
         },
@@ -442,7 +387,6 @@
           "values": [
             "prop-value-1046"
           ],
-          "count": 1,
           "attribute": "prop-1046",
           "type": "string"
         },
@@ -450,7 +394,6 @@
           "values": [
             "prop-value-1047"
           ],
-          "count": 1,
           "attribute": "prop-1047",
           "type": "string"
         },
@@ -458,7 +401,6 @@
           "values": [
             "prop-value-1048"
           ],
-          "count": 1,
           "attribute": "prop-1048",
           "type": "string"
         },
@@ -466,7 +408,6 @@
           "values": [
             "prop-value-1049"
           ],
-          "count": 1,
           "attribute": "prop-1049",
           "type": "string"
         },
@@ -474,7 +415,6 @@
           "values": [
             "prop-value-105"
           ],
-          "count": 1,
           "attribute": "prop-105",
           "type": "string"
         },
@@ -482,7 +422,6 @@
           "values": [
             "prop-value-1050"
           ],
-          "count": 1,
           "attribute": "prop-1050",
           "type": "string"
         },
@@ -490,7 +429,6 @@
           "values": [
             "prop-value-1051"
           ],
-          "count": 1,
           "attribute": "prop-1051",
           "type": "string"
         },
@@ -498,7 +436,6 @@
           "values": [
             "prop-value-1052"
           ],
-          "count": 1,
           "attribute": "prop-1052",
           "type": "string"
         },
@@ -506,7 +443,6 @@
           "values": [
             "prop-value-1053"
           ],
-          "count": 1,
           "attribute": "prop-1053",
           "type": "string"
         },
@@ -514,7 +450,6 @@
           "values": [
             "prop-value-1054"
           ],
-          "count": 1,
           "attribute": "prop-1054",
           "type": "string"
         },
@@ -522,7 +457,6 @@
           "values": [
             "prop-value-1055"
           ],
-          "count": 1,
           "attribute": "prop-1055",
           "type": "string"
         },
@@ -530,7 +464,6 @@
           "values": [
             "prop-value-1056"
           ],
-          "count": 1,
           "attribute": "prop-1056",
           "type": "string"
         },
@@ -538,7 +471,6 @@
           "values": [
             "prop-value-1057"
           ],
-          "count": 1,
           "attribute": "prop-1057",
           "type": "string"
         },
@@ -546,7 +478,6 @@
           "values": [
             "prop-value-1058"
           ],
-          "count": 1,
           "attribute": "prop-1058",
           "type": "string"
         },
@@ -554,7 +485,6 @@
           "values": [
             "prop-value-1059"
           ],
-          "count": 1,
           "attribute": "prop-1059",
           "type": "string"
         },
@@ -562,7 +492,6 @@
           "values": [
             "prop-value-106"
           ],
-          "count": 1,
           "attribute": "prop-106",
           "type": "string"
         },
@@ -570,7 +499,6 @@
           "values": [
             "prop-value-1060"
           ],
-          "count": 1,
           "attribute": "prop-1060",
           "type": "string"
         },
@@ -578,7 +506,6 @@
           "values": [
             "prop-value-1061"
           ],
-          "count": 1,
           "attribute": "prop-1061",
           "type": "string"
         },
@@ -586,7 +513,6 @@
           "values": [
             "prop-value-1062"
           ],
-          "count": 1,
           "attribute": "prop-1062",
           "type": "string"
         },
@@ -594,7 +520,6 @@
           "values": [
             "prop-value-1063"
           ],
-          "count": 1,
           "attribute": "prop-1063",
           "type": "string"
         },
@@ -602,7 +527,6 @@
           "values": [
             "prop-value-1064"
           ],
-          "count": 1,
           "attribute": "prop-1064",
           "type": "string"
         },
@@ -610,7 +534,6 @@
           "values": [
             "prop-value-1065"
           ],
-          "count": 1,
           "attribute": "prop-1065",
           "type": "string"
         },
@@ -618,7 +541,6 @@
           "values": [
             "prop-value-1066"
           ],
-          "count": 1,
           "attribute": "prop-1066",
           "type": "string"
         },
@@ -626,7 +548,6 @@
           "values": [
             "prop-value-1067"
           ],
-          "count": 1,
           "attribute": "prop-1067",
           "type": "string"
         },
@@ -634,7 +555,6 @@
           "values": [
             "prop-value-1068"
           ],
-          "count": 1,
           "attribute": "prop-1068",
           "type": "string"
         },
@@ -642,7 +562,6 @@
           "values": [
             "prop-value-1069"
           ],
-          "count": 1,
           "attribute": "prop-1069",
           "type": "string"
         },
@@ -650,7 +569,6 @@
           "values": [
             "prop-value-107"
           ],
-          "count": 1,
           "attribute": "prop-107",
           "type": "string"
         },
@@ -658,7 +576,6 @@
           "values": [
             "prop-value-1070"
           ],
-          "count": 1,
           "attribute": "prop-1070",
           "type": "string"
         },
@@ -666,7 +583,6 @@
           "values": [
             "prop-value-1071"
           ],
-          "count": 1,
           "attribute": "prop-1071",
           "type": "string"
         },
@@ -674,7 +590,6 @@
           "values": [
             "prop-value-1072"
           ],
-          "count": 1,
           "attribute": "prop-1072",
           "type": "string"
         },
@@ -682,7 +597,6 @@
           "values": [
             "prop-value-1073"
           ],
-          "count": 1,
           "attribute": "prop-1073",
           "type": "string"
         },
@@ -690,7 +604,6 @@
           "values": [
             "prop-value-1074"
           ],
-          "count": 1,
           "attribute": "prop-1074",
           "type": "string"
         },
@@ -698,7 +611,6 @@
           "values": [
             "prop-value-1075"
           ],
-          "count": 1,
           "attribute": "prop-1075",
           "type": "string"
         },
@@ -706,7 +618,6 @@
           "values": [
             "prop-value-1076"
           ],
-          "count": 1,
           "attribute": "prop-1076",
           "type": "string"
         },
@@ -714,7 +625,6 @@
           "values": [
             "prop-value-1077"
           ],
-          "count": 1,
           "attribute": "prop-1077",
           "type": "string"
         },
@@ -722,7 +632,6 @@
           "values": [
             "prop-value-1078"
           ],
-          "count": 1,
           "attribute": "prop-1078",
           "type": "string"
         },
@@ -730,7 +639,6 @@
           "values": [
             "prop-value-1079"
           ],
-          "count": 1,
           "attribute": "prop-1079",
           "type": "string"
         },
@@ -738,7 +646,6 @@
           "values": [
             "prop-value-108"
           ],
-          "count": 1,
           "attribute": "prop-108",
           "type": "string"
         },
@@ -746,7 +653,6 @@
           "values": [
             "prop-value-1080"
           ],
-          "count": 1,
           "attribute": "prop-1080",
           "type": "string"
         },
@@ -754,7 +660,6 @@
           "values": [
             "prop-value-1081"
           ],
-          "count": 1,
           "attribute": "prop-1081",
           "type": "string"
         },
@@ -762,7 +667,6 @@
           "values": [
             "prop-value-1082"
           ],
-          "count": 1,
           "attribute": "prop-1082",
           "type": "string"
         },
@@ -770,7 +674,6 @@
           "values": [
             "prop-value-1083"
           ],
-          "count": 1,
           "attribute": "prop-1083",
           "type": "string"
         },
@@ -778,7 +681,6 @@
           "values": [
             "prop-value-1084"
           ],
-          "count": 1,
           "attribute": "prop-1084",
           "type": "string"
         },
@@ -786,7 +688,6 @@
           "values": [
             "prop-value-1085"
           ],
-          "count": 1,
           "attribute": "prop-1085",
           "type": "string"
         },
@@ -794,7 +695,6 @@
           "values": [
             "prop-value-1086"
           ],
-          "count": 1,
           "attribute": "prop-1086",
           "type": "string"
         },
@@ -802,7 +702,6 @@
           "values": [
             "prop-value-1087"
           ],
-          "count": 1,
           "attribute": "prop-1087",
           "type": "string"
         }

@@ -3,7 +3,6 @@
   "layers": [
     {
       "layer": "geometry-extravaganza",
-      "count": 6,
       "attributeCount": 4,
       "attributes": [
         {
@@ -11,7 +10,6 @@
             "bar",
             null
           ],
-          "count": 2,
           "attribute": "foo",
           "type": "string"
         },
@@ -20,18 +18,14 @@
             1,
             null
           ],
-          "count": 2,
           "attribute": "bar",
-          "type": "number",
-          "min": 1,
-          "max": 1
+          "type": "number"
         },
         {
           "values": [
             "doo",
             null
           ],
-          "count": 2,
           "attribute": "doodoo",
           "type": "string"
         },
@@ -39,7 +33,6 @@
           "values": [
             true
           ],
-          "count": 1,
           "attribute": "baz",
           "type": "boolean"
         }

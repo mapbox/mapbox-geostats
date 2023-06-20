@@ -1,0 +1,17 @@
+{
+  "layerCount": 1,
+  "layers": [
+    {
+      "layer": "many-types",
+      "attributeCount": 1,
+      "attributes": [
+        {
+          "attribute": "name",
+          "type": "string",
+          "values": ["foo", "bar", "baz", "haha", "hoho", "hehe"]
+        }
+      ],
+      "geometry": "Point"
+    }
+  ]
+}

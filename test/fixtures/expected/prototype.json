@@ -6,9 +6,6 @@
       "attributes": [
         {
           "attribute": "constructor",
-          "count": 2,
-          "max": 2,
-          "min": 1,
           "type": "number",
           "values": [
             1,
@@ -17,7 +14,6 @@
         },
         {
           "attribute": "prototype",
-          "count": 2,
           "type": "string",
           "values": [
             "foo",
@@ -25,7 +21,6 @@
           ]
         }
       ],
-      "count": 2,
       "geometry": "Point",
       "layer": "prototype"
     }

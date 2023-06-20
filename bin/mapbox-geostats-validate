@@ -37,8 +37,8 @@ const results = validate(stats);
 if (results.length) {
   console.log('✘ Invalid');
   results.forEach(function(s) {
- console.log(`- ${s}`);
-});
+    console.log(`- ${s}`);
+  });
 } else {
   console.log('✔ Valid');
 }
