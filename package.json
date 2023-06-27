@@ -13,7 +13,7 @@
   "scripts": {
     "lint": "eslint lib test bin/**",
     "lint-fix": "eslint --fix lib test bin/**",
-    "test": "npm run lint && tap test/test.js --no-check-coverage",
+    "test": "npm run lint && tap test/*.js --no-check-coverage",
     "coverage": "tap test/test.js --cov --coverage-report=html"
   },
   "repository": {

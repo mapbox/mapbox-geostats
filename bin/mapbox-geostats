@@ -9,7 +9,8 @@ const help = `
   Usage
     mapbox-geostats <input> <options>
 
-    Output is logged to the console as a JSON string.
+    Output is logged to the console as a JSON string or written into mbtiles
+    when using --into-md option.
 
   Options
     --attributes, -a Specify attributes to analyze. The provided value
@@ -21,6 +22,8 @@ const help = `
     --tile-stats-values-limit Limit the number of unique attribute values to
                               report. Default: 50. If exceeded, show min and
                               max instead.
+    --into-md Insert generated tilestats into mbtiles metadata table. Fail
+              when tilestats already exist. Output is empty on success.
 
   Example
     mapbox-geostats cities.geojson --attributes name,pop > output.json
@@ -40,6 +43,9 @@ const cli = meow(help, {
       type: 'number',
       default: 50,
     },
+    intoMd: {
+      type: 'boolean',
+    },
   },
 });
 
@@ -48,6 +54,7 @@ const input = cli.input[0];
 const options = {
   forceAllAttributes: cli.flags.forceAllAttributes,
   maxValuesToReport: cli.flags.tileStatsValuesLimit,
+  intoMd: cli.flags.intoMd,
 };
 
 if (cli.flags.attributes) {
@@ -58,7 +65,9 @@ if (!input) {
   console.log(cli.help);
 } else {
   geostats(input, options).then((stats) => {
-    console.log(JSON.stringify(stats));
+    if (!options.intoMd) {
+      console.log(JSON.stringify(stats));
+    }
   }).catch((err) => {
     console.error(err.stack);
   });

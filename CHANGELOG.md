@@ -1,6 +1,9 @@
 # DEVEL
 
 - Ignore/limit attribute values [#1](https://github.com/maptiler/mapbox-geostats/pull/1)
+- `buildGeoStats` rejects promise instead of throwing an error [#3](https://github.com/maptiler/mapbox-geostats/pull/3)
+- Add an option to insert generated tilestats into mbtiles metadata [#3](https://github.com/maptiler/mapbox-geostats/pull/3)
+- Split geostats and validator tests [#3](https://github.com/maptiler/mapbox-geostats/pull/3)
 
 # 1.1.2
 

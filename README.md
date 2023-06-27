@@ -4,6 +4,8 @@ Generate statistics about geographic data.
 
 ## Installation
 
+Requires Node v16+.
+
 ```
 git clone https://github.com/maptiler/mapbox-geostats.git
 cd mapbox-geostats
@@ -54,11 +56,21 @@ Generate statistics about geographic data.
 Usage
   mapbox-geostats <input> <options>
 
-  Output is logged to the console as a JSON string.
+  Output is logged to the console as a JSON string or written into mbtiles
+  when using --into-md option.
 
 Options
   --attributes, -a Specify attributes to analyze. The provided value
                    will be parsed as an array, split on commas.
+  --force-all-attributes, -f Include values of these attributes: id,
+                             name, name1, name2, name_en, name_de,
+                             originalid, adm0_l, amd0_r, disputed_name,
+                             ref, fid, uuid.
+  --tile-stats-values-limit Limit the number of unique attribute values to
+                            report. Default: 50. If exceeded, show min and
+                            max instead.
+  --into-md Insert generated tilestats into mbtiles metadata table. Fail
+            when tilestats already exist. Output is empty on success.
 
 Example
   mapbox-geostats population-centers.geojson --attributes name,pop > output.json

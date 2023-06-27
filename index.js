@@ -11,9 +11,8 @@ const Constants = require('./lib/constants');
  * @param {Object} options
  * @returns {Object} The stats.
  */
-function buildGeoStats(filePath, options) {
+async function buildGeoStats(filePath, options) {
   options = options || {};
-  options.forceAllAttributes ??= false;
   options.maxValuesToReport ??= 50;
 
   if (options.attributes) {
@@ -25,14 +24,12 @@ function buildGeoStats(filePath, options) {
     options.attributes = new Set(options.attributes);
   }
 
-  return getFileType(filePath)
-    .then(function(fileType) {
-      if (fileType === Constants.FILETYPE_MBTILES) return tileAnalyze(filePath, options);
-      return mapnikAnalyze(filePath, fileType, options);
-    })
-    .then(function(stats) {
-      return reportStats(stats, options);
-    });
+  const fileType = await getFileType(filePath);
+  const stats = fileType === Constants.FILETYPE_MBTILES
+    ? await tileAnalyze(filePath, options)
+    : mapnikAnalyze(filePath, fileType, options);
+
+  return reportStats(stats, options);
 }
 
 module.exports = buildGeoStats;

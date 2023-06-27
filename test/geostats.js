@@ -1,26 +1,33 @@
 'use strict';
 
-const test = require('tap').test;
+const t = require('tap');
 const path = require('path');
-const fs = require('fs');
+const fs = require('fs').promises;
 const sloppySort = require('./utils/sloppy-sort');
 const geostats = require('../');
-const validator = require('../lib/validate-stats');
 
 function fixturePath(fileName) {
   return path.join(__dirname, 'fixtures', fileName);
 }
 
-function getExpected(name) {
-  return new Promise((resolve, reject) => {
-    fs.readFile(fixturePath(path.join('expected', name + '.json')), 'utf8', (err, data) => {
-      if (err) return reject(err);
-      resolve(JSON.parse(data));
-    });
-  });
+async function getExpected(name) {
+  const data = await fs.readFile(
+    fixturePath(path.join('expected', name + '.json')),
+    'utf8',
+  );
+  return JSON.parse(data);
 }
 
-test('Errors without a file path', t => {
+let tmpPath;
+
+t.before(async() => {
+  tmpPath = await fs.mkdtemp(fixturePath('tmp-'));
+  return tmpPath;
+});
+
+t.teardown(() => fs.rm(tmpPath, { recursive: true }));
+
+t.test('Errors without a file path', t => {
   geostats().then(() => {
     t.fail('should have errored');
     t.end();
@@ -30,7 +37,7 @@ test('Errors without a file path', t => {
   });
 });
 
-test('Errors when MBTiles file not found', t => {
+t.test('Errors when MBTiles file not found', t => {
   geostats(fixturePath('doodoodoo.mbtiles')).then(() => {
     t.fail('should have errored');
     t.end();
@@ -40,7 +47,7 @@ test('Errors when MBTiles file not found', t => {
   });
 });
 
-test('Errors when Mapnik-interpreted file not found', t => {
+t.test('Errors when Mapnik-interpreted file not found', t => {
   geostats(fixturePath('doodoodoo.csv')).then(() => {
     t.fail('should have errored');
     t.end();
@@ -50,7 +57,7 @@ test('Errors when Mapnik-interpreted file not found', t => {
   });
 });
 
-test('GeoJSON with many value types, input matching MBTiles, forceAllAttributes', t => {
+t.test('GeoJSON with many value types, input matching MBTiles, forceAllAttributes', t => {
   Promise.all([
     geostats(fixturePath('src/many-types.geojson'), { forceAllAttributes: true }),
     getExpected('many-types-geojson'),
@@ -63,7 +70,7 @@ test('GeoJSON with many value types, input matching MBTiles, forceAllAttributes'
 // Key difference between the MBTiles and the GeoJSON output now
 // is that when Mapnik reads the GeoJSON it inserts `null` values
 // in weird places
-test('MBTiles with many value types, input matching GeoJSON', t => {
+t.test('MBTiles with many value types, input matching GeoJSON', t => {
   Promise.all([
     geostats(fixturePath('src/many-types.mbtiles')),
     getExpected('many-types-mbtiles'),
@@ -73,7 +80,7 @@ test('MBTiles with many value types, input matching GeoJSON', t => {
   }).catch(t.threw);
 });
 
-test('GeoJSON with over 100 unique attributes and values, input matching Shapefile and CSV',
+t.test('GeoJSON with over 100 unique attributes and values, input matching Shapefile and CSV',
   t => {
     Promise.all([
       geostats(fixturePath('src/populations-plus.geojson')),
@@ -88,7 +95,7 @@ test('GeoJSON with over 100 unique attributes and values, input matching Shapefi
 // Key difference between the Shapefile and the GeoJSON output right now
 // seems to be that the shapefile has converted `null` to `""` in
 // predominantly string-valued attributes
-test('Shapefile with over 100 unique attributes and values, input matching GeoJSON and CSV',
+t.test('Shapefile with over 100 unique attributes and values, input matching GeoJSON and CSV',
   t => {
     Promise.all([
       geostats(fixturePath('src/populations-plus/populations-plus.shp')),
@@ -102,7 +109,7 @@ test('Shapefile with over 100 unique attributes and values, input matching GeoJS
 
 // Key difference between the CSV and Shapefile and GeoJSON is that it
 // includes X and Y attributes (it also converts `null` to `""`, like Shapefile)
-test('CSV with over 100 unique attributes and values, input matching GeoJSON and Shapefile',
+t.test('CSV with over 100 unique attributes and values, input matching GeoJSON and Shapefile',
   t => {
     Promise.all([
       geostats(fixturePath('src/populations-plus.csv')),
@@ -114,7 +121,7 @@ test('CSV with over 100 unique attributes and values, input matching GeoJSON and
   },
 );
 
-test('MBTiles with gzipped data', t => {
+t.test('MBTiles with gzipped data', t => {
   Promise.all([
     geostats(fixturePath('src/vectorgzip.mbtiles')),
     getExpected('vectorgzip'),
@@ -124,14 +131,14 @@ test('MBTiles with gzipped data', t => {
   }).catch(t.threw);
 });
 
-test('MBTiles with raster data', t => {
+t.test('MBTiles with raster data', t => {
   geostats(fixturePath('src/pngs.mbtiles')).then((output) => {
     t.same(output, { layerCount: 0, layers: [] }, 'empty output');
     t.end();
   }).catch(t.threw);
 });
 
-test('GeoJSON with over 1000 unique attributes', t => {
+t.test('GeoJSON with over 1000 unique attributes', t => {
   Promise.all([
     geostats(fixturePath('src/two-thousand-properties.geojson')),
     getExpected('two-thousand-properties'),
@@ -144,7 +151,7 @@ test('GeoJSON with over 1000 unique attributes', t => {
   }).catch(t.threw);
 });
 
-test('GeoJSON with many geometry types', t => {
+t.test('GeoJSON with many geometry types', t => {
   Promise.all([
     geostats(fixturePath('src/geometry-extravaganza.geojson')),
     getExpected('geometry-extravaganza'),
@@ -154,14 +161,14 @@ test('GeoJSON with many geometry types', t => {
   }).catch(t.threw);
 });
 
-test('MBTiles with no features', t => {
+t.test('MBTiles with no features', t => {
   geostats(fixturePath('src/no-features.mbtiles')).then((output) => {
     t.same(output, { layerCount: 0, layers: [] }, 'empty output');
     t.end();
   }).catch(t.threw);
 });
 
-test('Shapefile with no features', t => {
+t.test('Shapefile with no features', t => {
   Promise.all([
     geostats(fixturePath('src/no-features/no-features.shp')),
     getExpected('no-features'),
@@ -171,7 +178,7 @@ test('Shapefile with no features', t => {
   }).catch(t.threw);
 });
 
-test('CSV with no features', t => {
+t.test('CSV with no features', t => {
   Promise.all([
     geostats(fixturePath('src/no-features.csv')),
     getExpected('no-features'),
@@ -182,25 +189,25 @@ test('CSV with no features', t => {
 });
 
 // Currently this is blocked by a bug in node-mapnik
-// test('GeoJSON with no features still outputs', t => {
-//   geostats(fixturePath('src/no-features.geojson')).then((output) => {
-//     var expected = {
-//       layerCount: 1,
-//       layers: [
-//         {
-//           attributeCount: 0,
-//           attributes: [],
-//           count: 0,
-//           layer: 'no-features'
-//         }
-//       ]
-//     };
-//     t.same(output, expected, 'expected output');
-//     t.end();
-//   }).catch(t.threw);
-// });
+t.skip('GeoJSON with no features still outputs', t => {
+  geostats(fixturePath('src/no-features.geojson')).then((output) => {
+    const expected = {
+      layerCount: 1,
+      layers: [
+        {
+          attributeCount: 0,
+          attributes: [],
+          count: 0,
+          layer: 'no-features',
+        },
+      ],
+    };
+    t.same(output, expected, 'expected output');
+    t.end();
+  }).catch(t.threw);
+});
 
-test('invalid GeoJSON', t => {
+t.test('invalid GeoJSON', t => {
   geostats(fixturePath('src/invalid.geojson')).then(() => {
     t.fail('should have errored');
     t.end();
@@ -210,7 +217,7 @@ test('invalid GeoJSON', t => {
   });
 });
 
-test('GeoJSON skips invalid geometry types', t => {
+t.test('GeoJSON skips invalid geometry types', t => {
   Promise.all([
     geostats(fixturePath('src/geometry-invalid-types.geojson')),
     getExpected('geojson-invalid-geometry-types'),
@@ -222,7 +229,7 @@ test('GeoJSON skips invalid geometry types', t => {
   });
 });
 
-test('invalid Shapefile', t => {
+t.test('invalid Shapefile', t => {
   geostats(fixturePath('src/invalid.shp')).then(() => {
     t.fail('should have errored');
     t.end();
@@ -232,7 +239,7 @@ test('invalid Shapefile', t => {
   });
 });
 
-test('invalid CSV', t => {
+t.test('invalid CSV', t => {
   geostats(fixturePath('src/invalid.csv')).then(() => {
     t.fail('should have errored');
     t.end();
@@ -242,7 +249,7 @@ test('invalid CSV', t => {
   });
 });
 
-test('invalid MBTiles', t => {
+t.test('invalid MBTiles', t => {
   geostats(fixturePath('src/invalid.mbtiles')).then(() => {
     t.fail('should have errored');
     t.end();
@@ -252,7 +259,7 @@ test('invalid MBTiles', t => {
   });
 });
 
-test('invalid file format', t => {
+t.test('invalid file format', t => {
   geostats(fixturePath('src/invalid.txt')).then(() => {
     t.fail('should have errored');
     t.end();
@@ -262,7 +269,7 @@ test('invalid file format', t => {
   });
 });
 
-test('GeoJSON with specified name attribute', t => {
+t.test('GeoJSON with specified name attribute', t => {
   Promise.all([
     geostats(fixturePath('src/many-types.geojson'), {
       attributes: ['name'],
@@ -275,7 +282,7 @@ test('GeoJSON with specified name attribute', t => {
   }).catch(t.threw);
 });
 
-test('GeoJSON with specified attributes', t => {
+t.test('GeoJSON with specified attributes', t => {
   Promise.all([
     geostats(fixturePath('src/two-thousand-properties.geojson'), {
       attributes: ['prop-21', 'prop-1031'],
@@ -287,9 +294,8 @@ test('GeoJSON with specified attributes', t => {
   }).catch(t.threw);
 });
 
-test('Trying to report on more than 100 attributes', t => {
-  t.throws(() => {
-    geostats(fixturePath('src/populations-plus.geojson'), {
+t.test('Trying to report on more than 100 attributes', t => {
+  t.rejects(geostats(fixturePath('src/populations-plus.geojson'), {
       attributes: ['attr-0', 'attr-1', 'attr-2', 'attr-3', 'attr-4', 'attr-5',
         'attr-6', 'attr-7', 'attr-8', 'attr-9', 'attr-10', 'attr-11', 'attr-12',
         'attr-13', 'attr-14', 'attr-15', 'attr-16', 'attr-17', 'attr-18', 'attr-19',
@@ -307,12 +313,12 @@ test('Trying to report on more than 100 attributes', t => {
         'attr-97', 'attr-98', 'attr-99', 'attr-100', 'attr-101', 'attr-102',
         'attr-103', 'attr-104', 'attr-105', 'attr-106', 'attr-107', 'attr-108',
         'attr-109'],
-    });
-  }, 'throws');
+    }), new Error('Cannot report on more than 100 attributes'),
+  );
   t.end();
 });
 
-test('GeoJSON with prototype attribute', t => {
+t.test('GeoJSON with prototype attribute', t => {
   Promise.all([
     geostats(fixturePath('src/prototype.geojson')),
     getExpected('prototype'),
@@ -322,7 +328,7 @@ test('GeoJSON with prototype attribute', t => {
   }).catch(t.threw);
 });
 
-test('truncate attribute names', t => {
+t.test('truncate attribute names', t => {
   Promise.all([
     geostats(fixturePath('src/long-attribute-names.geojson')),
     getExpected('long-attribute-names'),
@@ -332,7 +338,7 @@ test('truncate attribute names', t => {
   }).catch(t.threw);
 });
 
-test('MBTiles with two layers', t => {
+t.test('MBTiles with two layers', t => {
   Promise.all([
     geostats(fixturePath('src/two-layers.mbtiles')),
     getExpected('two-layers'),
@@ -342,7 +348,7 @@ test('MBTiles with two layers', t => {
   }).catch(t.threw);
 });
 
-test('MBTiles with tilestats metadata table returns as expected', t => {
+t.test('MBTiles with tilestats metadata table returns as expected', t => {
   Promise.all([
     geostats(fixturePath('src/tilestats.mbtiles')),
     getExpected('tilestats'),
@@ -352,129 +358,30 @@ test('MBTiles with tilestats metadata table returns as expected', t => {
   }).catch(t.threw);
 });
 
-test('[validator] valid stats object', t => {
-  const stats = {
-    layerCount: 1,
-    layers: [
-      {
-        layer: 'test-layer',
-        count: 3,
-        geometry: 'Point',
-        attributeCount: 1,
-        attributes: [
-          {
-            attribute: 'test-attribute',
-            count: 3,
-            type: 'number',
-            values: [2, 5, 19],
-            min: 2,
-            max: 19,
-          },
-        ],
-      },
-    ],
-  };
-
-  t.ok(validator(stats));
+t.test('option --into-md with non MBTiles file', t => {
+  t.rejects(
+    geostats(fixturePath('src/many-types.geojson'), { intoMd: true }),
+    new Error('Option --into-md can be used only for mbtiles'),
+  );
   t.end();
 });
 
-test('[validator] invalid stats object - no layers', t => {
-  const stats = {
-    layerCount: 1,
-  };
+t.test('MBTiles with option --into-md', async(t) => {
+  const tmpFilename = path.join(tmpPath, 'many-types.mbtiles');
+  await fs.copyFile(fixturePath('src/many-types.mbtiles'), tmpFilename);
 
-  const results = validator(stats);
-  t.equal(results.length, 1, 'only one error');
-  t.equal(results[0], 'instance requires property "layers"', 'expected error message');
-  t.end();
-});
-
-test('[validator] invalid layer object - no layer name', t => {
-  const stats = {
-    layerCount: 1,
-    layers: [
-      {
-        count: 3,
-        geometry: 'Point',
-        attributeCount: 1,
-        attributes: [
-          {
-            attribute: 'test-attribute',
-            count: 3,
-            type: 'number',
-            values: [2, 5, 19],
-            min: 2,
-            max: 19,
-          },
-        ],
-      },
-    ],
-  };
-
-  const results = validator(stats);
-  t.equal(results.length, 1, 'only one error');
-  t.equal(results[0], 'instance.layers[0] requires property "layer"', 'expected error message');
-  t.end();
-});
-
-test('[validator] invalid layer object - no layer name', t => {
-  const stats = {
-    layerCount: 'wrong type',
-    layers: [
-      {
-        geometry: 'Point',
-        attributes: [
-          {
-            attribute: 'test-attribute',
-            type: 'number',
-            min: 2,
-            max: 19,
-          },
-        ],
-      },
-    ],
-  };
-
-  const expected = sloppySort([
-    'instance.layerCount is not of a type(s) number',
-    'instance.layers[0] requires property "count"',
-    'instance.layers[0].attributes[0] requires property "values"',
-    'instance.layers[0] requires property "layer"',
-    'instance.layers[0].attributes[0] requires property "count"',
-    'instance.layers[0] requires property "attributeCount"',
+  const [act, exp] = await Promise.all([
+    geostats(tmpFilename, { intoMd: true }),
+    getExpected('many-types-mbtiles'),
   ]);
+  t.same(sloppySort(act), sloppySort(exp), 'expected output');
 
-  const results = validator(stats);
-  t.same(sloppySort(results), expected, 'expect lots of errors');
-  t.end();
-});
+  t.rejects(
+    geostats(tmpFilename, { intoMd: true }),
+    new Error('Tilestats already exist in json record of metadata table, run without --into-md to display them'),
+  );
 
-test('[validator] invalid attributes contain mulitple types', t => {
-  const stats = {
-    layerCount: 1,
-    layers: [
-      {
-        layer: 'test-layer',
-        count: 3,
-        geometry: 'Point',
-        attributeCount: 1,
-        attributes: [
-          {
-            attribute: 'test-attribute',
-            count: 3,
-            type: 'number',
-            values: [2, 'five', null],
-            min: 2,
-            max: 19,
-          },
-        ],
-      },
-    ],
-  };
-
-  const results = validator(stats);
-  t.equal(results.length, 1, 'only one error');
-  t.equal(results[0], 'instance.layers[0].attributes[0].values is not any of [subschema 0],[subschema 1],[subschema 2],[subschema 3]', 'expected error message');
+  const preGenStats = await geostats(tmpFilename);
+  t.same(sloppySort(preGenStats), sloppySort(exp), 'expected output');
   t.end();
 });
