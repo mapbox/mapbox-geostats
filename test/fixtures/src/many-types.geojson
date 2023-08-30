@@ -5,6 +5,8 @@
       "type": "Feature",
       "properties": {
         "name": "foo",
+        "name:en": "enFuu",
+        "name_de": "deFuu",
         "power": 6,
         "mixed": 7,
         "numbers": [1, 2, 3],

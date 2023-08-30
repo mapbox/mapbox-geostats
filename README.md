@@ -63,9 +63,10 @@ Options
   --attributes, -a Specify attributes to analyze. The provided value
                    will be parsed as an array, split on commas.
   --force-all-attributes, -f Include values of these attributes: id,
-                             name, name1, name2, name_en, name_de,
-                             originalid, adm0_l, amd0_r, disputed_name,
-                             ref, fid, uuid.
+                              name, name1, name2, originalid, adm0_l, amd0_r,
+                              disputed_name, ref, fid, uuid.
+  --ignore-translations Exclude name translations attributes (name_int,
+                        name_de, name_en, name:*). Default: true.
   --tile-stats-values-limit Limit the number of unique attribute values to
                             report. Default: 50. If exceeded, show min and
                             max instead.

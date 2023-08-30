@@ -1,0 +1,89 @@
+{
+  "layerCount": 1,
+  "layers": [
+    {
+      "layer": "many-types",
+      "attributeCount": 10,
+      "attributes": [
+        {
+          "values": [
+            true,
+            null
+          ],
+          "attribute": "astonishing",
+          "type": "boolean"
+        },
+        {
+          "values": ["enFuu", null],
+          "attribute": "name:en",
+          "type": "string"
+        },
+        {
+          "values": ["deFuu", null],
+          "attribute": "name_de",
+          "type": "string"
+        },
+        {
+          "values": [
+            7,
+            "7",
+            null
+          ],
+          "attribute": "mixed",
+          "type": "mixed"
+        },
+        {
+          "values": [
+            "foo",
+            "bar",
+            "baz",
+            "haha",
+            "hoho",
+            "hehe"
+          ],
+          "attribute": "name",
+          "type": "string"
+        },
+        {
+          "values": [
+            "[1,2,3]",
+            null
+          ],
+          "attribute": "numbers",
+          "type": "string"
+        },
+        {
+          "values": [
+            6,
+            99,
+            null,
+            86
+          ],
+          "attribute": "power",
+          "type": "number"
+        },
+        {
+          "values": [
+            6,
+            "{\"foo\":\"bar\"}"
+          ],
+          "attribute": "data",
+          "type": "mixed"
+        },
+        {
+          "values": [],
+          "attribute": "description",
+          "type": "string"
+        },
+        {
+          "values": [
+            null
+          ],
+          "attribute": "onlyNull",
+          "type": "null"
+        }
+      ],
+      "geometry": "Point"
+    }
+  ]
+}

@@ -59,8 +59,18 @@ t.test('Errors when Mapnik-interpreted file not found', t => {
 
 t.test('GeoJSON with many value types, input matching MBTiles, forceAllAttributes', t => {
   Promise.all([
-    geostats(fixturePath('src/many-types.geojson'), { forceAllAttributes: true }),
+    geostats(fixturePath('src/many-types.geojson'), { forceAllAttributes: true, ignoreTranslations: true }),
     getExpected('many-types-geojson'),
+  ]).then((output) => {
+    t.same(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.end();
+  }).catch(t.threw);
+});
+
+t.test('GeoJSON with many value types, ignoreTranslations to false', t => {
+  Promise.all([
+    geostats(fixturePath('src/many-types.geojson'), { forceAllAttributes: true }),
+    getExpected('many-types-geojson-translations'),
   ]).then((output) => {
     t.same(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
