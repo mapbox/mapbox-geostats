@@ -240,14 +240,14 @@
         {
           "attribute": "LATITUDE",
           "type": "number",
-          "min": -41.2999739393,
-          "max": 64.1500236197
+          "min": -42,
+          "max": 65
         },
         {
           "attribute": "LONGITUDE",
           "type": "number",
-          "min": -175.220564478,
-          "max": 179.216647094
+          "min": -176,
+          "max": 180
         },
         {
           "values": [
@@ -277,26 +277,26 @@
         {
           "attribute": "MAX_BBXMAX",
           "type": "number",
-          "min": -175.16666667,
-          "max": 178.53333333
+          "min": -176,
+          "max": 179
         },
         {
           "attribute": "MAX_BBXMIN",
           "type": "number",
-          "min": -175.23333333,
-          "max": 178.425
+          "min": -176,
+          "max": 179
         },
         {
           "attribute": "MAX_BBYMAX",
           "type": "number",
-          "min": -41.2,
-          "max": 64.16666667
+          "min": -42,
+          "max": 65
         },
         {
           "attribute": "MAX_BBYMIN",
           "type": "number",
-          "min": -41.35,
-          "max": 64.05
+          "min": -42,
+          "max": 65
         },
         {
           "values": [
@@ -399,14 +399,14 @@
         {
           "attribute": "MEAN_BBXC",
           "type": "number",
-          "min": -175.20679825,
-          "max": 178.47288462
+          "min": -176,
+          "max": 179
         },
         {
           "attribute": "MEAN_BBYC",
           "type": "number",
-          "min": -41.28553922,
-          "max": 64.116125
+          "min": -42,
+          "max": 65
         },
         {
           "values": [
@@ -435,26 +435,26 @@
         {
           "attribute": "MIN_BBXMAX",
           "type": "number",
-          "min": -175.16666667,
-          "max": 178.53333333
+          "min": -176,
+          "max": 179
         },
         {
           "attribute": "MIN_BBXMIN",
           "type": "number",
-          "min": -175.23333333,
-          "max": 178.425
+          "min": -176,
+          "max": 179
         },
         {
           "attribute": "MIN_BBYMAX",
           "type": "number",
-          "min": -41.2,
-          "max": 64.16666667
+          "min": -42,
+          "max": 65
         },
         {
           "attribute": "MIN_BBYMIN",
           "type": "number",
-          "min": -41.35,
-          "max": 64.05
+          "min": -42,
+          "max": 65
         },
         {
           "attribute": "MIN_PERKM",
@@ -771,14 +771,14 @@
         {
           "attribute": "UN_LAT",
           "type": "number",
-          "min": -37.85,
-          "max": 60.19
+          "min": -38,
+          "max": 61
         },
         {
           "attribute": "UN_LONG",
           "type": "number",
-          "min": -122.96,
-          "max": 174.76
+          "min": -123,
+          "max": 175
         },
         {
           "values": [

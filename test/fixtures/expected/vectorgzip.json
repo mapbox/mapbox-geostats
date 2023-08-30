@@ -26,14 +26,14 @@
         {
           "attribute": "LAT",
           "type": "number",
-          "min": -54.422,
-          "max": 78.83
+          "min": -55,
+          "max": 79
         },
         {
           "attribute": "LON",
           "type": "number",
-          "min": -178.131,
-          "max": 179.219
+          "min": -179,
+          "max": 180
         },
         {
           "attribute": "NAME",
