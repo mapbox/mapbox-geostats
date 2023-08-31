@@ -53,14 +53,10 @@
           "type": "string"
         },
         {
-          "values": [
-            6,
-            99,
-            null,
-            86
-          ],
           "attribute": "power",
-          "type": "number"
+          "type": "number",
+          "min": 6,
+          "max": 99
         },
         {
           "values": [
