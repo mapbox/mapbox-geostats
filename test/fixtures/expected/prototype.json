@@ -21,7 +21,7 @@
           ]
         }
       ],
-      "geometry": "Point",
+      "geometry": ["LineString", "Point"],
       "layer": "prototype"
     }
   ]

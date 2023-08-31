@@ -5,8 +5,10 @@
     "layer": { "type": "string" },
     "count": { "type": "number" },
     "geometry": {
-      "type": "string",
-      "enum": [ "Point", "LineString", "Polygon" ]
+      "anyOf": [
+        { "$ref": "/geometry" },
+        { "type": "array", "items": { "$ref": "/geometry" } }
+      ]
     },
     "attributeCount": { "type": "number" },
     "attributes": {

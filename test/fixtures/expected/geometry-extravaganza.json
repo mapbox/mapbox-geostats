@@ -37,7 +37,7 @@
           "type": "boolean"
         }
       ],
-      "geometry": "Point"
+      "geometry": ["GeometryCollection", "MultiLineString", "MultiPoint", "MultiPolygon", "Point"]
     }
   ]
 }

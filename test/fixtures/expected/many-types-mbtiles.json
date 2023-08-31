@@ -54,7 +54,7 @@
           "type": "string"
         }
       ],
-      "geometry": "Point"
+      "geometry": ["LineString", "Point", "Polygon"]
     }
   ]
 }

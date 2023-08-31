@@ -1,0 +1,13 @@
+{
+  "id": "/geometry",
+  "type": "string",
+  "enum": [
+    "GeometryCollection",
+    "LineString",
+    "MultiLineString",
+    "MultiPoint",
+    "MultiPolygon",
+    "Point",
+    "Polygon"
+  ]
+}

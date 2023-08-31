@@ -11,7 +11,7 @@
           "values": ["foo", "bar", "baz", "haha", "hoho", "hehe"]
         }
       ],
-      "geometry": "Point"
+      "geometry": ["LineString", "Point", "Polygon"]
     }
   ]
 }
