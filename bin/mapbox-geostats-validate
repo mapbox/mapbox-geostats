@@ -26,11 +26,11 @@ try {
   const raw = fs.readFileSync(file);
   console.log(raw);
   stats = JSON.parse(raw);
-  // stats = JSON.parse(fs.readFileSync(file));
 } catch (err) {
-  console.log('Unable to read file');
+  console.log('Unable to read JSON file');
   console.error(err);
   console.log(help);
+  return;
 }
 
 const results = validate(stats);

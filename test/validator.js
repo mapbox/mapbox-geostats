@@ -90,10 +90,7 @@ test('invalid layer object - no layer name', t => {
 
   const expected = sloppySort([
     'instance.layerCount is not of a type(s) number',
-    'instance.layers[0] requires property "count"',
-    'instance.layers[0].attributes[0] requires property "values"',
     'instance.layers[0] requires property "layer"',
-    'instance.layers[0].attributes[0] requires property "count"',
     'instance.layers[0] requires property "attributeCount"',
   ]);
 

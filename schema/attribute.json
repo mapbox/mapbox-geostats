@@ -19,5 +19,5 @@
     "min": { "type": "number" },
     "max": { "type": "number" }
   },
-  "required": [ "attribute", "count", "type", "values" ]
+  "required": [ "attribute", "type" ]
 }
