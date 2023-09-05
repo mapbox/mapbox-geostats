@@ -67,9 +67,9 @@ t.test('GeoJSON with many value types, input matching MBTiles, forceAllAttribute
   }).catch(t.threw);
 });
 
-t.test('GeoJSON with many value types, ignoreTranslations to false, briefAttributes to power', t => {
+t.test('GeoJSON, ignoreTranslations to false, briefAttributes to power, addLanguages to true', t => {
   Promise.all([
-    geostats(fixturePath('src/many-types.geojson'), { briefAttributes: 'power' }),
+    geostats(fixturePath('src/many-types.geojson'), { briefAttributes: 'power', addLanguages: true }),
     getExpected('many-types-geojson-translations'),
   ]).then((output) => {
     t.same(sloppySort(output[0]), sloppySort(output[1]), 'expected output');

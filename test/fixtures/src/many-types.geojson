@@ -24,6 +24,7 @@
       "type": "Feature",
       "properties": {
         "name": "bar",
+        "name:it": "itBar",
         "mixed": "7",
         "power": 99
       },

@@ -6,6 +6,10 @@
     "layers": {
       "type": "array",
       "items": { "$ref": "/layer" }
+    },
+    "languages": {
+      "type": "array",
+      "items": { "type": "string" }
     }
   },
   "required": [ "layerCount", "layers" ]

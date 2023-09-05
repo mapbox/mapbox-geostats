@@ -74,6 +74,8 @@ Options
   --tile-stats-values-limit Limit the number of unique attribute values to
                             report. Default: 50. If exceeded, show min and
                             max instead.
+  --add-languages Save all the languages from the vector data into the
+                  tilestats as languages array. Default: true.
   --into-md Insert generated tilestats into mbtiles metadata table. Fail
             when tilestats already exist. Output is empty on success.
 
@@ -123,7 +125,9 @@ The tilestats jsonschema is specified in the /schema directory under schema/tile
 The stats output has this structure:
 
 ```js
-{  
+{
+  // The list of all languages in the vector data
+  "languages": Array<string>
   // The number of layers in the source data (max. 1000)
   "layerCount": Number,
   // An array of details about the first 100 layers
@@ -131,10 +135,8 @@ The stats output has this structure:
     {
       // The name of this layer
       "layer": String,
-      // The number of features in this layer
-      "count": Number,
-      // The dominant geometry type in this layer
-      "geometry": String,
+      // The geometry type(s) in this layer
+      "geometry": String | Array<String>,
       // The number of unique attributes in this layer (max. 1000)
       "attributeCount": Number
       // An array of details about the first 100 attributes in this layer
@@ -142,16 +144,14 @@ The stats output has this structure:
         {
           // The name of this attribute
           "attribute": String,
-          // The number of unique values for this attribute (max. 1000)
-          "count": Number,
           // The type of this attribute's values
           "type": String, // More info below ...
-          // An array of this attribute's first 100 unique values
+          // An array of this attribute's if less than VALUES LIMIT unique values
           "values": [
             // ...
           ],
-          // If there are *any* numbers in the values, the following
-          // numeric stats will be reported
+          // If there are more number values than VALUES LIMIT, the following
+          // numeric stats will be reported instead
           "min": Number,
           "max": Number
         }

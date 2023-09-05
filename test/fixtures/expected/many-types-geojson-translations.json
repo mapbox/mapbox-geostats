@@ -1,9 +1,10 @@
 {
+  "languages": ["en", "it"],
   "layerCount": 1,
   "layers": [
     {
       "layer": "many-types",
-      "attributeCount": 10,
+      "attributeCount": 11,
       "attributes": [
         {
           "values": [
@@ -16,6 +17,11 @@
         {
           "values": ["enFuu", null],
           "attribute": "name:en",
+          "type": "string"
+        },
+        {
+          "values": ["itBar", null],
+          "attribute": "name:it",
           "type": "string"
         },
         {

@@ -27,6 +27,8 @@ const help = `
     --tile-stats-values-limit Limit the number of unique attribute values to
                               report. Default: 50. If exceeded, show min and
                               max instead.
+    --add-languages Save all the languages from the vector data into the
+                    tilestats as languages array. Default: true.
     --into-md Insert generated tilestats into mbtiles metadata table. Fail
               when tilestats already exist. Output is empty on success.
 
@@ -58,6 +60,10 @@ const cli = meow(help, {
     intoMd: {
       type: 'boolean',
     },
+    addLanguages: {
+      type: 'boolean',
+      default: true,
+    },
   },
 });
 
@@ -67,6 +73,7 @@ const options = {
   forceAllAttributes: cli.flags.forceAllAttributes,
   ignoreTranslations: cli.flags.ignoreTranslations,
   maxValuesToReport: cli.flags.tileStatsValuesLimit,
+  addLanguages: cli.flags.addLanguages,
   intoMd: cli.flags.intoMd,
 };
 
