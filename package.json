@@ -1,5 +1,5 @@
 {
-  "name": "@mapbox/mapbox-geostats",
+  "name": "@maptiler/tilestats",
   "version": "1.1.2",
   "description": "Generate statistics about geographic data.",
   "main": "index.js",
@@ -7,8 +7,8 @@
     "node": ">=16.0.0"
   },
   "bin": {
-    "mapbox-geostats": "bin/mapbox-geostats",
-    "mapbox-geostats-validate": "bin/mapbox-geostats-validate"
+    "tilestats-generate": "bin/tilestats-generate",
+    "tilestats-validate": "bin/tilestats-validate"
   },
   "scripts": {
     "lint": "eslint lib test bin/**",
@@ -18,14 +18,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mapbox/mapbox-geostats.git"
+    "url": "git+https://github.com/maptiler/tilestats.git"
   },
-  "author": "Mapbox",
+  "contributors": ["MapTiler", "Mapbox"],
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mapbox/mapbox-geostats/issues"
-  },
-  "homepage": "https://github.com/mapbox/mapbox-geostats#readme",
+  "homepage": "https://github.com/maptiler/tilestats#readme",
   "dependencies": {
     "@mapbox/mapbox-file-sniff": "^1.0.5",
     "@mapbox/mbtiles": "^0.12.1",

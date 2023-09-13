@@ -1,9 +1,16 @@
 # DEVEL
 
-- Ignore/limit attribute values [#1](https://github.com/maptiler/mapbox-geostats/pull/1)
-- `buildGeoStats` rejects promise instead of throwing an error [#3](https://github.com/maptiler/mapbox-geostats/pull/3)
-- Add an option to insert generated tilestats into mbtiles metadata [#3](https://github.com/maptiler/mapbox-geostats/pull/3)
-- Split geostats and validator tests [#3](https://github.com/maptiler/mapbox-geostats/pull/3)
+- Ignore/limit attribute values [#1](https://github.com/maptiler/tilestats/pull/1)
+- `buildGeoStats` rejects promise instead of throwing an error [#3](https://github.com/maptiler/tilestats/pull/3)
+- Add an option to insert generated tilestats into mbtiles metadata [#3](https://github.com/maptiler/tilestats/pull/3)
+- Split geostats and validator tests [#3](https://github.com/maptiler/tilestats/pull/3)
+- Add `ignore-translations` option to ignore name translations [#4](https://github.com/maptiler/tilestats/pull/4)
+- Round off min/max values [#5](https://github.com/maptiler/tilestats/pull/5)
+- Add `brief-attributes` option to override ignored attribute values [#6](https://github.com/maptiler/tilestats/pull/6)
+- Report layer geometry as a string or an array if there are multiple types [#7](https://github.com/maptiler/tilestats/pull/7)
+- Add `add-languages` option to generate languages stats [#9](https://github.com/maptiler/tilestats/pull/9)
+- Renamed repository, package and bin files [#12](https://github.com/maptiler/tilestats/pull/12)
+
 
 # 1.1.2
 

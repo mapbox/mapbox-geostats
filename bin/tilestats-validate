@@ -8,12 +8,12 @@ const validate = require('../lib/validate-stats');
 
 const help = `
   Usage
-    mapbox-geostats-validate <file>
+    tilestats-validate <file>
 
     Output is empty if valid, or a list of errors.
 
   Example
-    mapbox-geostats-validate ./path/to/stats.json
+    tilestats-validate ./path/to/stats.json
   `;
 
 const cli = meow(help);

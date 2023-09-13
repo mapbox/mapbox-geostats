@@ -1,4 +1,4 @@
-# mapbox-geostats
+# tilestats
 
 Generate statistics about geographic data.
 
@@ -7,10 +7,10 @@ Generate statistics about geographic data.
 Requires Node v16+.
 
 ```
-git clone https://github.com/maptiler/mapbox-geostats.git
-cd mapbox-geostats
+git clone https://github.com/maptiler/tilestats.git
+cd tilestats
 npm i
-./bin/mapbox-geostats <input> <options>
+./bin/tilestats-generate <input> <options>
 ```
 
 ## About
@@ -49,12 +49,12 @@ So if you've specified a limited number of attributes to inspect, the number of 
 
 ## CLI
 
-`mapbox-geostats` generate a tilestats JSON object
+`tilestats-generate` generate a tilestats JSON object
 ```
 Generate statistics about geographic data.
 
 Usage
-  mapbox-geostats <input> <options>
+  tilestats-generate <input> <options>
 
   Output is logged to the console as a JSON string or written into mbtiles
   when using --into-md option.
@@ -80,24 +80,24 @@ Options
             when tilestats already exist. Output is empty on success.
 
 Example
-  mapbox-geostats population-centers.geojson --attributes name,pop > output.json
+  tilestats-generate population-centers.geojson --attributes name,pop > output.json
 ```
 
-`mapbox-geostats-validate`: validate a tilestats JSON object
+`tilestats-validate`: validate a tilestats JSON object
 ```
 Usage
-  mapbox-geostats-validate <file>
+  tilestats-validate <file>
 
   Output is empty if valid, or a list of errors.
 
 Example
-  mapbox-geostats-validate ./path/to/stats.json
+  tilestats-validate ./path/to/stats.json
 ```
 
 ## Node
 
 ```js
-var geostats = require('@mapbox/mapbox-geostats');
+var geostats = require('@maptiler/tilestats-generate');
 
 geostats(filePath, options).then(function (stats) {
   // Do something with the stats

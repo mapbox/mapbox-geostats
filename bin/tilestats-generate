@@ -7,7 +7,7 @@ const geostats = require('../');
 
 const help = `
   Usage
-    mapbox-geostats <input> <options>
+    tilestats-generate <input> <options>
 
     Output is logged to the console as a JSON string or written into mbtiles
     when using --into-md option.
@@ -33,7 +33,7 @@ const help = `
               when tilestats already exist. Output is empty on success.
 
   Example
-    mapbox-geostats cities.geojson --attributes name,pop > output.json
+    tilestats-generate cities.geojson --attributes name,pop > output.json
   `;
 
 const cli = meow(help, {
