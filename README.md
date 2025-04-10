@@ -7,7 +7,9 @@ Generate statistics about geographic data.
 ## Installation
 
 ```
-npm install @mapbox/mapbox-geostats
+# sqlite3 (dependency for node-mbtiles) binaries for v4.0.6 only exist for node 10
+nvm use 10 
+npm ci
 ```
 
 ## About
