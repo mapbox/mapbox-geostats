@@ -5,7 +5,7 @@
 Generate statistics about geographic data.
 
 ## Installation
-`npm ci`
+`npm install @mapbox/mapbox-geostats`
 
 ## About
 
