@@ -10,7 +10,7 @@
   "scripts": {
     "lint": "eslint lib test bin/**",
     "lint-fix": "eslint --fix lib test bin/**",
-    "test": "tap test/test.js",
+    "test": "npm run lint && tap test/test.js",
     "coverage": "tap test/test.js --cov --coverage-report=html"
   },
   "repository": {
@@ -40,8 +40,5 @@
     "eslint": "^7.32.0",
     "eslint-plugin-node": "^11.1.0",
     "tap": "^12.7.0"
-  },
-  "overrides": {
-    "tap-mocha-reporter>diff": "5.1.0"
   }
 }
