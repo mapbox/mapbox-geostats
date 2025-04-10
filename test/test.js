@@ -56,7 +56,7 @@ test('GeoJSON with many value types, input matching MBTiles', t => {
     geostats(fixturePath('src/many-types.geojson')),
     getExpected('many-types-geojson'),
   ]).then((output) => {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.same(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -69,7 +69,7 @@ test('MBTiles with many value types, input matching GeoJSON', t => {
     geostats(fixturePath('src/many-types.mbtiles')),
     getExpected('many-types-mbtiles'),
   ]).then((output) => {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.same(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -80,7 +80,7 @@ test('GeoJSON with over 100 unique attributes and values, input matching Shapefi
       geostats(fixturePath('src/populations-plus.geojson')),
       getExpected('populations-plus-geojson'),
     ]).then((output) => {
-      t.deepEqual(output[0], output[1], 'expected output');
+      t.same(output[0], output[1], 'expected output');
       t.end();
     }).catch(t.threw);
   }
@@ -95,7 +95,7 @@ test('Shapefile with over 100 unique attributes and values, input matching GeoJS
       geostats(fixturePath('src/populations-plus/populations-plus.shp')),
       getExpected('populations-plus-shp'),
     ]).then((output) => {
-      t.deepEqual(output[0], output[1], 'expected output');
+      t.same(output[0], output[1], 'expected output');
       t.end();
     }).catch(t.threw);
   }
@@ -109,7 +109,7 @@ test('CSV with over 100 unique attributes and values, input matching GeoJSON and
       geostats(fixturePath('src/populations-plus.csv')),
       getExpected('populations-plus-csv'),
     ]).then((output) => {
-      t.deepEqual(output[0], output[1], 'expected output');
+      t.same(output[0], output[1], 'expected output');
       t.end();
     }).catch(t.threw);
   }
@@ -120,7 +120,7 @@ test('Shapefile with over 1000 unique values', t => {
     geostats(fixturePath('src/ports/ports.shp')),
     getExpected('ports'),
   ]).then((output) => {
-    t.deepEqual(output[0], output[1], 'expected output');
+    t.same(output[0], output[1], 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -130,14 +130,14 @@ test('MBTiles with gzipped data', t => {
     geostats(fixturePath('src/vectorgzip.mbtiles')),
     getExpected('vectorgzip'),
   ]).then((output) => {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.same(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
 
 test('MBTiles with raster data', t => {
   geostats(fixturePath('src/pngs.mbtiles')).then((output) => {
-    t.deepEqual(output, { layerCount: 0, layers: [] }, 'empty output');
+    t.same(output, { layerCount: 0, layers: [] }, 'empty output');
     t.end();
   }).catch(t.threw);
 });
@@ -148,7 +148,7 @@ test('GeoJSON with over 1000 unique attributes', t => {
     getExpected('two-thousand-properties'),
   ]).then((output) => {
     const actual = sloppySort(output[0]);
-    t.deepEqual(actual, sloppySort(output[1]), 'expected output');
+    t.same(actual, sloppySort(output[1]), 'expected output');
     t.equal(actual.layers[0].attributeCount, 1000, 'attributeCount stops at 1000');
     t.equal(actual.layers[0].attributes.length, 100, 'attribute details stop at 100');
     t.end();
@@ -160,14 +160,14 @@ test('GeoJSON with many geometry types', t => {
     geostats(fixturePath('src/geometry-extravaganza.geojson')),
     getExpected('geometry-extravaganza'),
   ]).then((output) => {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.same(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
 
 test('MBTiles with no features', t => {
   geostats(fixturePath('src/no-features.mbtiles')).then((output) => {
-    t.deepEqual(output, { layerCount: 0, layers: [] }, 'empty output');
+    t.same(output, { layerCount: 0, layers: [] }, 'empty output');
     t.end();
   }).catch(t.threw);
 });
@@ -177,7 +177,7 @@ test('Shapefile with no features', t => {
     geostats(fixturePath('src/no-features/no-features.shp')),
     getExpected('no-features'),
   ]).then((output) => {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.same(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -187,7 +187,7 @@ test('CSV with no features', t => {
     geostats(fixturePath('src/no-features.csv')),
     getExpected('no-features'),
   ]).then((output) => {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.same(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -206,7 +206,7 @@ test('CSV with no features', t => {
 //         }
 //       ]
 //     };
-//     t.deepEqual(output, expected, 'expected output');
+//     t.same(output, expected, 'expected output');
 //     t.end();
 //   }).catch(t.threw);
 // });
@@ -226,7 +226,7 @@ test('GeoJSON skips invalid geometry types', t => {
     geostats(fixturePath('src/geometry-invalid-types.geojson')),
     getExpected('geojson-invalid-geometry-types'),
   ]).then((output) => {
-    t.deepEqual(output[0], output[1], 'expected geostats');
+    t.same(output[0], output[1], 'expected geostats');
     t.end();
   }).catch((err) => {
     t.fail(err);
@@ -281,7 +281,7 @@ test('Shapefile with specified attribute with over 1000 values', t => {
     getExpected('ports-only-name'),
   ]).then((output) => {
     const actual = sloppySort(output[0]);
-    t.deepEqual(actual, sloppySort(output[1]), 'expected output');
+    t.same(actual, sloppySort(output[1]), 'expected output');
     const nameAttribute = _.find(actual.layers[0].attributes, attribute => {
       return attribute.attribute === 'name';
     });
@@ -298,7 +298,7 @@ test('GeoJSON with specified attributes', t => {
     }),
     getExpected('two-thousand-properties-only-two'),
   ]).then((output) => {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.same(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -309,7 +309,7 @@ test('GeoJSON with over 10000 unique values and no specified attributes', t => {
     getExpected('myriad-values-all-attrs'),
   ]).then((output) => {
     const actual = sloppySort(output[1]);
-    t.deepEqual(sloppySort(output[0]), actual, 'expected output');
+    t.same(sloppySort(output[0]), actual, 'expected output');
     t.ok(actual.layers[0].attributes.every(attribute => {
       return attribute.count === 1000;
     }), 'value counts stop at 1000');
@@ -328,7 +328,7 @@ test('GeoJSON with over 10000 unique values and one specified attribute', t => {
     getExpected('myriad-values-1-attr'),
   ]).then((output) => {
     const actual = sloppySort(output[1]);
-    t.deepEqual(sloppySort(output[0]), actual, 'expected output');
+    t.same(sloppySort(output[0]), actual, 'expected output');
     t.ok(actual.layers[0].attributes.every(attribute => {
       return attribute.count === 10010;
     }), 'value count does not stop yet');
@@ -347,7 +347,7 @@ test('GeoJSON with over 10000 unique values and five specified attribute', t => 
     getExpected('myriad-values-5-attrs'),
   ]).then((output) => {
     const actual = sloppySort(output[1]);
-    t.deepEqual(sloppySort(output[0]), actual, 'expected output');
+    t.same(sloppySort(output[0]), actual, 'expected output');
     t.ok(actual.layers[0].attributes.every(attribute => {
       return attribute.count === 10010;
     }), 'value counts does not stop yet');
@@ -388,7 +388,7 @@ test('GeoJSON with prototype attribute', t => {
     geostats(fixturePath('src/prototype.geojson')),
     getExpected('prototype'),
   ]).then((output) => {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.same(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -398,7 +398,7 @@ test('truncate attribute names', t => {
     geostats(fixturePath('src/long-attribute-names.geojson')),
     getExpected('long-attribute-names'),
   ]).then((output) => {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.same(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -408,7 +408,7 @@ test('MBTiles with two layers', t => {
     geostats(fixturePath('src/two-layers.mbtiles')),
     getExpected('two-layers'),
   ]).then((output) => {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.same(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -418,7 +418,7 @@ test('MBTiles with tilestats metadata table returns as expected', t => {
     geostats(fixturePath('src/tilestats.mbtiles')),
     getExpected('tilestats'),
   ]).then((output) => {
-    t.deepEqual(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
+    t.same(sloppySort(output[0]), sloppySort(output[1]), 'expected output');
     t.end();
   }).catch(t.threw);
 });
@@ -517,7 +517,7 @@ test('[validator] invalid layer object - no layer name', t => {
   ]);
 
   const results = validator(stats);
-  t.deepEqual(sloppySort(results), expected, 'expect lots of errors');
+  t.same(sloppySort(results), expected, 'expect lots of errors');
   t.end();
 });
 

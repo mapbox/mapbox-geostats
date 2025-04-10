@@ -7,6 +7,7 @@
     "mapbox-geostats": "bin/mapbox-geostats",
     "mapbox-geostats-validate": "bin/mapbox-geostats-validate"
   },
+  "type": "commonjs",
   "scripts": {
     "lint": "eslint lib test bin/**",
     "lint-fix": "eslint --fix lib test bin/**",
@@ -39,6 +40,6 @@
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-plugin-node": "^11.1.0",
-    "tap": "^12.7.0"
+    "tap": "^21.1.0"
   }
 }
