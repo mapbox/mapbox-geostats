@@ -7,6 +7,7 @@
     "mapbox-geostats": "bin/mapbox-geostats",
     "mapbox-geostats-validate": "bin/mapbox-geostats-validate"
   },
+  "type": "commonjs",
   "scripts": {
     "lint": "eslint lib test bin/**",
     "lint-fix": "eslint --fix lib test bin/**",
@@ -24,21 +25,21 @@
   },
   "homepage": "https://github.com/mapbox/mapbox-geostats#readme",
   "dependencies": {
-    "@mapbox/mapbox-file-sniff": "~1.0.1",
-    "@mapbox/mbtiles": "^0.10.0",
-    "@mapbox/tilelive": "~5.12.2",
+    "@mapbox/mapbox-file-sniff": "^1.0.6",
+    "@mapbox/mbtiles": "^0.12.1",
+    "@mapbox/tilelive": "^6.1.0",
     "@mapbox/tiletype": "^0.3.0",
     "@mapbox/vector-tile": "^1.2.1",
     "d3-queue": "^3.0.7",
     "jsonschema": "^1.1.1",
     "lodash": "^4.13.1",
-    "mapnik": "^4.3.1",
-    "meow": "^3.7.0",
+    "mapnik": "^4.5.9",
+    "meow": "^9.0.0",
     "pbf": "^2.0.1"
   },
   "devDependencies": {
-    "eslint": "^5.13.0",
-    "eslint-plugin-node": "^8.0.1",
-    "tap": "^12.5.1"
+    "eslint": "^7.32.0",
+    "eslint-plugin-node": "^11.1.0",
+    "tap": "^21.1.0"
   }
 }
