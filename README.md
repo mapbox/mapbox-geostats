@@ -1,8 +1,6 @@
+⚠️ This repository is no longer actively maintained by Mapbox.
+
 # mapbox-geostats
-
-❌ UNMAINTAINED: this project is no longer maintained and no additional development is planned. Nor is any kind of deprecation planned. Rather this code is now frozen. If you are depending on this module in any of your applications, it is recommended you remove the dependency and/or find a replacement solution
-
-[![CircleCI](https://circleci.com/gh/mapbox/mapbox-geostats.svg?style=svg)](https://circleci.com/gh/mapbox/mapbox-geostats)
 
 Generate statistics about geographic data.
 
